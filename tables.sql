@@ -2,6 +2,16 @@
 
 -- noinspection SqlNoDataSourceInspectionForFile
 
+-- H2 pruebas
+
+-- Aqui iran todos los scripts SQL que se ejecuten, la idea
+-- es que las pruebas se realicen en este archivo.
+
+
+-- Por ahora la base de datos suministrada es la del parcial.
+
+-- Cambios innecesarios xD
+
 CREATE TABLE `AUTHOR` (
 	`id` INT NOT NULL,
 	`name` varchar(100) NOT NULL,
