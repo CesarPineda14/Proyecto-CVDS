@@ -12,37 +12,23 @@
 
 -- Cambios innecesarios xD
 
-CREATE TABLE `AUTHOR` (
-	`id` INT NOT NULL,
-	`name` varchar(100) NOT NULL,
-	`citizenship` varchar(100) NOT NULL,
-	`birthdate` DATE NOT NULL,
-	CONSTRAINT `AUTHOR_PK` PRIMARY KEY (`id`)
-)
-ENGINE=InnoDB;
+--Table TIPORECURSO
+CREATE TABLE TIPORECURSO (
+	tipo VARCHAR(17) NOT NULL,
+	descripcion varchar(200) NOT NULL,
+	maxTiempo INT NOT NULL
+);
 
-CREATE TABLE `BOOK` (
-	`id` INT  NOT NULL,
-	`name` varchar(100) NULL,
-	`price` INT NOT NULL,
-	`format` varchar(100) NOT NULL,
-	`language` varchar(100) NOT NULL,
-	`publicationdate` DATE NOT NULL,
-	`rating` SMALLINT NOT NULL,
-	`author_id` INT NOT NULL,
-	CONSTRAINT `BOOK_PK` PRIMARY KEY (`id`),
-	CONSTRAINT `BOOK_FK` FOREIGN KEY (`author_id`) REFERENCES `AUTHOR`(`id`)
-)
-ENGINE=InnoDB;
+ALTER TABLE TIPORECURSO ADD PRIMARY KEY (tipo);
 
-CREATE TABLE `REVIEW` (
-	`id` INT NOT NULL,
-	`title` varchar(100) NOT NULL,
-	`date` DATE NOT NULL,
-	`comment` varchar(1000) NOT NULL,
-	`rating` SMALLINT NOT NULL,
-	`book_id` INT NOT NULL,
-	CONSTRAINT `REVIEW_PK` PRIMARY KEY (`id`),
-	CONSTRAINT `REVIEW_FK` FOREIGN KEY (`book_id`) REFERENCES `BOOK`(`id`)
-)
-ENGINE=InnoDB;
+--DROP table tiporecurso;
+
+
+--TABLE RECURSOS
+CREATE TABLE RECURSOS (
+	codigo CHAR(5) NOT NULL,
+	tipo VARCHAR(17) NOT NULL,
+	nombre VARCHAR(20) not NULL,
+	enUso BOOLEAN not null,
+	CONSTRAINT FK_recursos_tipoR FOREIGN KEY(tipo) REFERENCES TIPORECURSO(tipo)
+);
