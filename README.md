@@ -10,3 +10,8 @@ mvn exec:java -Dexec.mainClass="edu.eci.cvds.sampleprj.jdbc.JDBCExample" -Dexec.
 ```
 
 En el archivo `DatosBD.txt` se encuentra la informacion relacionada a la conexion con la base de datos y en el archivo `tables.sql` encontramos los scripts de la base de datos.
+
+```
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+```

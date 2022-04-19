@@ -4,18 +4,26 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
+import edu.eci.cvds.persistence.ResourceDAO;
+import edu.eci.cvds.persistence.UserDAO;
+import edu.eci.cvds.persistence.mybatisimpl.MyBatisResourceDAO;
+import edu.eci.cvds.persistence.mybatisimpl.MyBatisUserDAO;
+import edu.eci.cvds.services.impl.ECIBookServices;
+import edu.eci.cvds.services.impl.ECIBookServicesImpl;
 import org.mybatis.guice.XMLMyBatisModule;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
+/*
 import edu.eci.cvds.persistence.AuthorDAO;
 import edu.eci.cvds.persistence.BookDAO;
 import edu.eci.cvds.persistence.mybatisimpl.MyBatisAuthorDAO;
 import edu.eci.cvds.persistence.mybatisimpl.MyBatisBookDAO;
 import edu.eci.cvds.services.ECIBookServices;
 import edu.eci.cvds.services.impl.ECIBookServicesImpl;
+*/
 
 public class GuiceContextListener implements ServletContextListener {
 
@@ -34,6 +42,13 @@ public class GuiceContextListener implements ServletContextListener {
 				setEnvironmentId("development");
 
 				setClassPathResource("mybatis-config.xml");
+
+				//Inyeccion implementacion servicios
+				bind(ECIBookServices.class).to(ECIBookServicesImpl.class);
+				//Inyeccion DAOS
+				bind(UserDAO.class).to(MyBatisUserDAO.class);
+				bind(ResourceDAO.class).to(MyBatisResourceDAO.class);
+
 
 				// Decanatura
                 //bind(ECIBookServices.class).to(ECIBookServicesImpl.class);
