@@ -1,5 +1,6 @@
 package edu.eci.cvds.managedbeans;
 
+import edu.eci.cvds.entities.User;
 import edu.eci.cvds.services.ServicesException;
 import edu.eci.cvds.services.impl.ECIBookServices;
 import edu.eci.cvds.services.impl.ECIBookServicesImpl;
@@ -14,6 +15,7 @@ import javax.faces.bean.ManagedBean;
 public class UserBean extends BasePageBean{
     private String email;
     private String password;
+    private String nombreCompleto;
 
     @Inject
     private ECIBookServices eciBookServices;
@@ -36,9 +38,33 @@ public class UserBean extends BasePageBean{
 
         }
     }
+    public User loadUser() throws Exception{
+        try {
+            return eciBookServices.getUser();
+        }
+        catch (Exception e){
+            return null;
+        }
+    }
 
     public String getEmail() {
         return email;
+    }
+
+    public String getNombreCompleto() {
+        try {
+            User user = loadUser();
+            String concatenar = user.getNombres() + user.getApellidos();
+            System.out.println(concatenar);
+            return concatenar;
+        }
+        catch (Exception e){
+            return null;
+        }
+    }
+
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
     }
 
     public void setEmail(String email) {

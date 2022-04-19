@@ -41,4 +41,9 @@ CREATE TABLE Usuario (
 	programa VARCHAR(50) NOT NULL
 );
 
-ALTER TABLE TIPORECURSO ADD PRIMARY KEY (id, nId);
+--ALTER TABLE TIPORECURSO ADD PRIMARY KEY (id, nId);
+
+--La siguiente instruccion recoge el primer dato de la tabla
+--usuarios
+
+SELECT * FROM usuario LIMIT 1;

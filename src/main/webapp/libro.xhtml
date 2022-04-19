@@ -9,31 +9,8 @@
 	<title></title>
 </h:head>
 <h:body>
-	<h1>Libros de #{libroBean.autor.name}</h1>
-	<p:button outcome="autor" value="Volver a Autores" />
-	<p:dataTable id="programas_table" var="libro" value="#{libroBean.libros}">
-		<p:column headerText="Id">
-			<h:outputText value="#{libro.id}" />
-		</p:column>
-		<p:column headerText="Nombre">
-			<h:outputText value="#{libro.name}" />
-		</p:column>
-		<p:column headerText="Precio">
-			<h:outputText value="#{libro.price}" />
-		</p:column>
-		<p:column headerText="Lenguaje">
-			<h:outputText value="#{libro.language}" />
-		</p:column>
-		<p:column headerText="Fecha de Publicación">
-			<h:outputText value="#{libro.publicationdate}" />
-		</p:column>
-		<p:column headerText="Calificación">
-			<h:outputText value="#{libro.rating}" />
-		</p:column>
-		<p:column headerText="Formato">
-			<h:outputText value="#{libro.format}" />
-		</p:column>
-	</p:dataTable>
+	<h1>Cliente</h1>
+	<p:outputLabel value="#{userBean.nombreCompleto}"/>
 </h:body>
 </html>
 
