@@ -18,7 +18,6 @@ public class MyBatisUserDAO implements UserDAO {
             userMapper.createUser();
         }
         catch (Exception e){
-
         }
     }
     // Consulta
