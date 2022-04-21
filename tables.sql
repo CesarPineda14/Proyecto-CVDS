@@ -47,3 +47,13 @@ CREATE TABLE Usuario (
 --usuarios
 
 SELECT * FROM usuario LIMIT 1;
+
+--insert into usuario (id, nid, apellidos, nombres, programa) values ('1', 'Usuario1','Carrillo','yesid','sistemas')
+--insert into usuario (id, nid, apellidos, nombres, programa) values ('1', 'Usuario2','Henao','Ronaldo','sistemas')
+--insert into usuario (id, nid, apellidos, nombres, programa) values ('1', 'Usuario3','Lozano','Edwar','sistemas')
+--insert into usuario (id, nid, apellidos, nombres, programa) values ('1', 'Usuario4','Fetecua','Santiago','sistemas')
+
+--insert into recurso (codigo, tipo, nombre, enuso) values ('1', 'equipo didactico', 'libro', true)
+--insert into recurso (codigo, tipo, nombre, enuso) values ('2', 'equipo computo', 'portatil', true )
+--insert into recurso (codigo, tipo, nombre, enuso) values ('3', 'sala de estudio', 'sala 1', false)
+--insert into recurso (codigo, tipo, nombre, enuso) values ('4', 'equipo didactico', 'libro', false)

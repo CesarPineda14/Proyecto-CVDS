@@ -1,10 +1,10 @@
 package edu.eci.cvds.entities;
 
 public class Resource {
-    //Atributos sobre atributos de la base de datos
     private String codigo;
     private String tipo;
     private String nombre;
+    private Boolean enUso;
 
     public String getCodigo() {
         return codigo;
@@ -38,5 +38,5 @@ public class Resource {
         this.enUso = enUso;
     }
 
-    private Boolean enUso;
+
 }

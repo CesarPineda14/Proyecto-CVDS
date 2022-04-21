@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.ResourceMapper">
+
+    <insert id="createResource">
+        insert into recurso (codigo, tipo, nombre, enuso)
+        values (#{resource.codigo}, #{resource.tipo}, #{resource.nombre}, #{resource.enuso})
+    </insert>
+
+    <select parameterType="map" id="getResource" resultMap="ResourceResult">
+        select * from recursos limit 1
+    </select>
+
+</mapper>

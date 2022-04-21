@@ -9,7 +9,6 @@ import edu.eci.cvds.persistence.mybatisimpl.mappers.UserMapper;
 public class MyBatisUserDAO implements UserDAO {
 
     @Inject
-    //Injectar mapper
     private UserMapper userMapper;
     // Insert
     @Override

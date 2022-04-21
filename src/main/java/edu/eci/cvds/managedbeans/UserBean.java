@@ -1,24 +1,21 @@
 package edu.eci.cvds.managedbeans;
 
-import edu.eci.cvds.entities.User;
-import edu.eci.cvds.services.ServicesException;
+import edu.eci.cvds.entities.*;
 import edu.eci.cvds.services.impl.ECIBookServices;
-import edu.eci.cvds.services.impl.ECIBookServicesImpl;
-
 import javax.inject.Inject;
-
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name="userBean")
 @RequestScoped
 public class UserBean extends BasePageBean{
-    private String email;
-    private String password;
-    private String nombreCompleto;
 
     @Inject
     private ECIBookServices eciBookServices;
+    private String email;
+    private String password;
+    private String nombreCompleto;
 
     public void createUser() throws Exception{
         try{
@@ -54,9 +51,8 @@ public class UserBean extends BasePageBean{
     public String getNombreCompleto() {
         try {
             User user = loadUser();
-            String concatenar = user.getNombres() + user.getApellidos();
-            System.out.println(concatenar);
-            return concatenar;
+            nombreCompleto = user.getNombres() + user.getApellidos();
+            return nombreCompleto;
         }
         catch (Exception e){
             return null;
