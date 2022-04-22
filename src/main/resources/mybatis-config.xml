@@ -15,11 +15,11 @@
 		<environment id="development">
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
-				<property name="driver" value="org.postgresql.Driver" />
+				<property name="driver" value="${driver}" />
 				<!--property name="url" value="jdbc:mysql://localhost:3306/video_rental"/! -->
-				<property name="url" value="jdbc:postgres://ec2-3-230-122-20.compute-1.amazonaws.com:5432/d7lbrltk4jp2qq?ssl=true&amp" />
-				<property name="username" value="xvwwsijzxuquns" />
-				<property name="password" value="6c96dafd57411a5c5304fc10c42429e72e9ba9a3fbe2599c42f45de42a6d6564" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
 			</dataSource>
 		</environment>
 	</environments>
