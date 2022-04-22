@@ -6,7 +6,7 @@
 
     <insert id="createResource">
         insert into recurso (codigo, tipo, nombre, enuso)
-        values (#{resource.codigo}, #{resource.tipo}, #{resource.nombre}, #{resource.enuso})
+        values (#{resource.codigo}, #{resource.nombre}, #{resource.ubicacion}, #{resource.tipo}, #{resource.capacidad})
     </insert>
 
     <select parameterType="map" id="getResource" resultMap="ResourceResult">

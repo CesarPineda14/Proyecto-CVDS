@@ -6,6 +6,15 @@ public class User {
     private String apellidos;
     private String nombres;
     private String programa;
+    private String perfil;
+
+    public String getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(String perfil) {
+        this.perfil = perfil;
+    }
 
     public String getId() {
         return id;

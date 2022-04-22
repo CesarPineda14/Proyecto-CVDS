@@ -1,10 +1,27 @@
 package edu.eci.cvds.entities;
 
 public class Resource {
-    private String codigo;
-    private String tipo;
     private String nombre;
-    private Boolean enUso;
+    private String ubicacion;
+    private String tipo;
+    private int capacidad;
+    private String codigo;
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    public int getCapacidad() {
+        return capacidad;
+    }
+
+    public void setCapacidad(int capacidad) {
+        this.capacidad = capacidad;
+    }
 
     public String getCodigo() {
         return codigo;
@@ -30,13 +47,6 @@ public class Resource {
         this.nombre = nombre;
     }
 
-    public Boolean getEnUso() {
-        return enUso;
-    }
-
-    public void setEnUso(Boolean enUso) {
-        this.enUso = enUso;
-    }
 
 
 }
