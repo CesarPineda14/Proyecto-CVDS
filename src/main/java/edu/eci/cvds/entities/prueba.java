@@ -60,6 +60,7 @@ public class prueba {
     public static void main(String[] args) throws ServicesException {
         System.out.println("-------------------------------- CONSULAR CLIENTES --------------------------------");
         System.out.println(instance.getServiciosAlquiler().getUser());
+        //al menos algo, no esta solicitando el recurso
         long documento = 10999900099L;
         /*
         System.out.println("---------------------------------- CONSULAR CLIENTE " + documento + " ------------------------------------");
