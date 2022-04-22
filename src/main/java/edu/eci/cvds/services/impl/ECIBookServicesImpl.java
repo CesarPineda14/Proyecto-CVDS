@@ -19,8 +19,8 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	@Inject
 	private UserDAO userDAO;
 
-	@Inject
-	private ResourceDAO resourceDAO;
+	//@Inject
+	//private ResourceDAO resourceDAO;
 
 
 	@Override
