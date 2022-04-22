@@ -9,7 +9,7 @@
         values (#{user.id}, #{user.nid}, #{user.apellidos}, #{user.nombres}, #{user.programa})
     </insert>
 
-    <select parameterType="map" id="getUser" resultMap="UserResult">
+    <select parameterType="map" id="getUser" resultType="User">
         select * from usuario limit 1
     </select>
 

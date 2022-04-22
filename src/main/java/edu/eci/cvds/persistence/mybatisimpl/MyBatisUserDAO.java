@@ -26,6 +26,7 @@ public class MyBatisUserDAO implements UserDAO {
             return userMapper.getUser();
         }
         catch (Exception e){
+            System.out.println(e.getMessage());
             return null;
         }
     }

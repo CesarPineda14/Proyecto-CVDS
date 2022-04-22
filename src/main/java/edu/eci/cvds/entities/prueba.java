@@ -59,7 +59,8 @@ public class prueba {
 
     public static void main(String[] args) throws ServicesException {
         System.out.println("-------------------------------- CONSULAR CLIENTES --------------------------------");
-        System.out.println(instance.getServiciosAlquiler().getUser());
+        System.out.println(instance.getServiciosAlquiler().getUser().getApellidos());
+        // Funcionaaaaaaaaa el select
         //al menos algo, no esta solicitando el recurso
         long documento = 10999900099L;
         /*

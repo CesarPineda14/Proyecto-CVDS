@@ -9,8 +9,8 @@
         values (#{resource.codigo}, #{resource.nombre}, #{resource.ubicacion}, #{resource.tipo}, #{resource.capacidad})
     </insert>
 
-    <select parameterType="map" id="getResource" resultMap="ResourceResult">
+    <!-- <select parameterType="map" id="getResource" resultMap="ResourceResult">
         select * from recursos limit 1
-    </select>
+    </select> !-->
 
 </mapper>
