@@ -6,14 +6,14 @@ public class User {
     private String apellidos;
     private String nombres;
     private String programa;
-    private String perfil;
+    private String tipo;
 
-    public String getPerfil() {
-        return perfil;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setPerfil(String perfil) {
-        this.perfil = perfil;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getId() {

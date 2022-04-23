@@ -2,7 +2,9 @@ package edu.eci.cvds.entities;
 import com.google.inject.Injector;
 import edu.eci.cvds.entities.Resource;
 import edu.eci.cvds.persistence.PersistenceException;
+import edu.eci.cvds.persistence.ResourceDAO;
 import edu.eci.cvds.persistence.UserDAO;
+import edu.eci.cvds.persistence.mybatisimpl.MyBatisResourceDAO;
 import edu.eci.cvds.persistence.mybatisimpl.MyBatisUserDAO;
 import edu.eci.cvds.services.ServicesException;
 import edu.eci.cvds.services.impl.ECIBookServices;
@@ -26,6 +28,7 @@ public class prueba {
                 setEnvironmentId(env);
                 setClassPathResource(pathResource);
                 bind(UserDAO.class).to(MyBatisUserDAO.class);
+                bind(ResourceDAO.class).to(MyBatisResourceDAO.class);
                 bind(ECIBookServices.class).to(ECIBookServicesImpl.class);
             }
         });
@@ -60,6 +63,7 @@ public class prueba {
     public static void main(String[] args) throws ServicesException {
         System.out.println("-------------------------------- CONSULAR CLIENTES --------------------------------");
         System.out.println(instance.getServiciosAlquiler().getUser().getApellidos());
+        System.out.println(instance.getServiciosAlquiler().getUser().getNombres());
         // Funcionaaaaaaaaa el select
         //al menos algo, no esta solicitando el recurso
         long documento = 10999900099L;

@@ -5,7 +5,7 @@
 <mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.ResourceMapper">
 
     <insert id="createResource">
-        insert into recurso (codigo, tipo, nombre, enuso)
+        insert into recurso (codigo, nombre, ubicacion, tipo, capacidad)
         values (#{resource.codigo}, #{resource.nombre}, #{resource.ubicacion}, #{resource.tipo}, #{resource.capacidad})
     </insert>
 

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.google.inject.Inject;
 
+import edu.eci.cvds.entities.Resource;
 import edu.eci.cvds.entities.User;
 import edu.eci.cvds.persistence.PersistenceException;
 import edu.eci.cvds.persistence.ResourceDAO;
@@ -19,8 +20,8 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	@Inject
 	private UserDAO userDAO;
 
-	//@Inject
-	//private ResourceDAO resourceDAO;
+	@Inject
+	private ResourceDAO resourceDAO;
 
 
 	@Override
@@ -35,6 +36,22 @@ public class ECIBookServicesImpl implements ECIBookServices {
 
 	@Override
 	public void createUser() throws ServicesException {
+
+	}
+
+	@Override
+	public Resource getResource() throws ServicesException {
+		return null;
+	}
+
+	@Override
+	public Resource createResource(String codigo, String nombre, String ubicacion, String tipo, int capacidad) throws ServicesException{
+		try {
+			return resourceDAO.save(codigo,nombre,ubicacion,tipo,capacidad);
+		}
+		catch (Exception e){
+			return null;
+		}
 
 	}
 }

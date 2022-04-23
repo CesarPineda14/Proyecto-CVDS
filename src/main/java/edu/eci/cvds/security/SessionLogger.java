@@ -6,7 +6,7 @@ public interface SessionLogger {
 
     public void login(String nombre, String clave) throws ServicesException;
 
-    public boolean isLogged();
+    public boolean isLogged() throws ServicesException;
 
-    public void logout();
+    public void logout() throws ServicesException;
 }

@@ -1,4 +1,6 @@
 package edu.eci.cvds.security;
+import org.apache.shiro.mgt.DefaultSecurityManager;
+import org.apache.shiro.realm.text.IniRealm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.apache.shiro.SecurityUtils;
@@ -14,27 +16,31 @@ public class SecurityAPP {
 
     public static void main(String[] args) {
         log.info("My First Apache Shiro Application");
-
+        /*
         Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro.ini");
-        SecurityManager securityManager = factory.getInstance();
-        SecurityUtils.setSecurityManager(securityManager);
+        SecurityManager securityManager = factory.getInstance();*/
 
-        // get the currently executing user:
-        // usuario que esta iniciando sesion
+        // Cargar user de shiro.ini
+        IniRealm iniRealm = new IniRealm("classpath:shiro.ini");
+        SecurityManager securityManager = new DefaultSecurityManager(iniRealm);
+
+        SecurityUtils.setSecurityManager(securityManager);
         Subject currentUser = SecurityUtils.getSubject();
 
         // Do some stuff with a Session (no need for a web or EJB container!!!)
         // Aca nos muestra en que sesion se encuentra el usurio actual
+        /*
         Session session = currentUser.getSession();
         session.setAttribute("someKey", "aValue");
         String value = (String) session.getAttribute("someKey");
+
         if (value.equals("aValue")) {
             log.info("Retrieved the correct value! [" + value + "]");
-        }
+        }*/
 
-        // let's login the current user so we can check against roles and permissions:
+        // Autenticasion del usuario actual con sus roles y permisos
         if (!currentUser.isAuthenticated()) {
-            UsernamePasswordToken token = new UsernamePasswordToken("lonestarr", "vespa");
+            UsernamePasswordToken token = new UsernamePasswordToken("user", "password");
             token.setRememberMe(true);
             try {
                 currentUser.login(token);
@@ -57,10 +63,12 @@ public class SecurityAPP {
         log.info("User [" + currentUser.getPrincipal() + "] logged in successfully.");
 
         //test a role:
-        if (currentUser.hasRole("schwartz")) {
-            log.info("May the Schwartz be with you!");
+        if (currentUser.hasRole("admin")) {
+            log.info("Bienvenido");
+        } else if (currentUser.hasRole("guest")){
+            log.info("Bienvenido");
         } else {
-            log.info("Hello, mere mortal.");
+
         }
 
         //test a typed permission (not instance-level)

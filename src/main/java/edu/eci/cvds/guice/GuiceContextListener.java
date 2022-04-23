@@ -38,7 +38,7 @@ public class GuiceContextListener implements ServletContextListener {
 				bind(ECIBookServices.class).to(ECIBookServicesImpl.class);
 				//Inyeccion DAOS
 				bind(UserDAO.class).to(MyBatisUserDAO.class);
-				//bind(ResourceDAO.class).to(MyBatisResourceDAO.class);
+				bind(ResourceDAO.class).to(MyBatisResourceDAO.class);
 
 			}
 		}

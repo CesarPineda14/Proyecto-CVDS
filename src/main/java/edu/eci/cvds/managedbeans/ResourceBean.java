@@ -13,15 +13,29 @@ public class ResourceBean extends BasePageBean{
 
     @Inject
     private ECIBookServices eciBookServices;
+    public Resource resource;
+    public String nombre;
+    public String ubicacion;
+    public String tipo;
+    public int capacidad;
+    public String codigo;
 
-    public void createResource() throws Exception{
+    public Resource save(String _codigo, String _nombre, String _ubicacion, String _tipo, int _capacidad) throws Exception{
         try{
             //Uso de metodos en clase eciBookServices
+            resource = eciBookServices.createResource(_codigo, _nombre, _ubicacion, _tipo, _capacidad);
+            codigo = resource.getCodigo();
+            nombre = resource.getNombre();
+            ubicacion = resource.getUbicacion();
+            tipo = resource.getTipo();
+            capacidad = resource.getCapacidad();
+            return resource;
+
         }
-        catch (Exception exception){
+        catch (Exception e){
             // cambiar cuando se implementen las excepciones
             // de servicesException
-            throw exception;
+            return null;
         }
     }
 

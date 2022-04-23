@@ -6,5 +6,5 @@ import edu.eci.cvds.entities.User;
 public interface ResourceMapper {
     public Resource getResource();
 
-    public void createResource();
+    public Resource createResource(String codigo, String nombre, String ubicacion, String tipo, int capacidad);
 }

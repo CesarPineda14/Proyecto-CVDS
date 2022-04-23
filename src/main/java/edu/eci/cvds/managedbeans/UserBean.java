@@ -1,6 +1,7 @@
 package edu.eci.cvds.managedbeans;
 
 import edu.eci.cvds.entities.*;
+import edu.eci.cvds.security.ShiroSession;
 import edu.eci.cvds.services.impl.ECIBookServices;
 import javax.inject.Inject;
 import javax.enterprise.context.RequestScoped;
@@ -16,7 +17,9 @@ public class UserBean extends BasePageBean{
     private String email;
     private String password;
     private String nombreCompleto;
+    private ShiroSession shiroSession;
 
+    /*
     public void createUser() throws Exception{
         try{
             //Uso de metodos en clase eciBookServices
@@ -26,15 +29,28 @@ public class UserBean extends BasePageBean{
             // de servicesException
             throw exception;
         }
-    }
-    public void signIn() throws Exception{
+    }*/
+    public void signIn(String nombre, String clave) throws Exception{
         try{
             ////Uso de metodos en clase eciBookServices
+            shiroSession.login(nombre, clave);
         }
         catch (Exception e){
 
         }
     }
+
+    public void logOut() throws Exception{
+        try {
+            if(shiroSession.isLogged()){
+                shiroSession.logout();
+            }
+        }
+        catch (Exception e){
+
+        }
+    }
+
     public User loadUser() throws Exception{
         try {
             return eciBookServices.getUser();
