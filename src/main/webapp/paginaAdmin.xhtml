@@ -131,11 +131,9 @@
 
 		select:invalid { color: gray; }
 
-		@import url(https://fonts.googleapis.com/css?family=Oswald:400);
-
 img {
   width: 25px;
-  border-radius: 10px;
+  border-radius: 5px;
   float: left;
 }
 
@@ -156,17 +154,17 @@ img {
 	text-decoration: none;
 	float: right;
 	padding: 15px;
-	margin: 15px;
+	margin: 10px;
 	color: white;
-	width: 25px;
-	background-color: rgb(128, 128, 128);
+	width: 20px;
+	background-color: rgba(185, 185, 185, 0);
 	transition: width .35s;
 	-webkit-transition: width .35s;
 	overflow: hidden
 }
 
 a:hover {
-  width: 100px;
+  width: 110px;
 }
 
 a:hover .logout{
@@ -177,61 +175,45 @@ a {
   text-decoration: none;
 }
 
+header {
+    min-height: 100px;
+    background-color: rgba(185, 185, 185, 0.315);
+}
+
 </style>
 
-<h:head>
+<header>
 	<title>Recursos Biblioteca </title>
 	<br></br>
 	<img style="float: left;" class = "picture" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg/1920px-Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg.png" alt=""></img>
-	<br></br>
-	<br></br>
-	<br></br>
 	
-</h:head>
-
-<h:body>
-	
-	<h1>Gestión de Recursos</h1>
-	<br></br>
-	<h:form>
-            <div class="login-page">
-                <div class="form">
-                  <form class="login-form">
-                    <input type="String" id= "Nombre Recurso" binding="" placeholder="Nombre Recurso"/>
-					
-					<select name="Ubicacion Recurso" id="Ubicacion Recurso">
-						<option value="">Ubicacion Recurso</option>
-						<option value="Salas de Estudio">Salas de Estudio</option>
-						<option value="Equipos de Computo">Equipos de Computo</option>
-						<option value="Equipos Multimedia">Equipos Multimedia</option>	
-					</select>
-
-					<select name="Tipo Recurso" id="Tipo Recurso" >
-						<option value="">Tipo Recurso</option>
-						<option value="Salas de Estudio">Salas de Estudio</option>
-						<option value="Equipos de Computo">Equipos de Computo</option>
-						<option value="Equipos Multimedia">Equipos Multimedia</option>	
-					</select>
-
-					<input type="String" id= "Capacidad Recurso" binding="" placeholder="Capacidad Recurso"/>
-					<input type="String" id= "Id Interno" binding="" placeholder="Id Interno"/>
-
-					<button>Registrar</button>
-                  </form>
-                </div>
-            </div>
-    </h:form>
-
-	<div class="navigation">
+  <div class="navigation">
   
 		<a class="button" href="">
-		  <img src="https://aux.iconspalace.com/uploads/logout-icon-256-510450847.png"></img>
+		  <img src="https://flyclipart.com/thumb2/exit-icon-740908.png"></img>
 	  
 	  <div class="logout">LOGOUT</div>
 	
 		</a>
 	</div>
-		
-</h:body>
+	
+</header>
+
+<h:head>  
+<title>MenuBar</title>  
+</h:head>  
+<h:body> 
+<br></br>
+<h:form>
+<p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(185, 185, 185, 0.315);">  
+
+
+    
+    <p:menuitem value="Registrar Recurso" />  
+    <p:menuitem value="Cambiar Estado Recurso" />  
+
+</p:menubar>  
+</h:form>  
+</h:body>  
 </html>
 
