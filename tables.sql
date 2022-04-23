@@ -64,12 +64,21 @@ CREATE TABLE Usuario (
 
 SELECT * FROM usuario LIMIT 1;
 
---insert into usuario (id, nid, apellidos, nombres, programa) values ('1', 'Usuario1','Carrillo','yesid','sistemas')
---insert into usuario (id, nid, apellidos, nombres, programa) values ('1', 'Usuario2','Henao','Ronaldo','sistemas')
---insert into usuario (id, nid, apellidos, nombres, programa) values ('1', 'Usuario3','Lozano','Edwar','sistemas')
---insert into usuario (id, nid, apellidos, nombres, programa) values ('1', 'Usuario4','Fetecua','Santiago','sistemas')
+--Población
 
---insert into recurso (codigo, tipo, nombre, enuso) values ('1', 'equipo didactico', 'libro', true)
---insert into recurso (codigo, tipo, nombre, enuso) values ('2', 'equipo computo', 'portatil', true )
---insert into recurso (codigo, tipo, nombre, enuso) values ('3', 'sala de estudio', 'sala 1', false)
---insert into recurso (codigo, tipo, nombre, enuso) values ('4', 'equipo didactico', 'libro', false)
+insert into tiporecurso values ('Sala de estudio', 'Se usa para realizar trabajos intelectuales, leer o trabajar individualmente o en grupo', '9:00:00', '17:00:00');
+insert into tiporecurso values ('Equipo de computo', 'Dispositivo electrónico que le permite al usuario conectarse a distintas herramientas', '7:00:00', '18:30:00');
+insert into tiporecurso values ('Equipo multimedia', 'Herramienta o objeto útiles para el desarrollo de actividades académicas', '7:00:00', '18:30:00');
+
+--delete from tiporecurso;
+
+insert into ubicaciones values ('Biblioteca Principal', '7:00:00', '19:00:00');
+insert into ubicaciones values ('Biblioteca Satelite', '9:00:00', '19:00:00');
+insert into ubicaciones values ('Edificio I', '9:00:00', '19:00:00');
+
+--delete from ubicaciones;
+
+insert into recursos values ('00001', 'Sala de estudio', 'Biblioteca Principal', 'Sala Estudio 1');
+insert into recursos values ('00002', 'Equipo de computo', 'Biblioteca Satelite', 'PC Portatil 1');
+
+--delete from recuros;
