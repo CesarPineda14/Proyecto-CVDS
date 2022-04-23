@@ -37,7 +37,6 @@ CREATE TABLE RECURSOS (
 	tipo VARCHAR(17) NOT NULL,
 	ubicacion VARCHAR(30) not null,
 	nombre VARCHAR(20) not NULL,
-	enUso BOOLEAN not null,
 	CONSTRAINT FK_recursos_tipoR FOREIGN KEY(tipo) REFERENCES TIPORECURSO(tipo),
 	CONSTRAINT FK_recursos_ubi FOREIGN KEY(ubicacion) REFERENCES UBICACIONES(ubicacion)
 );
