@@ -12,27 +12,43 @@
 
 -- Cambios innecesarios xD
 
---Table TIPORECURSO
+--Tipo Recurso
 CREATE TABLE TIPORECURSO (
 	tipo VARCHAR(17) NOT NULL,
 	descripcion varchar(200) NOT NULL,
-	maxTiempo INT NOT NULL
+	horaMinima time not null,
+	horaMaxima time not null
 );
 
 ALTER TABLE TIPORECURSO ADD PRIMARY KEY (tipo);
 
---DROP table tiporecurso;
+--Ubicaciones
+CREATE TABLE UBICACIONES (
+	ubicacion VARCHAR(30) NOT NULL,
+	horaMinima time not null,
+	horaMaxima time not null
+);
 
+ALTER table UBICACIONES ADD PRIMARY KEY (ubicacion);
 
---TABLE RECURSOS
+--Recursos
 CREATE TABLE RECURSOS (
 	codigo CHAR(5) NOT NULL,
 	tipo VARCHAR(17) NOT NULL,
+	ubicacion VARCHAR(30) not null,
 	nombre VARCHAR(20) not NULL,
-	enUso BOOLEAN not null,
-	CONSTRAINT FK_recursos_tipoR FOREIGN KEY(tipo) REFERENCES TIPORECURSO(tipo)
+	CONSTRAINT FK_recursos_tipoR FOREIGN KEY(tipo) REFERENCES TIPORECURSO(tipo),
+	CONSTRAINT FK_recursos_ubi FOREIGN KEY(ubicacion) REFERENCES UBICACIONES(ubicacion)
 );
 
+ALTER table RECURSOS ADD PRIMARY KEY (codigo);
+
+
+DROP table recursos;
+DROP table tiporecurso;
+DROP table UBICACIONES;
+
+--Table Usuario
 CREATE TABLE Usuario (
 	id VARCHAR(3) NOT NULL,
 	nId VARCHAR(11) NOT NULL,
@@ -48,9 +64,21 @@ CREATE TABLE Usuario (
 
 SELECT * FROM usuario LIMIT 1;
 
---insert into usuario (id, nid, apellidos, nombres, programa) values ('1', 'Usuario1','Carrillo','yesid','sistemas')
---insert into usuario (id, nid, apellidos, nombres, programa) values ('1', 'Usuario2','Henao','Ronaldo','sistemas')
---insert into usuario (id, nid, apellidos, nombres, programa) values ('1', 'Usuario3','Lozano','Edwar','sistemas')
---insert into usuario (id, nid, apellidos, nombres, programa) values ('1', 'Usuario4','Fetecua','Santiago','sistemas')
+--Población
 
-INSERT INTO recursos (nombre,ubicacion,tipo,capacidad,idinterno) values ("primerrecurso","biblioteca","pc",2,"dato");
+insert into tiporecurso values ('Sala de estudio', 'Se usa para realizar trabajos intelectuales, leer o trabajar individualmente o en grupo', '9:00:00', '17:00:00');
+insert into tiporecurso values ('Equipo de computo', 'Dispositivo electrónico que le permite al usuario conectarse a distintas herramientas', '7:00:00', '18:30:00');
+insert into tiporecurso values ('Equipo multimedia', 'Herramienta o objeto útiles para el desarrollo de actividades académicas', '7:00:00', '18:30:00');
+
+--delete from tiporecurso;
+
+insert into ubicaciones values ('Biblioteca Principal', '7:00:00', '19:00:00');
+insert into ubicaciones values ('Biblioteca Satelite', '9:00:00', '19:00:00');
+insert into ubicaciones values ('Edificio I', '9:00:00', '19:00:00');
+
+--delete from ubicaciones;
+
+insert into recursos values ('00001', 'Sala de estudio', 'Biblioteca Principal', 'Sala Estudio 1');
+insert into recursos values ('00002', 'Equipo de computo', 'Biblioteca Satelite', 'PC Portatil 1');
+
+--delete from recuros;
