@@ -7,8 +7,5 @@ public interface UserDAO {
 
     public User load() throws PersistenceException;
 
-    //metodo para consultar recurso
-
-    //metodo para insertar recurso
 
 }

@@ -12,22 +12,25 @@ public class MyBatisResourceDAO implements ResourceDAO{
     @Inject
     private ResourceMapper resourceMapper;
 
+
     @Override
-    public Resource save(String codigo, String nombre, String ubicacion, String tipo, int capacidad) throws PersistenceException {
+    public void save(Resource resource) throws PersistenceException {
         try {
-            return resourceMapper.createResource(codigo, nombre, ubicacion, tipo, capacidad);
+            System.out.println("aqui pasa");
+            resourceMapper.createResource(resource);
         }
         catch (Exception e) {
-            return null;
         }
     }
 
     @Override
     public Resource load(long id) throws PersistenceException {
         try {
+            //System.out.println("aqui pasa");
             return resourceMapper.getResource();
         }
         catch (Exception e){
+            System.out.println(e.getMessage());
             return null;
         }
     }
