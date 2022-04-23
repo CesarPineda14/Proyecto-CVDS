@@ -20,6 +20,7 @@ public class MyBatisResourceDAO implements ResourceDAO{
             resourceMapper.createResource(resource);
         }
         catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 

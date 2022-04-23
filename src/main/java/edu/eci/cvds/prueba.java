@@ -57,7 +57,7 @@ public class prueba {
         Resource resource = new Resource(
                 "0003",
                 "Edificio I",
-                "Sala de estudio", "drgdfgd"
+                "Sala de estudio", "ere"
         );
         return  resource;
     }

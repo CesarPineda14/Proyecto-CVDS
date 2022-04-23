@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.ResourceMapper">
 
-    <insert id="createResource" >
+    <insert id="createResource" parameterType="map">
         insert into recursos (codigo, tipo , ubicacion, nombre)
         values (#{resource.codigo}, #{resource.tipo}, #{resource.ubicacion}, #{resource.nombre})
     </insert>

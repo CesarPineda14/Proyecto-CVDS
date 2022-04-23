@@ -13,6 +13,10 @@ public class Resource {
         this.codigo = codigo;
     }
 
+    public Resource getResource(){
+        return this;
+    }
+
     public String getNombre() {
         return nombre;
     }
