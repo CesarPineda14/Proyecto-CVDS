@@ -12,7 +12,7 @@
 
 -- Cambios innecesarios xD
 
---Table TIPORECURSO
+--Tipo Recurso
 CREATE TABLE TIPORECURSO (
 	tipo VARCHAR(17) NOT NULL,
 	descripcion varchar(200) NOT NULL,
@@ -22,23 +22,34 @@ CREATE TABLE TIPORECURSO (
 
 ALTER TABLE TIPORECURSO ADD PRIMARY KEY (tipo);
 
---DROP table tiporecurso;
+--Ubicaciones
+CREATE TABLE UBICACIONES (
+	ubicacion VARCHAR(30) NOT NULL,
+	horaMinima time not null,
+	horaMaxima time not null
+);
 
+ALTER table UBICACIONES ADD PRIMARY KEY (ubicacion);
 
---TABLE RECURSOS
+--Recursos
 CREATE TABLE RECURSOS (
 	codigo CHAR(5) NOT NULL,
 	tipo VARCHAR(17) NOT NULL,
 	ubicacion VARCHAR(30) not null,
 	nombre VARCHAR(20) not NULL,
 	enUso BOOLEAN not null,
-	CONSTRAINT FK_recursos_tipoR FOREIGN KEY(tipo) REFERENCES TIPORECURSO(tipo)
+	CONSTRAINT FK_recursos_tipoR FOREIGN KEY(tipo) REFERENCES TIPORECURSO(tipo),
+	CONSTRAINT FK_recursos_ubi FOREIGN KEY(ubicacion) REFERENCES UBICACIONES(ubicacion)
 );
 
 ALTER table RECURSOS ADD PRIMARY KEY (codigo);
 
---DROP table recursos;
 
+DROP table recursos;
+DROP table tiporecurso;
+DROP table UBICACIONES;
+
+--Table Usuario
 CREATE TABLE Usuario (
 	id VARCHAR(3) NOT NULL,
 	nId VARCHAR(11) NOT NULL,
