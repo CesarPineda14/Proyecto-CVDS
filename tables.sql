@@ -29,10 +29,15 @@ ALTER TABLE TIPORECURSO ADD PRIMARY KEY (tipo);
 CREATE TABLE RECURSOS (
 	codigo CHAR(5) NOT NULL,
 	tipo VARCHAR(17) NOT NULL,
+	ubicacion VARCHAR(30) not null,
 	nombre VARCHAR(20) not NULL,
 	enUso BOOLEAN not null,
 	CONSTRAINT FK_recursos_tipoR FOREIGN KEY(tipo) REFERENCES TIPORECURSO(tipo)
 );
+
+ALTER table RECURSOS ADD PRIMARY KEY (codigo);
+
+--DROP table recursos;
 
 CREATE TABLE Usuario (
 	id VARCHAR(3) NOT NULL,
