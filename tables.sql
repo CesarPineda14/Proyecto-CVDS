@@ -16,7 +16,8 @@
 CREATE TABLE TIPORECURSO (
 	tipo VARCHAR(17) NOT NULL,
 	descripcion varchar(200) NOT NULL,
-	maxTiempo INT NOT NULL
+	horaMinima time not null,
+	horaMaxima time not null
 );
 
 ALTER TABLE TIPORECURSO ADD PRIMARY KEY (tipo);
