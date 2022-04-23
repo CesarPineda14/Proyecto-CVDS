@@ -41,16 +41,23 @@ public class ECIBookServicesImpl implements ECIBookServices {
 
 	@Override
 	public Resource getResource() throws ServicesException {
-		return null;
+		try {
+			return resourceDAO.load(1);
+		}catch (Exception e){
+			System.out.println(e.getMessage());
+			return null;
+		}
 	}
 
 	@Override
-	public Resource createResource(String codigo, String nombre, String ubicacion, String tipo, int capacidad) throws ServicesException{
+	public void createResource(Resource resource) throws ServicesException{
 		try {
-			return resourceDAO.save(codigo,nombre,ubicacion,tipo,capacidad);
+			resourceDAO.save(resource);
+			System.out.println("recurso agregado");
+			System.out.println(resource);
 		}
 		catch (Exception e){
-			return null;
+			System.out.println(e.getMessage());
 		}
 
 	}

@@ -1,7 +1,6 @@
-package edu.eci.cvds.entities;
+package edu.eci.cvds;
 import com.google.inject.Injector;
 import edu.eci.cvds.entities.Resource;
-import edu.eci.cvds.persistence.PersistenceException;
 import edu.eci.cvds.persistence.ResourceDAO;
 import edu.eci.cvds.persistence.UserDAO;
 import edu.eci.cvds.persistence.mybatisimpl.MyBatisResourceDAO;
@@ -54,7 +53,14 @@ public class prueba {
 
         return optInjector.get().getInstance(ECIBookServices.class);
     }
-
+    public Resource createResource(){
+        Resource resource = new Resource(
+                "0003",
+                "Edificio I",
+                "Sala de estudio", "drgdfgd"
+        );
+        return  resource;
+    }
 
     public static prueba getInstance(){
         return instance;
@@ -64,6 +70,14 @@ public class prueba {
         System.out.println("-------------------------------- CONSULAR CLIENTES --------------------------------");
         System.out.println(instance.getServiciosAlquiler().getUser().getApellidos());
         System.out.println(instance.getServiciosAlquiler().getUser().getNombres());
+
+        System.out.println("------------------CONSULTAR RECURSO ----------------------------------------");
+
+        Resource resource = getInstance().createResource();
+        instance.getServiciosAlquiler().createResource(resource);
+        System.out.println(instance.getServiciosAlquiler().getResource().getNombre());
+
+        //System.out.println(instance.getServiciosAlquiler().getResource());
         // Funcionaaaaaaaaa el select
         //al menos algo, no esta solicitando el recurso
         long documento = 10999900099L;

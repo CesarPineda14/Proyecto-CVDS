@@ -14,6 +14,7 @@ public class MyBatisUserDAO implements UserDAO {
     @Override
     public void save(User rs) throws PersistenceException {
         try {
+
             userMapper.createUser();
         }
         catch (Exception e){

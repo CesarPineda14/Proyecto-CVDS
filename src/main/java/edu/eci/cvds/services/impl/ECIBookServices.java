@@ -12,6 +12,6 @@ public interface ECIBookServices {
 
     public Resource getResource() throws ServicesException;
 
-    public Resource createResource(String codigo, String nombre, String ubicacion, String tipo, int capacidad) throws ServicesException;
+    public void createResource(Resource resource) throws ServicesException;
 
 }

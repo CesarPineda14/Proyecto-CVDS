@@ -20,15 +20,15 @@ public class ResourceBean extends BasePageBean{
     public int capacidad;
     public String codigo;
 
-    public Resource save(String _codigo, String _nombre, String _ubicacion, String _tipo, int _capacidad) throws Exception{
+    public Resource save( String _nombre, String _ubicacion, String _tipo, int _capacidad,String idinterno) throws Exception{
         try{
             //Uso de metodos en clase eciBookServices
-            resource = eciBookServices.createResource(_codigo, _nombre, _ubicacion, _tipo, _capacidad);
+            //resource = eciBookServices.createResource(_nombre, _ubicacion, _tipo, _capacidad, idinterno);
             codigo = resource.getCodigo();
             nombre = resource.getNombre();
             ubicacion = resource.getUbicacion();
             tipo = resource.getTipo();
-            capacidad = resource.getCapacidad();
+            //capacidad = resource.getCapacidad();
             return resource;
 
         }
