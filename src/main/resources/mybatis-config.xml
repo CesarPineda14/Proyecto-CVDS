@@ -9,6 +9,8 @@
 	<typeAliases>
 		<typeAlias type='edu.eci.cvds.entities.User' alias='User' />
 		<typeAlias type='edu.eci.cvds.entities.Resource' alias='Resource' />
+		<typeAlias type='edu.eci.cvds.entities.ResourceType' alias='ResourceType' />
+		<typeAlias type='edu.eci.cvds.entities.Location' alias='Location' />
 	</typeAliases>
 
 	<environments default="development">
@@ -27,6 +29,8 @@
 	<mappers>
 		<mapper resource="mappers/UserMapper.xml"></mapper>
 		<mapper resource="mappers/ResourceMapper.xml"></mapper>
+		<mapper resource="mappers/ResourceTypeMapper.xml"></mapper>
+		<mapper resource="mappers/LocationMapper.xml"></mapper>
 	</mappers>
 
 </configuration>

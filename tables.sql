@@ -66,19 +66,19 @@ SELECT * FROM usuario LIMIT 1;
 
 --Población
 
-insert into tiporecurso values ('Sala de estudio', 'Se usa para realizar trabajos intelectuales, leer o trabajar individualmente o en grupo', '9:00:00', '17:00:00');
-insert into tiporecurso values ('Equipo de computo', 'Dispositivo electrónico que le permite al usuario conectarse a distintas herramientas', '7:00:00', '18:30:00');
-insert into tiporecurso values ('Equipo multimedia', 'Herramienta o objeto útiles para el desarrollo de actividades académicas', '7:00:00', '18:30:00');
+--insert into tiporecurso values ('Sala de estudio', 'Se usa para realizar trabajos intelectuales, leer o trabajar individualmente o en grupo', '9:00:00', '17:00:00');
+--insert into tiporecurso values ('Equipo de computo', 'Dispositivo electrónico que le permite al usuario conectarse a distintas herramientas', '7:00:00', '18:30:00');
+--insert into tiporecurso values ('Equipo multimedia', 'Herramienta o objeto útiles para el desarrollo de actividades académicas', '7:00:00', '18:30:00');
 
 --delete from tiporecurso;
 
-insert into ubicaciones values ('Biblioteca Principal', '7:00:00', '19:00:00');
-insert into ubicaciones values ('Biblioteca Satelite', '9:00:00', '19:00:00');
-insert into ubicaciones values ('Edificio I', '9:00:00', '19:00:00');
+--insert into ubicaciones values ('Biblioteca Principal', '7:00:00', '19:00:00');
+--insert into ubicaciones values ('Biblioteca Satelite', '9:00:00', '19:00:00');
+--insert into ubicaciones values ('Edificio I', '9:00:00', '19:00:00');
 
 --delete from ubicaciones;
 
-insert into recursos values ('00001', 'Sala de estudio', 'Biblioteca Principal', 'Sala Estudio 1');
-insert into recursos values ('00002', 'Equipo de computo', 'Biblioteca Satelite', 'PC Portatil 1');
+--insert into recursos values ('00001', 'Sala de estudio', 'Biblioteca Principal', 'Sala Estudio 1');
+--insert into recursos values ('00002', 'Equipo de computo', 'Biblioteca Satelite', 'PC Portatil 1');
 
 --delete from recuros;

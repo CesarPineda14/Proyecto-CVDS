@@ -8,6 +8,14 @@ public class User {
     private String programa;
     private String tipo;
 
+    public User(String id, String nid, String apellidos, String nombres, String programa) {
+        this.id = id;
+        this.nid = nid;
+        this.apellidos = apellidos;
+        this.nombres = nombres;
+        this.programa = programa;
+    }
+
     public String getTipo() {
         return tipo;
     }

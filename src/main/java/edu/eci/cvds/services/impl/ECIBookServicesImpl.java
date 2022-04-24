@@ -6,9 +6,7 @@ import com.google.inject.Inject;
 
 import edu.eci.cvds.entities.Resource;
 import edu.eci.cvds.entities.User;
-import edu.eci.cvds.persistence.PersistenceException;
-import edu.eci.cvds.persistence.ResourceDAO;
-import edu.eci.cvds.persistence.UserDAO;
+import edu.eci.cvds.persistence.*;
 import edu.eci.cvds.services.impl.ECIBookServices;
 import edu.eci.cvds.services.ServicesException;
 
@@ -22,6 +20,12 @@ public class ECIBookServicesImpl implements ECIBookServices {
 
 	@Inject
 	private ResourceDAO resourceDAO;
+
+	@Inject
+	private ResourceTypeDAO resourceTypeDAO;
+
+	@Inject
+	private LocationDAO locationDAO;
 
 
 	@Override

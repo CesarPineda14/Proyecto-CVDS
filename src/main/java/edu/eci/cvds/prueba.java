@@ -1,9 +1,13 @@
 package edu.eci.cvds;
 import com.google.inject.Injector;
 import edu.eci.cvds.entities.Resource;
+import edu.eci.cvds.persistence.LocationDAO;
 import edu.eci.cvds.persistence.ResourceDAO;
+import edu.eci.cvds.persistence.ResourceTypeDAO;
 import edu.eci.cvds.persistence.UserDAO;
+import edu.eci.cvds.persistence.mybatisimpl.MyBatisLocationDAO;
 import edu.eci.cvds.persistence.mybatisimpl.MyBatisResourceDAO;
+import edu.eci.cvds.persistence.mybatisimpl.MyBatisResourceTypeDAO;
 import edu.eci.cvds.persistence.mybatisimpl.MyBatisUserDAO;
 import edu.eci.cvds.services.ServicesException;
 import edu.eci.cvds.services.impl.ECIBookServices;
@@ -26,9 +30,13 @@ public class prueba {
             protected void initialize() {
                 setEnvironmentId(env);
                 setClassPathResource(pathResource);
+
+                bind(ECIBookServices.class).to(ECIBookServicesImpl.class);
+
                 bind(UserDAO.class).to(MyBatisUserDAO.class);
                 bind(ResourceDAO.class).to(MyBatisResourceDAO.class);
-                bind(ECIBookServices.class).to(ECIBookServicesImpl.class);
+                bind(ResourceTypeDAO.class).to(MyBatisResourceTypeDAO.class);
+                bind(LocationDAO.class).to(MyBatisLocationDAO.class);
             }
         });
     }

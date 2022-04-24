@@ -4,9 +4,13 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
+import edu.eci.cvds.persistence.LocationDAO;
 import edu.eci.cvds.persistence.ResourceDAO;
+import edu.eci.cvds.persistence.ResourceTypeDAO;
 import edu.eci.cvds.persistence.UserDAO;
+import edu.eci.cvds.persistence.mybatisimpl.MyBatisLocationDAO;
 import edu.eci.cvds.persistence.mybatisimpl.MyBatisResourceDAO;
+import edu.eci.cvds.persistence.mybatisimpl.MyBatisResourceTypeDAO;
 import edu.eci.cvds.persistence.mybatisimpl.MyBatisUserDAO;
 import edu.eci.cvds.services.impl.ECIBookServices;
 import edu.eci.cvds.services.impl.ECIBookServicesImpl;
@@ -39,6 +43,8 @@ public class GuiceContextListener implements ServletContextListener {
 				//Inyeccion DAOS
 				bind(UserDAO.class).to(MyBatisUserDAO.class);
 				bind(ResourceDAO.class).to(MyBatisResourceDAO.class);
+				bind(ResourceTypeDAO.class).to(MyBatisResourceTypeDAO.class);
+				bind(LocationDAO.class).to(MyBatisLocationDAO.class);
 
 			}
 		}
