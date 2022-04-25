@@ -1,19 +1,20 @@
 package edu.eci.cvds;
 import com.google.inject.Injector;
 import edu.eci.cvds.entities.Resource;
-import edu.eci.cvds.persistence.LocationDAO;
-import edu.eci.cvds.persistence.ResourceDAO;
-import edu.eci.cvds.persistence.ResourceTypeDAO;
-import edu.eci.cvds.persistence.UserDAO;
-import edu.eci.cvds.persistence.mybatisimpl.MyBatisLocationDAO;
-import edu.eci.cvds.persistence.mybatisimpl.MyBatisResourceDAO;
-import edu.eci.cvds.persistence.mybatisimpl.MyBatisResourceTypeDAO;
-import edu.eci.cvds.persistence.mybatisimpl.MyBatisUserDAO;
+import edu.eci.cvds.persistence.mybatisimpl.DAOs.LocationDAO;
+import edu.eci.cvds.persistence.mybatisimpl.DAOs.ResourceDAO;
+import edu.eci.cvds.persistence.mybatisimpl.DAOs.ResourceTypeDAO;
+import edu.eci.cvds.persistence.mybatisimpl.DAOs.UserDAO;
+import edu.eci.cvds.persistence.mybatisimpl.MybatisDAOs.MyBatisLocationDAO;
+import edu.eci.cvds.persistence.mybatisimpl.MybatisDAOs.MyBatisResourceDAO;
+import edu.eci.cvds.persistence.mybatisimpl.MybatisDAOs.MyBatisResourceTypeDAO;
+import edu.eci.cvds.persistence.mybatisimpl.MybatisDAOs.MyBatisUserDAO;
 import edu.eci.cvds.services.ServicesException;
 import edu.eci.cvds.services.impl.ECIBookServices;
 import edu.eci.cvds.services.impl.ECIBookServicesImpl;
 import org.mybatis.guice.XMLMyBatisModule;
 
+import java.util.List;
 import java.util.Optional;
 
 import static com.google.inject.Guice.createInjector;
@@ -82,8 +83,23 @@ public class prueba {
         System.out.println("------------------CONSULTAR RECURSO ----------------------------------------");
 
         Resource resource = getInstance().createResource();
-        instance.getServiciosAlquiler().createResource(resource);
+        //instance.getServiciosAlquiler().createResource(resource);
         System.out.println(instance.getServiciosAlquiler().getResource().getNombre());
+
+        System.out.println("------------------CONSULTAR tipoRECURSO ----------------------------------------");
+        System.out.println(instance.getServiciosAlquiler().getResourceType().getDescripcion());
+
+        System.out.println("------------------CONSULTAR RECURSO ----------------------------------------");
+        System.out.println(instance.getServiciosAlquiler().getLocation().getHoraMaxima());
+
+        System.out.println("------------------CONSULTAR lista RECURSO ----------------------------------------");
+        List<Resource> listaRecursos = instance.getServiciosAlquiler().getListResources();
+        for (Resource i: listaRecursos){
+            System.out.println(i.getNombre());
+        }
+
+
+
 
         //System.out.println(instance.getServiciosAlquiler().getResource());
         // Funcionaaaaaaaaa el select

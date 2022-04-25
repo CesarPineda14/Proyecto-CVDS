@@ -212,7 +212,23 @@ header {
     <p:menuitem value="Registrar Recurso" />  
     <p:menuitem value="Cambiar Estado Recurso" />  
 
-</p:menubar>  
+</p:menubar>
+<p:panel header="Recursos" toggleable="true" toggleSpeed="500" widgetVar="panel1" style="text-align: center" name="panel1" id="panel1">
+	<p:dataTable id="listaRecursos" var="resource" value="#{resourceBean.loadListResources()}" >
+	<p:column headerText="Codigo">
+		<h:outputText value="#{resource.codigo}" />
+	</p:column>
+	<p:column headerText="Nombre">
+		<h:outputText value="#{resource.nombre}" />
+	</p:column>
+	<p:column headerText="Ubicacion">
+		<h:outputText value="#{resource.ubicacion}" />
+	</p:column>
+	<p:column headerText="Tipo">
+		<h:outputText value="#{resource.tipo}" />
+	</p:column>
+	</p:dataTable>
+</p:panel>
 </h:form>  
 </h:body>  
 </html>

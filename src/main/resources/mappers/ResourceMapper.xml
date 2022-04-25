@@ -13,4 +13,14 @@
         select * from recursos limit 1
     </select>
 
+    <select parameterType="map" id="getListResources" resultMap="ResourceResult">
+        select codigo, tipo, ubicacion, nombre from recursos
+    </select>
+
+    <resultMap type="Resource" id="ResourceResult">
+        <id property="codigo" column="codigo"/>
+        <result property="tipo" column="tipo"/>
+        <result property="ubicacion" column="ubicacion"/>
+        <result property="nombre" column="nombre"/>
+    </resultMap>
 </mapper>

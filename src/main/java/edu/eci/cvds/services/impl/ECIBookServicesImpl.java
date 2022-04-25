@@ -4,10 +4,14 @@ import java.util.List;
 
 import com.google.inject.Inject;
 
+import edu.eci.cvds.entities.Location;
 import edu.eci.cvds.entities.Resource;
+import edu.eci.cvds.entities.ResourceType;
 import edu.eci.cvds.entities.User;
-import edu.eci.cvds.persistence.*;
-import edu.eci.cvds.services.impl.ECIBookServices;
+import edu.eci.cvds.persistence.mybatisimpl.DAOs.LocationDAO;
+import edu.eci.cvds.persistence.mybatisimpl.DAOs.ResourceDAO;
+import edu.eci.cvds.persistence.mybatisimpl.DAOs.ResourceTypeDAO;
+import edu.eci.cvds.persistence.mybatisimpl.DAOs.UserDAO;
 import edu.eci.cvds.services.ServicesException;
 
 /**
@@ -54,6 +58,17 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	}
 
 	@Override
+	public List<Resource> getListResources() throws ServicesException {
+		try{
+			return resourceDAO.loadListResources();
+		}
+		catch (Exception e){
+			System.out.println();
+			return null;
+		}
+	}
+
+	@Override
 	public void createResource(Resource resource) throws ServicesException{
 		try {
 			resourceDAO.save(resource);
@@ -63,6 +78,27 @@ public class ECIBookServicesImpl implements ECIBookServices {
 		catch (Exception e){
 			System.out.println(e.getMessage());
 		}
-
 	}
+
+	@Override
+	public ResourceType getResourceType() throws ServicesException {
+		try{
+			return resourceTypeDAO.getResourceType();
+		}catch (Exception e){
+			System.out.println(e.getMessage());
+			return null;
+		}
+	}
+
+	@Override
+	public Location getLocation() throws ServicesException {
+		try{
+			return locationDAO.getLocation();
+		} catch (Exception e){
+			System.out.println(e.getMessage());
+			return null;
+		}
+	}
+
+
 }

@@ -5,4 +5,8 @@
 <mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.LocationMapper">
 
 
+    <select parameterType="map" id="getLocation" resultType="Location">
+        select * from ubicaciones limit 1
+    </select>
+
 </mapper>

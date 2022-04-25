@@ -1,10 +1,12 @@
-package edu.eci.cvds.persistence.mybatisimpl;
+package edu.eci.cvds.persistence.mybatisimpl.MybatisDAOs;
 
 import com.google.inject.Inject;
 import edu.eci.cvds.entities.Resource;
 import edu.eci.cvds.persistence.PersistenceException;
-import edu.eci.cvds.persistence.ResourceDAO;
+import edu.eci.cvds.persistence.mybatisimpl.DAOs.ResourceDAO;
 import edu.eci.cvds.persistence.mybatisimpl.mappers.ResourceMapper;
+
+import java.util.List;
 
 
 public class MyBatisResourceDAO implements ResourceDAO{
@@ -31,6 +33,16 @@ public class MyBatisResourceDAO implements ResourceDAO{
             return resourceMapper.getResource();
         }
         catch (Exception e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public List<Resource> loadListResources() {
+        try{
+            return resourceMapper.getListResources();
+        } catch (Exception e){
             System.out.println(e.getMessage());
             return null;
         }
