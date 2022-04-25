@@ -22,4 +22,8 @@
   <listener>
     <listener-class>edu.eci.cvds.guice.GuiceContextListener</listener-class>
   </listener>
+  <mime-mapping>
+    <extension>woff</extension>
+    <mime-type>application/font-woff</mime-type>
+  </mime-mapping>
 </web-app>
