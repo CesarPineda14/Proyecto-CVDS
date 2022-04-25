@@ -214,7 +214,7 @@ header {
 
 </p:menubar>
 <p:panel header="Recursos" toggleable="true" toggleSpeed="500" widgetVar="panel1" style="text-align: center" name="panel1" id="panel1">
-	<p:dataTable id="listaRecursos" var="resource" value="#{resourceBean.loadListResources()}" >
+	<p:dataTable id="listaRecursos" var="resources" value="#{resourceBean.loadListResources()}" >
 	<p:column headerText="Codigo">
 		<h:outputText value="#{resource.codigo}" />
 	</p:column>
