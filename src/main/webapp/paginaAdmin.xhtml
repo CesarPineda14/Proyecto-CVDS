@@ -206,29 +206,43 @@ header {
 <br></br>
 <h:form>
 <p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(185, 185, 185, 0.315);">  
-
-
-    
+ 
     <p:menuitem value="Registrar Recurso" />  
     <p:menuitem value="Cambiar Estado Recurso" />  
 
 </p:menubar>
-<p:panel header="Recursos" toggleable="true" toggleSpeed="500" widgetVar="panel1" style="text-align: center" name="panel1" id="panel1">
-	<p:dataTable id="listaRecursos" var="resource" value="#{resourceBean.loadListResources()}" >
-	<p:column headerText="Codigo">
-		<h:outputText value="#{resource.codigo}" />
-	</p:column>
-	<p:column headerText="Tipo">
-		<h:outputText value="#{resource.tipo}" />
-	</p:column>
-	<p:column headerText="Ubicacion">
-		<h:outputText value="#{resource.ubicacion}" />
-	</p:column>
-	<p:column headerText="Tipo">
-		<h:outputText value="#{resource.nombre}" />
-	</p:column>
+<br></br>
+	<p:dataTable id="listaRecursos" var="Resource" value="#{ResourceBean.loadListResources()}" 
+  rowKey="#{Resource.codigo}" paginator="true" rows="10" paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink}RowsPerPageDropdown}" currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords}" rowsPerPageTemplate="5,10,15,20" >
+      <p:column style="color:black;">
+            <f:facet name="header">
+                <h:outputText value="Codigo"/>
+            </f:facet>
+            <h:outputText value="#{Resource.codigo}"/>
+      </p:column>
+
+      <p:column style="color:black;">
+          <f:facet name="header">
+              <h:outputText value="Tipo" />
+          </f:facet>
+        <h:outputText value="#{Resource.tipo}" />
+      </p:column>
+
+      <p:column style="color:black;">
+        <f:facet name="header">
+          <h:outputText value="Ubicacion" />
+      </f:facet>
+        <h:outputText value="#{Resource.ubicacion}" />
+      </p:column>
+
+      <p:column style="color:black;">
+        <f:facet name="header">
+          <h:outputText value="Nombre" />
+      </f:facet>
+        <h:outputText value="#{Resource.nombre}" />
+      </p:column>
 	</p:dataTable>
-</p:panel>
+
 </h:form>  
 </h:body>  
 </html>

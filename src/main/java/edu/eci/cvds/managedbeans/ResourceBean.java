@@ -9,7 +9,7 @@ import javax.faces.bean.SessionScoped;
 import java.util.ArrayList;
 import java.util.List;
 
-@ManagedBean(name="resourceBean")
+@ManagedBean(name="ResourceBean")
 @RequestScoped
 public class ResourceBean extends BasePageBean{
 
