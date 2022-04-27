@@ -4,14 +4,8 @@ import java.util.List;
 
 import com.google.inject.Inject;
 
-import edu.eci.cvds.entities.Location;
-import edu.eci.cvds.entities.Resource;
-import edu.eci.cvds.entities.ResourceType;
-import edu.eci.cvds.entities.User;
-import edu.eci.cvds.persistence.mybatisimpl.DAOs.LocationDAO;
-import edu.eci.cvds.persistence.mybatisimpl.DAOs.ResourceDAO;
-import edu.eci.cvds.persistence.mybatisimpl.DAOs.ResourceTypeDAO;
-import edu.eci.cvds.persistence.mybatisimpl.DAOs.UserDAO;
+import edu.eci.cvds.entities.*;
+import edu.eci.cvds.persistence.mybatisimpl.DAOs.*;
 import edu.eci.cvds.services.ServicesException;
 
 /**
@@ -30,6 +24,9 @@ public class ECIBookServicesImpl implements ECIBookServices {
 
 	@Inject
 	private LocationDAO locationDAO;
+
+	@Inject
+	private ReserveDAO reserveDAO;
 
 
 	@Override
@@ -100,5 +97,13 @@ public class ECIBookServicesImpl implements ECIBookServices {
 		}
 	}
 
-
+	@Override
+	public List<Reserve> getListReserve() throws ServicesException {
+		try {
+			return reserveDAO.getListReserves();
+		} catch (Exception e){
+			System.out.println(e.getMessage());
+			return null;
+		}
+	}
 }

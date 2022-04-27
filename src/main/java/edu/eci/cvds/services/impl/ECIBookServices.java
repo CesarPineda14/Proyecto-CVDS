@@ -1,9 +1,6 @@
 package edu.eci.cvds.services.impl;
 
-import edu.eci.cvds.entities.Location;
-import edu.eci.cvds.entities.Resource;
-import edu.eci.cvds.entities.ResourceType;
-import edu.eci.cvds.entities.User;
+import edu.eci.cvds.entities.*;
 import edu.eci.cvds.services.ServicesException;
 
 import java.util.List;
@@ -23,4 +20,6 @@ public interface ECIBookServices {
     public ResourceType getResourceType() throws ServicesException;
 
     public Location getLocation() throws ServicesException;
+
+    public List<Reserve> getListReserve() throws ServicesException;
 }

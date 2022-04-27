@@ -4,14 +4,8 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import edu.eci.cvds.persistence.mybatisimpl.DAOs.LocationDAO;
-import edu.eci.cvds.persistence.mybatisimpl.DAOs.ResourceDAO;
-import edu.eci.cvds.persistence.mybatisimpl.DAOs.ResourceTypeDAO;
-import edu.eci.cvds.persistence.mybatisimpl.DAOs.UserDAO;
-import edu.eci.cvds.persistence.mybatisimpl.MybatisDAOs.MyBatisLocationDAO;
-import edu.eci.cvds.persistence.mybatisimpl.MybatisDAOs.MyBatisResourceDAO;
-import edu.eci.cvds.persistence.mybatisimpl.MybatisDAOs.MyBatisResourceTypeDAO;
-import edu.eci.cvds.persistence.mybatisimpl.MybatisDAOs.MyBatisUserDAO;
+import edu.eci.cvds.persistence.mybatisimpl.DAOs.*;
+import edu.eci.cvds.persistence.mybatisimpl.MybatisDAOs.*;
 import edu.eci.cvds.services.impl.ECIBookServices;
 import edu.eci.cvds.services.impl.ECIBookServicesImpl;
 import org.mybatis.guice.XMLMyBatisModule;
@@ -45,6 +39,7 @@ public class GuiceContextListener implements ServletContextListener {
 				bind(ResourceDAO.class).to(MyBatisResourceDAO.class);
 				bind(ResourceTypeDAO.class).to(MyBatisResourceTypeDAO.class);
 				bind(LocationDAO.class).to(MyBatisLocationDAO.class);
+				bind(ReserveDAO.class).to(MyBatisReserveDAO.class);
 
 			}
 		}

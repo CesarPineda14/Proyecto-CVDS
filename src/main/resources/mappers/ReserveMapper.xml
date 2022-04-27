@@ -4,5 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.ReserveMapper">
 
+    <select parameterType="map" id="getListReserves" resultMap="ReserveResult">
+        select codigo, recurso, horainicial, horafinal, periodicidad, fechafinal from reservas
+    </select>
 
 </mapper>
