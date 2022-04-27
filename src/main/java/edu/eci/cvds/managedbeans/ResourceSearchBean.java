@@ -9,9 +9,9 @@ import javax.faces.bean.SessionScoped;
 import java.util.ArrayList;
 import java.util.List;
 
-@ManagedBean(name="ResourceBean")
+@ManagedBean(name="ResourceSearchBean")
 @RequestScoped
-public class ResourceBean extends BasePageBean{
+public class ResourceSearchBean extends BasePageBean{
 
     @Inject
     private ECIBookServices eciBookServices;
@@ -20,7 +20,7 @@ public class ResourceBean extends BasePageBean{
 
 
 
-    public ResourceBean() {
+    public ResourceSearchBean() {
         try{
             resourcesList = new ArrayList<Resource>();
             //resource = loadResource();

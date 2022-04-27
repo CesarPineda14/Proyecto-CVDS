@@ -5,8 +5,8 @@
 <mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.ResourceMapper">
 
     <insert id="createResource" parameterType="map">
-        insert into recursos (codigo, tipo , ubicacion, nombre)
-        values (#{resource.codigo}, #{resource.tipo}, #{resource.ubicacion}, #{resource.nombre})
+        insert into recursos (codigo, tipo , ubicacion, nombre, estado)
+        values (#{resource.codigo}, #{resource.tipo}, #{resource.ubicacion}, #{resource.nombre}, #{resource.estado})
     </insert>
 
     <select parameterType="map" id="getResource" resultType="Resource">
@@ -14,7 +14,7 @@
     </select>
 
     <select parameterType="map" id="getListResources" resultMap="ResourceResult">
-        select codigo, tipo, ubicacion, nombre from recursos
+        select codigo, tipo, ubicacion, nombre, estado from recursos
     </select>
 
     <resultMap type="Resource" id="ResourceResult">
@@ -22,5 +22,6 @@
         <result property="tipo" column="tipo"/>
         <result property="ubicacion" column="ubicacion"/>
         <result property="nombre" column="nombre"/>
+        <result property="estado" column="estado"/>
     </resultMap>
 </mapper>

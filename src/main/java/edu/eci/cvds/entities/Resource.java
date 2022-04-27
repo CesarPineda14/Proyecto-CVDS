@@ -5,12 +5,22 @@ public class Resource {
     private String ubicacion;
     private String tipo;
     private String codigo;
+    private String estado;
 
-    public Resource(String nombre, String ubicacion, String tipo, String codigo) {
+    public Resource(String nombre, String ubicacion, String tipo, String codigo, String estado) {
         this.nombre = nombre;
         this.ubicacion = ubicacion;
         this.tipo = tipo;
         this.codigo = codigo;
+        this.estado = estado;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public Resource getResource(){
