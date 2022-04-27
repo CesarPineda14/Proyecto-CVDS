@@ -38,7 +38,8 @@ CREATE TABLE RECURSOS (
 	ubicacion VARCHAR(30) not null,
 	nombre VARCHAR(20) not NULL,
 	CONSTRAINT FK_recursos_tipoR FOREIGN KEY(tipo) REFERENCES TIPORECURSO(tipo),
-	CONSTRAINT FK_recursos_ubi FOREIGN KEY(ubicacion) REFERENCES UBICACIONES(ubicacion)
+	CONSTRAINT FK_recursos_ubi FOREIGN KEY(ubicacion) REFERENCES UBICACIONES(ubicacion),
+	UNIQUE(nombre)
 );
 
 ALTER table RECURSOS ADD PRIMARY KEY (codigo);
