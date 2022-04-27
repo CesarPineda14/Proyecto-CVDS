@@ -78,7 +78,6 @@ SELECT * FROM usuario LIMIT 1;
 
 --delete from ubicaciones;
 
---insert into recursos values ('00001', 'Sala de estudio', 'Biblioteca Principal', 'Sala Estudio 1');
---insert into recursos values ('00002', 'Equipo de computo', 'Biblioteca Satelite', 'PC Portatil 1');
-
+--insert into recursos values ('00001', 'Sala de estudio', 'Biblioteca Principal', 'Sala Estudio 1', 'Activo');
+--insert into recursos values ('00002', 'Equipo de computo', 'Biblioteca Satelite', 'PC Portatil 1', 'Inactivo');
 --delete from recuros;
