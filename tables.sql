@@ -44,7 +44,21 @@ CREATE TABLE RECURSOS (
 
 ALTER table RECURSOS ADD PRIMARY KEY (codigo);
 
+--Reservas
+CREATE TABLE RESERVAS (
+	codigo CHAR(5) NOT NULL,
+	recurso VARCHAR(20) not null,
+	horaInicial time not null,
+	horaFinal time not null,
+	periodicidad VARCHAR(17) NOT NULL,
+	fechaFinal date not NULL,
+	CONSTRAINT FK_reserva_recurso FOREIGN KEY(recurso) REFERENCES RECURSOS(nombre)
+);
 
+ALTER table RESERVAS ADD PRIMARY KEY (codigo);
+
+
+DROP table reservas;
 DROP table recursos;
 DROP table tiporecurso;
 DROP table UBICACIONES;
