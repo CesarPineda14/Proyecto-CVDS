@@ -241,6 +241,12 @@ header {
       </f:facet>
         <h:outputText value="#{Resource.nombre}" />
       </p:column>
+        <p:column style="color:black;">
+            <f:facet name="header">
+                <h:outputText value="Estado" />
+            </f:facet>
+            <h:outputText value="#{Resource.estado}" />
+        </p:column>
 	</p:dataTable>
 
 </h:form>  
