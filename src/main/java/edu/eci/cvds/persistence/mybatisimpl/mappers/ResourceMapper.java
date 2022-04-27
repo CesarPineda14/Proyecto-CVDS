@@ -11,4 +11,6 @@ public interface ResourceMapper {
     public void createResource(Resource resource);
 
     public List<Resource> getListResources();
+
+    public void updateResource(Resource resource);
 }

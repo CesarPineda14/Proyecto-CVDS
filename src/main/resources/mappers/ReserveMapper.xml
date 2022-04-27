@@ -8,4 +8,13 @@
         select codigo, recurso, horainicial, horafinal, periodicidad, fechafinal from reservas
     </select>
 
+    <resultMap type="Reserve" id="ReserveResult">
+        <id property="codigo" column="codigo"/>
+        <result property="recurso" column="recurso"/>
+        <result property="horainicial" column="horainicial"/>
+        <result property="horafinal" column="horafinal"/>
+        <result property="periodicidad" column="periodicidad"/>
+        <result property="fechafinal" column="fechafinal"/>
+    </resultMap>
+
 </mapper>

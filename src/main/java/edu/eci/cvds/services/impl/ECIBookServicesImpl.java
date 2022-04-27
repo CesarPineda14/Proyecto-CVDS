@@ -106,4 +106,14 @@ public class ECIBookServicesImpl implements ECIBookServices {
 			return null;
 		}
 	}
+
+	@Override
+	public void updateResource(Resource resource) throws ServicesException {
+		try{
+			resourceDAO.updateResource(resource);
+		}
+		catch (Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
 }

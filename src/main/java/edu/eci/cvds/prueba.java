@@ -37,36 +37,37 @@ public class prueba {
         });
     }
 
-    private prueba(){
+    private prueba() {
         optInjector = Optional.empty();
     }
 
-    public ECIBookServices getServiciosAlquiler(){
+    public ECIBookServices getServiciosAlquiler() {
         if (!optInjector.isPresent()) {
-            optInjector = Optional.of(myBatisInjector("development","mybatis-config.xml"));
+            optInjector = Optional.of(myBatisInjector("development", "mybatis-config.xml"));
         }
 
         return optInjector.get().getInstance(ECIBookServices.class);
     }
 
 
-    public ECIBookServices getServiciosAlquilerTesting(){
+    public ECIBookServices getServiciosAlquilerTesting() {
         if (!optInjector.isPresent()) {
-            optInjector = Optional.of(myBatisInjector("test","mybatis-config-h2.xml"));
+            optInjector = Optional.of(myBatisInjector("test", "mybatis-config-h2.xml"));
         }
 
         return optInjector.get().getInstance(ECIBookServices.class);
     }
-    public Resource createResource(){
+
+    public Resource createResource() {
         Resource resource = new Resource(
                 "0003",
                 "Edificio I",
                 "Sala de estudio", "ere", "valido"
         );
-        return  resource;
+        return resource;
     }
 
-    public static prueba getInstance(){
+    public static prueba getInstance() {
         return instance;
     }
 
@@ -75,23 +76,46 @@ public class prueba {
         System.out.println(instance.getServiciosAlquiler().getUser().getApellidos());
         System.out.println(instance.getServiciosAlquiler().getUser().getNombres());
 
-        System.out.println("------------------CONSULTAR RECURSO ----------------------------------------");
+//        System.out.println("------------------CONSULTAR RECURSO ----------------------------------------");
+//
+//        Resource resource = getInstance().createResource();
+//        //instance.getServiciosAlquiler().createResource(resource);
+//        System.out.println(instance.getServiciosAlquiler().getResource().getNombre());
+//
 
-        Resource resource = getInstance().createResource();
-        //instance.getServiciosAlquiler().createResource(resource);
-        System.out.println(instance.getServiciosAlquiler().getResource().getNombre());
 
-        System.out.println("------------------CONSULTAR tipoRECURSO ----------------------------------------");
-        System.out.println(instance.getServiciosAlquiler().getResourceType().getDescripcion());
-
-        System.out.println("------------------CONSULTAR RECURSO ----------------------------------------");
-        System.out.println(instance.getServiciosAlquiler().getLocation().getHoraMaxima());
-
+//        System.out.println("------------------CONSULTAR tipoRECURSO ----------------------------------------");
+//        System.out.println(instance.getServiciosAlquiler().getResourceType().getDescripcion());
+//
+//        System.out.println("------------------CONSULTAR RECURSO ----------------------------------------");
+//        System.out.println(instance.getServiciosAlquiler().getLocation().getHoraMaxima());
+//
         System.out.println("------------------CONSULTAR lista RECURSO ----------------------------------------");
-        List<Resource> listaRecursos = instance.getServiciosAlquiler().getListResources();
-        for (Resource i: listaRecursos){
-            System.out.println(i.getNombre());
+        List<Resource> listaRecursos = instance.update();
+        for (Resource i : listaRecursos) {
+            System.out.println(i.getEstado());
+
         }
+        System.out.println("------------------Actualizar recurso estado----------------------------------------");
+        instance.getServiciosAlquiler().updateResource(listaRecursos.get(1));
+        List<Resource> listaRecursos1 = instance.update();
+        for (Resource i : listaRecursos1) {
+            System.out.println(i.getEstado());
+
+        }
+    }
+    public List<Resource> update(){
+        try {
+            List<Resource> listaRecursos = instance.getServiciosAlquiler().getListResources();
+            return listaRecursos;
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+}
 
 
 
@@ -99,13 +123,12 @@ public class prueba {
         //System.out.println(instance.getServiciosAlquiler().getResource());
         // Funcionaaaaaaaaa el select
         //al menos algo, no esta solicitando el recurso
-        long documento = 10999900099L;
         /*
         System.out.println("---------------------------------- CONSULAR CLIENTE " + documento + " ------------------------------------");
         System.out.println(instance.getServiciosAlquiler().consultarCliente(documento).toString());
         System.out.println("----------------------------- CONSULAR ITEMS DEL CLIENTE " + documento +" -----------------------------");
         System.out.println(instance.getServiciosAlquiler().consultarItemsCliente(10999900099L).toString());*/
-    }
+
 
 //        public static void main(String[] args) throws PersistenceException {
 //          ECIBookServices instance
@@ -117,4 +140,4 @@ public class prueba {
 //
 //        }
 //    }
-}
+

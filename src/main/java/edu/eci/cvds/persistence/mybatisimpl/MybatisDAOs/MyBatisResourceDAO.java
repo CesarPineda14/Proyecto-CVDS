@@ -47,4 +47,21 @@ public class MyBatisResourceDAO implements ResourceDAO{
             return null;
         }
     }
+
+    @Override
+    public void updateResource(Resource resource){
+        try{
+
+            if (resource.getEstado().equals("Activo")) {
+                resource.setEstado("Inactivo");
+            }
+            else if (resource.getEstado().equals("Inactivo")){
+                //System.out.println("entra");
+                resource.setEstado("Activo");}
+            resourceMapper.updateResource(resource);
+            System.out.println("pasa por aca");
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
 }

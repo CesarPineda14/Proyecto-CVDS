@@ -17,6 +17,10 @@
         select codigo, tipo, ubicacion, nombre, estado from recursos
     </select>
 
+    <update id="updateResource" parameterType="map">
+        update recursos set estado = #{resource.estado}
+    </update>
+
     <resultMap type="Resource" id="ResourceResult">
         <id property="codigo" column="codigo"/>
         <result property="tipo" column="tipo"/>

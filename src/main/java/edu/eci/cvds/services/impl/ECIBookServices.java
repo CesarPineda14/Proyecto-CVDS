@@ -22,4 +22,6 @@ public interface ECIBookServices {
     public Location getLocation() throws ServicesException;
 
     public List<Reserve> getListReserve() throws ServicesException;
+
+    public void updateResource(Resource resource) throws ServicesException;
 }
