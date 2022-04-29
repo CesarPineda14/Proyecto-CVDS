@@ -7,4 +7,6 @@ import java.util.List;
 public interface ReserveDAO {
 
     public List<Reserve> getListReserves();
+
+    public void createReserve(Reserve reserve);
 }

@@ -64,4 +64,13 @@ public class ResourceSearchBean extends BasePageBean{
     public List<Resource> getResourcesList() {
         return resourcesList;
     }
+
+    public void createResource(Resource resource){
+        try {
+            eciBookServices.createResource(resource);
+        }
+        catch (Exception e){
+
+        }
+    }
 }

@@ -23,4 +23,14 @@ public class MyBatisReserveDAO implements ReserveDAO {
             return null;
         }
     }
+
+    @Override
+    public void createReserve(Reserve reserve) {
+        try {
+            reserveMapper.createReserve(reserve);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
 }

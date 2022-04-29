@@ -8,6 +8,13 @@
         select codigo, recurso, horainicial, horafinal, periodicidad, fechafinal from reservas
     </select>
 
+    <insert id="createReserve" parameterType="map">
+        insert into reservas (codigo, recurso , horainicial, horafinal, periodicidad, fechafinal)
+        values (#{reserve.codigo}, #{reserve.recurso}, #{reserve.horaInicial}, #{reserve.horaFinal}, #{reserve.periodicidad},
+        #{reserve.fechaFinal})
+    </insert>
+
+
     <resultMap type="Reserve" id="ReserveResult">
         <id property="codigo" column="codigo"/>
         <result property="recurso" column="recurso"/>

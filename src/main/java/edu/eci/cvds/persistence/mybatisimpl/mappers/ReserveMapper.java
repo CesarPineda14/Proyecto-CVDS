@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ReserveMapper {
     public List<Reserve> getListReserves();
+
+    public void createReserve(Reserve reserve);
 }

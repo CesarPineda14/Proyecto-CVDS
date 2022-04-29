@@ -205,12 +205,13 @@ header {
 <h:body> 
 <br></br>
 <h:form>
-<p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(185, 185, 185, 0.315);">  
- 
-    <p:menuitem value="Registrar Recurso" />  
-    <p:menuitem value="Cambiar Estado Recurso" />  
-
-</p:menubar>
+    <h:form>
+        <p:commandButton class="botn" value="Login" actionListener="#{ResourceSearchBean.createResource()}" action="#{navigationController.paginaRegistroRec()}"/>
+    </h:form>
+    <p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(185, 185, 185, 0.315);">
+        <p:menuitem value="Registrar Recurso"  />
+        <p:menuitem value="Cambiar Estado Recurso" />
+    </p:menubar>
 <br></br>
 	<p:dataTable id="listaRecursos" var="Resource" value="#{ResourceSearchBean.loadListResources()}"
   rowKey="#{Resource.codigo}" paginator="true" rows="10" paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink}RowsPerPageDropdown}" currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords}" rowsPerPageTemplate="5,10,15,20" >

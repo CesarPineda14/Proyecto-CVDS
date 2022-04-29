@@ -1,7 +1,7 @@
 package edu.eci.cvds.entities;
 
 import java.sql.Time;
-import java.util.Date;
+import java.sql.Date;
 
 public class Reserve {
 

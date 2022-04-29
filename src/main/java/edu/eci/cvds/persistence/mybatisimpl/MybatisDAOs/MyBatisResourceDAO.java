@@ -64,4 +64,39 @@ public class MyBatisResourceDAO implements ResourceDAO{
             System.out.println(e.getMessage());
         }
     }
+
+    @Override
+    public List<Resource> searchResourceType(String tipo) {
+        try {
+            System.out.println("paseeeeeeeeeeeeee");
+            return resourceMapper.searchResourceType(tipo);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public List<Resource> searchResourceCapacity(String capacidad) {
+        try {
+            System.out.println("paseeeeeeeeeeeeee");
+            return resourceMapper.searchResourceCapacity(capacidad);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public List<Resource> searchResourcelocation(String ubicacion) {
+        try {
+            return resourceMapper.searchResourcelocation(ubicacion);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
 }

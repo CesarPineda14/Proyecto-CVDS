@@ -23,5 +23,13 @@ public interface ECIBookServices {
 
     public List<Reserve> getListReserve() throws ServicesException;
 
+    public void createReserve(Reserve reserve) throws ServicesException;
+
     public void updateResource(Resource resource) throws ServicesException;
+
+    public List<Resource> searchResourceType(String tipo) throws ServicesException;
+
+    public List<Resource> searchResourceCapacity(String capacidad) throws ServicesException;
+
+    public List<Resource> searchResourceLocation(String ubicacion) throws ServicesException;
 }

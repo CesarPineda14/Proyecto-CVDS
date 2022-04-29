@@ -15,6 +15,11 @@ public interface ResourceDAO {
 
     public void updateResource(Resource resource);
 
+    public List<Resource> searchResourceType(String tipo);
+
+    public List<Resource> searchResourceCapacity(String capacidad);
+
+    public List<Resource> searchResourcelocation(String ubicacion);
 }
 
     //metodo para consultar recurso
