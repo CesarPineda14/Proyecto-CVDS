@@ -220,8 +220,14 @@ header {
                 <div class="form">
                   <form class="login-form">
                     <input type="String" id= "Nombre Recurso" binding="" placeholder="Nombre Recurso"/>
+            <p:selectOneMenu id="ubicacionRec" value="#{selectOneMenuView.selectedOption}">
+              <f:selectItem itemLabel="Select One" itemValue=""/>
+              <f:selectItem itemLabel="Biblioteca Principal" itemValue="1"/>
+              <f:selectItem itemLabel="Biblioteca Satelite" itemValue="2"/>
+              <f:selectItem itemLabel="Edificio I" itemValue="3"/>
+          </p:selectOneMenu>
 					
-					<select name="Ubicacion Recurso" id="Ubicacion Recurso">
+          <select name="Ubicacion Recurso" id="Ubicacion Recurso">
 						<option value="">Ubicacion Recurso</option>
 						<option value="Salas de Estudio">Salas de Estudio</option>
 						<option value="Equipos de Computo">Equipos de Computo</option>
