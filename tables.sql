@@ -56,13 +56,16 @@ ALTER table RESERVAS ADD PRIMARY KEY (codigo);
 
 
 --Table Usuario
-CREATE TABLE Usuario (
+CREATE TABLE USUARIOS (
 	id VARCHAR(3) NOT NULL,
 	nId VARCHAR(11) NOT NULL,
 	apellidos VARCHAR(50) NOT NULL,
 	nombres VARCHAR(50) NOT NULL,
-	programa VARCHAR(50) NOT NULL
+	programa VARCHAR(50) NOT null,
+	contrasena VARCHAR(20) not NULL
 );
+
+ALTER table USUARIOS ADD PRIMARY KEY (id, nId);
 
 
 
