@@ -1,30 +1,18 @@
 package edu.eci.cvds.entities;
 
 public class Resource {
+    private Integer codigo;
+    private Integer tipo;
+    private Integer ubicacion;
     private String nombre;
-    private String ubicacion;
-    private String tipo;
-    private String codigo;
     private String estado;
 
-    public Resource(String nombre, String ubicacion, String tipo, String codigo, String estado) {
-        this.nombre = nombre;
-        this.ubicacion = ubicacion;
-        this.tipo = tipo;
+    public Resource(Integer codigo, Integer tipo, Integer ubicacion, String nombre, String estado) {
         this.codigo = codigo;
+        this.tipo = tipo;
+        this.ubicacion = ubicacion;
+        this.nombre = nombre;
         this.estado = estado;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    public Resource getResource(){
-        return this;
     }
 
     public String getNombre() {
@@ -35,27 +23,35 @@ public class Resource {
         this.nombre = nombre;
     }
 
-    public String getUbicacion() {
+    public Integer getUbicacion() {
         return ubicacion;
     }
 
-    public void setUbicacion(String ubicacion) {
+    public void setUbicacion(Integer ubicacion) {
         this.ubicacion = ubicacion;
     }
 
-    public String getTipo() {
+    public Integer getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(Integer tipo) {
         this.tipo = tipo;
     }
 
-    public String getCodigo() {
+    public Integer getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(Integer codigo) {
         this.codigo = codigo;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }

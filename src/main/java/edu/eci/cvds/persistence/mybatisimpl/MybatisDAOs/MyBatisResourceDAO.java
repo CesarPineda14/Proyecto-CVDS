@@ -68,7 +68,7 @@ public class MyBatisResourceDAO implements ResourceDAO{
     @Override
     public List<Resource> searchResourceType(String tipo) {
         try {
-            System.out.println("paseeeeeeeeeeeeee");
+            //System.out.println("paseeeeeeeeeeeeee");
             return resourceMapper.searchResourceType(tipo);
         }
         catch (Exception e){
@@ -80,7 +80,7 @@ public class MyBatisResourceDAO implements ResourceDAO{
     @Override
     public List<Resource> searchResourceCapacity(String capacidad) {
         try {
-            System.out.println("paseeeeeeeeeeeeee");
+            //System.out.println("paseeeeeeeeeeeeee");
             return resourceMapper.searchResourceCapacity(capacidad);
         }
         catch (Exception e){

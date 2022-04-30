@@ -3,24 +3,34 @@ package edu.eci.cvds.entities;
 import java.sql.Time;
 
 public class ResourceType {
-    private String tipo;
+    private int codigo;
+    private String nombre;
     private String descripcion;
     private Time horaMinima;
     private Time horaMaxima;
 
-    public ResourceType(String tipo, String descripcion, Time horaMinima, Time horaMaxima) {
-        this.tipo = tipo;
+    public ResourceType(int codigo, String nombre, String descripcion, Time horaMinima, Time horaMaxima) {
+        this.codigo = codigo;
+        this.nombre = nombre;
         this.descripcion = descripcion;
         this.horaMinima = horaMinima;
         this.horaMaxima = horaMaxima;
     }
 
-    public String getTipo() {
-        return tipo;
+    public int getCodigo() {
+        return codigo;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getDescripcion() {

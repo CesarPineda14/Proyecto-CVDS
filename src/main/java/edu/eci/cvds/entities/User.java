@@ -7,21 +7,16 @@ public class User {
     private String nombres;
     private String programa;
     private String tipo;
+    private String contrasena;
 
-    public User(String id, String nid, String apellidos, String nombres, String programa) {
+    public User(String id, String nid, String apellidos, String nombres, String programa, String tipo, String contrasena) {
         this.id = id;
         this.nid = nid;
         this.apellidos = apellidos;
         this.nombres = nombres;
         this.programa = programa;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
         this.tipo = tipo;
+        this.contrasena = contrasena;
     }
 
     public String getId() {
@@ -62,5 +57,21 @@ public class User {
 
     public void setPrograma(String programa) {
         this.programa = programa;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 }
