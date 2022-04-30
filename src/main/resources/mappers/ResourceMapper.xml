@@ -15,9 +15,14 @@
 
     <select parameterType="map" id="getListResources" resultMap="ResourceResult">
         select codigo, tipo, ubicacion, nombre, estado from recursos
+        <where>
+            <if test="estado = 'activo'">
+                and estado = #{estado}
+            </if>
+        </where>
     </select>
 
-   <select id="searchResourceType"  parameterType="map" resultMap="ResourceTypeResult" >
+   <select id="searchResourceType"  parameterType="map" resultMap="ResourceResult" >
         select codigo, tipo, ubicacion, nombre, estado from recursos
        <where>
            <if test="tipo != null">
@@ -26,7 +31,7 @@
        </where>
    </select>
 
-    <select id="searchResourceCapacity" parameterType="map" resultMap="ResourceCapacityResult">
+    <select id="searchResourceCapacity" parameterType="map" resultMap="ResourceResult">
         select codigo, tipo, ubicacion, nombre, estado from recursos
         <where>
             <if test="capacidad != null">
@@ -35,7 +40,7 @@
         </where>
     </select>
 
-    <select id="searchResourceLocation" parameterType="map" resultMap="ResourceLocationResult">
+    <select id="searchResourceLocation" parameterType="map" resultMap="ResourceResult">
         select codigo, tipo, ubicacion, nombre, estado from recursos where ubicacion
         <where>
             <if test="ubicacion != null">
@@ -56,27 +61,4 @@
         <result property="estado" column="estado"/>
     </resultMap>
 
-    <resultMap type="Resource" id="ResourceTypeResult">
-        <id property="codigo" column="codigo"/>
-        <result property="tipo" column="tipo"/>
-        <result property="ubicacion" column="ubicacion"/>
-        <result property="nombre" column="nombre"/>
-        <result property="estado" column="estado"/>
-    </resultMap>
-
-    <resultMap type="Resource" id="ResourceCapacityResult">
-        <id property="codigo" column="codigo"/>
-        <result property="tipo" column="tipo"/>
-        <result property="ubicacion" column="ubicacion"/>
-        <result property="nombre" column="nombre"/>
-        <result property="estado" column="estado"/>
-    </resultMap>
-
-    <resultMap type="Resource" id="ResourceLocationResult">
-        <id property="codigo" column="codigo"/>
-        <result property="tipo" column="tipo"/>
-        <result property="ubicacion" column="ubicacion"/>
-        <result property="nombre" column="nombre"/>
-        <result property="estado" column="estado"/>
-    </resultMap>
 </mapper>
