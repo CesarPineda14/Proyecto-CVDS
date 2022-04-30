@@ -1,12 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
-      <style>
-        body{ 
-            background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('https://motionfactorystudios.com/wp-content/uploads/2019/12/Motion-Factory-Studios-Fotograf%C3%ADa-Espacios-Escuela-Colombiana-de-Ingenieria-2.jpg');
+<style>
+	body{ 
+            background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('https://escuelaing.s3.amazonaws.com/production/images/_DSC5270.max-1440x800.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
@@ -19,31 +20,19 @@
             align-items: center;
             align-content: center;
         }
-
-        .botn{
-            height: 30px;
-            width: 30%;
-            margin-top: 10px;
-            font-size: 15px;
-            padding: 5px;
-            background: rgb(255, 255, 255);
-            color: black;
-            text-decoration: none;
-            border-radius: 15px;
-        }
-
-        .picture{
-            height: 100px;
+		
+		.picture{
+            height: 60px;
             width: auto;
         }
 
-        .login-page {
+		.login-page {
         width: 360px;
         padding: 1% 0 0;
         margin: auto;
         }
 
-        .form {
+		.form {
         position: relative;
         z-index: 1;
         max-width: 360px;
@@ -63,6 +52,19 @@
         box-sizing: border-box;
         font-size: 14px;
         }
+
+		.form select {
+			font-family: "Helvetica", sans-serif;
+			outline: 0;
+			background: #f2f2f2;
+			width: 100%;
+			border: 0;
+			margin: 0 0 15px;
+			padding: 15px;
+			box-sizing: border-box;
+			font-size: 14px;
+		}
+
         .form button {
         font-family: "Helvetica", sans-serif;
         text-transform: uppercase;
@@ -70,7 +72,7 @@
         background: #ff0000;
         width: 100%;
         border: 0;
-        padding: 5px;
+        padding: 15px;
         color: #FFFFFF;
         font-size: 14px;
         -webkit-transition: all 0.3 ease;
@@ -89,7 +91,9 @@
         color: #ff0000;
         text-decoration: none;
         }
-        
+        .form .register-form {
+        display: none;
+        }
         .container {
         position: relative;
         z-index: 1;
@@ -122,33 +126,92 @@
         }
         .container .info span .fa {
         color: #EF3B3A;
-        }
+        }	
 
-    </style>
 
-    <head>
-        <title>Recursos Biblioteca</title>
-        <br></br>
-        <img class = "picture" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg/1920px-Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg.png" alt=""></img>
-    </head>
+		select:invalid { color: gray; }
+
+img {
+  width: 25px;
+  border-radius: 5px;
+  float: left;
+}
+
+.logout {
+  font-size: .8em;
+  font-family: 'Oswald', sans-serif;
+	position: relative;
+  right: -18px;
+  bottom: -4px;
+  overflow: hidden;
+  letter-spacing: 3px;
+  opacity: 0;
+  transition: opacity .45s;
+  -webkit-transition: opacity .35s;
+}
+
+.button {
+	text-decoration: none;
+	float: right;
+	padding: 15px;
+	margin: 10px;
+	color: white;
+	width: 20px;
+	background-color: rgba(185, 185, 185, 0);
+	transition: width .35s;
+	-webkit-transition: width .35s;
+	overflow: hidden
+}
+
+a:hover {
+  width: 110px;
+}
+
+a:hover .logout{
+  opacity: .9;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+    min-height: 100px;
+    background-color: rgba(185, 185, 185, 0.315);
+}
+
+</style>
+
+<header>
+	<title>Recursos Biblioteca </title>
+	<br></br>
+	<img style="float: left;" class = "picture" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg/1920px-Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg.png" alt=""></img>
+	
+  <div class="navigation">
+  
+		<a class="button" href="">
+		  <img src="https://flyclipart.com/thumb2/exit-icon-740908.png"></img>
+	  
+	  <div class="logout">LOGOUT</div>
+	
+		</a>
+	</div>
+	
+</header>
+
+<h:head>  
+<title>MenuBar</title>  
+</h:head>  
+<h:body> 
+<br></br>
+<h:form>
+    <p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(185, 185, 185, 0.315);">
+        <p:menuitem value="Registrar Recurso" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaRegistroRec()}"/>
+        <p:menuitem value="Cambiar Estado Recurso"/>
+    </p:menubar>
+<br></br>
     
-    <h:body>
-        <h1>Inicio Sesión</h1>
-        <br></br>
-        <h:form>
-            <div class="login-page">
-                <div class="form">
-                    <form class="login-form">
-                        <input type="text" placeholder="Usuario"/>
-                        <input type="password" placeholder="Contraseña"/>
-                        <h:form id="form1">
-                            <p:commandButton class="botn" value="Login" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaConsultaRec()}"/>
-                        </h:form>
-                    </form>
-                </div>
-              </div>
-        </h:form>
-    </h:body>
-
+</h:form>  
+</h:body>  
 </html>
 
