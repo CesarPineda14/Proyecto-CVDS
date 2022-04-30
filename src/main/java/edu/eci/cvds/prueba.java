@@ -128,10 +128,10 @@ public class prueba {
 //        System.out.println("------------------INSERTAR RESERVA----------------------------------------");
 //        Reserve reserve = instance.createReserve();
 //        //instance.getServiciosAlquiler().createReserve(reserve);
-//        List<Reserve> reserves = instance.getServiciosAlquiler().getListReserve();
-////        for (Reserve r: reserves){
-////            System.out.println(r.getFechaFinal());
-////        }
+        List<Reserve> reserves = instance.getServiciosAlquiler().getListReserve();
+        for (Reserve r: reserves){
+            System.out.println(r.getFechaFinal());
+        }
 
     }
     public List<Resource> update(){

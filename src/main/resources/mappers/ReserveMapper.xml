@@ -14,14 +14,14 @@
         #{reserve.fechaFinal})
     </insert>
 
-
+    <!--property como esta escrito en la clase y column como esta en la base de datos   !-->
     <resultMap type="Reserve" id="ReserveResult">
         <id property="codigo" column="codigo"/>
         <result property="recurso" column="recurso"/>
-        <result property="horainicial" column="horainicial"/>
-        <result property="horafinal" column="horafinal"/>
+        <result property="horaInicial" column="horainicial"/>
+        <result property="horaFinal" column="horafinal"/>
         <result property="periodicidad" column="periodicidad"/>
-        <result property="fechafinal" column="fechafinal"/>
+        <result property="fechaFinal" column="fechafinal"/>
     </resultMap>
 
 </mapper>
