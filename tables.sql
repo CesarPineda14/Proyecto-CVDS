@@ -4,51 +4,51 @@
 --drop table ubicaciones;
 
 --TipoRecurso
-CREATE TABLE TIPORECURSO (
-	codigo SERIAL not null,
-	nombre VARCHAR(17) NOT NULL,
-	descripcion varchar(200) NOT NULL,
-	horaMinima time not null,
-	horaMaxima time not null
-);
+--CREATE TABLE TIPORECURSO (
+--	codigo SERIAL not null,
+	--nombre VARCHAR(17) NOT NULL,
+	--descripcion varchar(200) NOT NULL,
+	--horaMinima time not null,
+--	horaMaxima time not null
+--);
 
 --ALTER TABLE TIPORECURSO ADD PRIMARY KEY (codigo);
 
 --Ubicaciones
-CREATE TABLE UBICACIONES (
-	codigo SERIAL not null,
-	nombre VARCHAR(30) NOT NULL,
-	horaMinima time not null,
-	horaMaxima time not null
-);
+--CREATE TABLE UBICACIONES (
+	--codigo SERIAL not null,
+	--nombre VARCHAR(30) NOT NULL,
+	--horaMinima time not null,
+	--horaMaxima time not null
+--);
 
 --ALTER table UBICACIONES ADD PRIMARY KEY (codigo);
 
 --Recursos
-CREATE TABLE RECURSOS (
-	codigo SERIAL NOT NULL,
-	tipo SERIAL NOT NULL,
-	ubicacion SERIAL not null,
-	nombre VARCHAR(20) not NULL,
-	estado VARCHAR(8) not null,
-	CONSTRAINT FK_recursos_tipoR FOREIGN KEY(tipo) REFERENCES TIPORECURSO(codigo),
-	CONSTRAINT FK_recursos_ubi FOREIGN KEY(ubicacion) REFERENCES UBICACIONES(codigo),
-	UNIQUE(nombre)
-);
+--CREATE TABLE RECURSOS (
+--	codigo SERIAL NOT NULL,
+	--tipo SERIAL NOT NULL,
+--	ubicacion SERIAL not null,
+--	nombre VARCHAR(20) not NULL,
+--	estado VARCHAR(8) not null,
+--	CONSTRAINT FK_recursos_tipoR FOREIGN KEY(tipo) REFERENCES TIPORECURSO(codigo),
+--	CONSTRAINT FK_recursos_ubi FOREIGN KEY(ubicacion) REFERENCES UBICACIONES(codigo),
+--	UNIQUE(nombre)
+--);
 
 --ALTER table RECURSOS ADD PRIMARY KEY (codigo);
 
 
 --Reservas
-CREATE TABLE RESERVAS (
-	codigo CHAR(5) NOT NULL,
-	recurso VARCHAR(20) not null,
-	horaInicial time not null,
-	horaFinal time not null,
-	periodicidad VARCHAR(17) NOT NULL,
-	fechaFinal date not NULL,
-	CONSTRAINT FK_reserva_recurso FOREIGN KEY(recurso) REFERENCES RECURSOS(nombre)
-);
+ --CREATE TABLE RESERVAS (
+--	codigo CHAR(5) NOT NULL,
+	--recurso VARCHAR(20) not null,
+--	horaInicial time not null,
+--	horaFinal time not null,
+--	periodicidad VARCHAR(17) NOT NULL,
+--	fechaFinal date not NULL,
+--	CONSTRAINT FK_reserva_recurso FOREIGN KEY(recurso) REFERENCES RECURSOS(nombre)
+--);
 
 --ALTER table RESERVAS ADD PRIMARY KEY (codigo);
 
