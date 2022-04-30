@@ -15,11 +15,6 @@
 
     <select parameterType="map" id="getListResources" resultMap="ResourceResult">
         select codigo, tipo, ubicacion, nombre, estado from recursos
-        <where>
-            <if test="estado = 'activo'">
-                and estado = #{estado}
-            </if>
-        </where>
     </select>
 
    <select id="searchResourceType"  parameterType="map" resultMap="ResourceResult" >
