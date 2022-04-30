@@ -21,4 +21,8 @@ public class NavigationController implements Serializable {
     public String paginaReservas() {
         return "reservas";
     }
+
+    public String paginaAdmin() {
+        return "paginaAdmin";
+    }
 }
