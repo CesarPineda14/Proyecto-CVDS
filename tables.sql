@@ -29,10 +29,11 @@
 --Recursos
 --CREATE TABLE RECURSOS (
 --	codigo SERIAL NOT NULL,
-	--tipo SERIAL NOT NULL,
+--	tipo SERIAL NOT NULL,
 --	ubicacion SERIAL not null,
 --	nombre VARCHAR(20) not NULL,
 --	estado VARCHAR(8) not null,
+--	capacidad smallint not null,
 --	CONSTRAINT FK_recursos_tipoR FOREIGN KEY(tipo) REFERENCES TIPORECURSO(codigo),
 --	CONSTRAINT FK_recursos_ubi FOREIGN KEY(ubicacion) REFERENCES UBICACIONES(codigo),
 --	UNIQUE(nombre)
@@ -43,7 +44,7 @@
 
 --Reservas
  --CREATE TABLE RESERVAS (
---	codigo CHAR(5) NOT NULL,
+--	codigo SERIAL NOT NULL,
 	--recurso VARCHAR(20) not null,
 --	horaInicial time not null,
 --	horaFinal time not null,
@@ -64,17 +65,17 @@
 
 
 --Table Usuario
-CREATE TABLE USUARIOS (
-	correo VARCHAR(50) not null,
-	apellidos VARCHAR(50) NOT NULL,
-	nombres VARCHAR(50) NOT NULL,
-	contrasena VARCHAR(20) not null,
-	programa VARCHAR(50) NOT null,
-	rol SERIAL not null,
-	CONSTRAINT FK_usuarios_rol FOREIGN KEY(rol) REFERENCES ROLES(codigo)
-);
+--CREATE TABLE USUARIOS (
+--	correo VARCHAR(50) not null,
+--	apellidos VARCHAR(50) NOT NULL,
+--	nombres VARCHAR(50) NOT NULL,
+--	contrasena VARCHAR(20) not null,
+--	programa VARCHAR(50) NOT null,
+--	rol SERIAL not null,
+--	CONSTRAINT FK_usuarios_rol FOREIGN KEY(rol) REFERENCES ROLES(codigo)
+--);
 
-ALTER table USUARIOS ADD PRIMARY KEY (correo);
+--ALTER table USUARIOS ADD PRIMARY KEY (correo);
 
 
 
@@ -88,14 +89,14 @@ ALTER table USUARIOS ADD PRIMARY KEY (correo);
 --insert into ubicaciones values (default, 'Edificio I', '9:00:00', '19:00:00');
 
 
---insert into recursos values (default, 1, 1, 'Sala Estudio 1', 'Activo');
---insert into recursos values (default, 2, 2, 'PC Portatil 1', 'Inactivo');
---insert into recursos values (default, 3, 3, 'VideoBean 1', 'Activo');
---insert into recursos values (default, 1, 2, 'Sala Estudio 2', 'Inactivo');
---insert into recursos values (default, 2, 1, 'PC Portatil 2', 'Activo');
---insert into recursos values (default, 3, 2, 'Televisor 1', 'Inactivo');
---insert into recursos values (default, 1, 1, 'Sala Estudio 3', 'Activo');
---insert into recursos values (default, 2, 2, 'PC Portatil 3', 'Inactivo');
+--insert into recursos values (default, 1, 1, 'Sala Estudio 1', 'Activo', 7);
+--insert into recursos values (default, 2, 2, 'PC Portatil 1', 'Inactivo', 1);
+--insert into recursos values (default, 3, 3, 'VideoBean 1', 'Activo', 1);
+--insert into recursos values (default, 1, 2, 'Sala Estudio 2', 'Inactivo', 8);
+--insert into recursos values (default, 2, 1, 'PC Portatil 2', 'Activo', 1);
+--insert into recursos values (default, 3, 2, 'Televisor 1', 'Inactivo', 1);
+--insert into recursos values (default, 1, 1, 'Sala Estudio 3', 'Activo', 5);
+--insert into recursos values (default, 2, 2, 'PC Portatil 3', 'Inactivo', 1);
 
 --insert into roles values (default, 'Administrador');
 --insert into roles values (default, 'Usuario');
