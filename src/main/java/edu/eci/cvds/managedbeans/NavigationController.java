@@ -25,4 +25,13 @@ public class NavigationController implements Serializable {
     public String paginaAdmin() {
         return "paginaAdmin";
     }
+
+    public String paginaModificar(){
+        return "modificarRecursos";
+    }
+
+    public String paginaCambiarEstado(){
+        return "cambiarEstadoR";
+    }
+
 }

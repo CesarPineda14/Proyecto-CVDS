@@ -212,50 +212,7 @@ header {
 <br></br>
 </h:form>
 
-<h:form id="modificarRecurso">
-    <p:dataTable id="listaRecursos" var="Resource" value="#{ResourceSearchBean.loadListResources()}"
-  rowKey="#{Resource.codigo}" paginator="true" rows="10" paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink}RowsPerPageDropdown}" currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords}" rowsPerPageTemplate="5,10,15,20" >
-      <p:column style="color:black;">
-            <f:facet name="header">
-                <h:outputText value="Codigo"/>
-            </f:facet>
-            <h:outputText value="#{Resource.codigo}"/>
-      </p:column>
 
-      <p:column style="color:black;">
-          <f:facet name="header">
-              <h:outputText value="Tipo" />
-          </f:facet>
-        <h:outputText value="#{Resource.tipo}" />
-      </p:column>
-
-      <p:column style="color:black;">
-        <f:facet name="header">
-          <h:outputText value="Ubicacion" />
-      </f:facet>
-        <h:outputText value="#{Resource.ubicacion}" />
-      </p:column>
-
-      <p:column style="color:black;">
-        <f:facet name="header">
-          <h:outputText value="Nombre" />
-      </f:facet>
-        <h:outputText value="#{Resource.nombre}" />
-      </p:column>
-        <p:column style="color:black;">
-            <f:facet name="header">
-                <h:outputText value="Estado" />
-            </f:facet>
-            <h:outputText value="#{Resource.estado}" />
-        </p:column>
-        <p:column style="color:black;">
-            <f:facet name="header">
-                <h:outputText value="" />
-            </f:facet>
-            <h:commandLink value="Seleccionar" class="botn" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaModificar()}"/>
-        </p:column>
-	</p:dataTable>
-</h:form>
 </h:body>  
 </html>
 

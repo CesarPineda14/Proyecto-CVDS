@@ -139,9 +139,9 @@ img {
 
 .logout {
   font-size: .8em;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Helvetica", sans-serif;
 	position: relative;
-  right: -18px;
+  right: -3px;
   bottom: -4px;
   overflow: hidden;
   letter-spacing: 3px;
@@ -153,10 +153,10 @@ img {
 .button {
 	text-decoration: none;
 	float: right;
-	padding: 15px;
-	margin: 10px;
+	padding: 1px;
+	margin: 20px;
 	color: white;
-	width: 20px;
+	width: 100px;
 	background-color: rgba(185, 185, 185, 0);
 	transition: width .35s;
 	-webkit-transition: width .35s;
@@ -206,12 +206,15 @@ header {
 <br></br>
 <h:form>
     <p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(185, 185, 185, 0.315);">
-        <p:menuitem value="Registrar Recurso"  />
-        <p:menuitem value="Cambiar Estado Recurso" />
+      <p:menuitem value="Registrar Recurso" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaRegistroRec()}"/>
+      <p:menuitem value="Cambiar Estado Recurso" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaModificar()}"/>
     </p:menubar>
 <br></br>
 	<p:dataTable id="listaRecursos" var="Resource" value="#{ResourceSearchBean.loadListResources()}"
-  rowKey="#{Resource.codigo}" paginator="true" rows="10" paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink}RowsPerPageDropdown}" currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords}" rowsPerPageTemplate="5,10,15,20" >
+  rowKey="#{Resource.codigo}" paginator="true" rows="10" 
+  paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink}RowsPerPageDropdown}" 
+  currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords}" 
+  rowsPerPageTemplate="5,10,15,20" >
       <p:column style="color:black;">
             <f:facet name="header">
                 <h:outputText value="Codigo"/>
