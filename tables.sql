@@ -2,6 +2,8 @@
 --drop table recursos;
 --drop table tiporecurso;
 --drop table ubicaciones;
+--drop table Usuarios;
+--drop table roles;
 
 --TipoRecurso
 --CREATE TABLE TIPORECURSO (
@@ -52,7 +54,13 @@
 
 --ALTER table RESERVAS ADD PRIMARY KEY (codigo);
 
+--Table Roles
+--CREATE TABLE ROLES (
+--	codigo SERIAL not null,
+--	tipo VARCHAR(50) not null
+--);
 
+--ALTER table ROLES ADD PRIMARY KEY (codigo);
 
 
 --Table Usuario
@@ -60,11 +68,14 @@ CREATE TABLE USUARIOS (
 	correo VARCHAR(50) not null,
 	apellidos VARCHAR(50) NOT NULL,
 	nombres VARCHAR(50) NOT NULL,
+	contrasena VARCHAR(20) not null,
 	programa VARCHAR(50) NOT null,
-	contrasena VARCHAR(20) not NULL
+	rol SERIAL not null,
+	CONSTRAINT FK_usuarios_rol FOREIGN KEY(rol) REFERENCES ROLES(codigo)
 );
 
---ALTER table USUARIOS ADD PRIMARY KEY (correo);
+ALTER table USUARIOS ADD PRIMARY KEY (correo);
+
 
 
 --Población
@@ -85,3 +96,6 @@ CREATE TABLE USUARIOS (
 --insert into recursos values (default, 3, 2, 'Televisor 1', 'Inactivo');
 --insert into recursos values (default, 1, 1, 'Sala Estudio 3', 'Activo');
 --insert into recursos values (default, 2, 2, 'PC Portatil 3', 'Inactivo');
+
+--insert into roles values (default, 'Administrador');
+--insert into roles values (default, 'Usuario');
