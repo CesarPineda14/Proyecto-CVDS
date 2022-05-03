@@ -10,28 +10,28 @@ import javax.faces.bean.RequestScoped;
 
 public class NavigationController implements Serializable {
     public String paginaInicio() {
-        return "inicioSesion";
+        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/inicioSesion.xhtml");
     }
-    public String paginaRegistroRec() {
-        return "registrarRecurso";
+    public void paginaRegistroRec() {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/registrarRecurso.xhtml");
     }
     public String paginaConsultaRec() {
-        return "consultarRecursos";
+        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/consultarRecursos.xhtml");
     }
     public String paginaReservas() {
-        return "reservas";
+        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/consultarRecursos.xhtml");
     }
 
     public String paginaAdmin() {
-        return "paginaAdmin";
+        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/paginaAdmin.xhtml");
     }
 
     public String paginaModificar(){
-        return "modificarRecursos";
+        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/modificarRecursos.xhtml");
     }
 
     public String paginaCambiarEstado(){
-        return "cambiarEstadoR";
+        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/cambiarEstadoR.xhtml");
     }
 
 }
