@@ -1,36 +1,38 @@
 package edu.eci.cvds.managedbeans;
 
-import java.io.Serializable;  
+import java.io.IOException;
+import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean; 
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
 
 @ManagedBean(name = "navigationController", eager = true)
 @RequestScoped
 
 public class NavigationController implements Serializable {
-    public String paginaInicio() {
+    public void paginaInicio() throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/inicioSesion.xhtml");
     }
-    public void paginaRegistroRec() {
+    public void paginaRegistroRec() throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/registrarRecurso.xhtml");
     }
-    public String paginaConsultaRec() {
+    public void paginaConsultaRec() throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/consultarRecursos.xhtml");
     }
-    public String paginaReservas() {
+    public void paginaReservas() throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/consultarRecursos.xhtml");
     }
 
-    public String paginaAdmin() {
+    public void paginaAdmin() throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/paginaAdmin.xhtml");
     }
 
-    public String paginaModificar(){
+    public void paginaModificar() throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/modificarRecursos.xhtml");
     }
 
-    public String paginaCambiarEstado(){
+    public void paginaCambiarEstado() throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/cambiarEstadoR.xhtml");
     }
 
