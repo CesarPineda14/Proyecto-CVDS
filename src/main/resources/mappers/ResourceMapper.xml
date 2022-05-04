@@ -14,7 +14,14 @@
     </select>
 
     <select parameterType="map" id="getListResources" resultMap="ResourceResult">
-        select codigo, tipo, ubicacion, nombre, estado from recursos
+        select r.codigo,
+            t.nombre as tiporecurso,
+            u.nombre as ubicacion,
+            r.nombre as nombrerecurso,
+            estado,
+            capacidad
+        from recursos r join tiporecurso t on r.tipo=t.codigo
+            join ubicaciones u on r.ubicacion=u.codigo
     </select>
 
    <select id="searchResourceType"  parameterType="map" resultMap="ResourceResult" >
@@ -49,11 +56,12 @@
     </update>
 
     <resultMap type="Resource" id="ResourceResult">
-        <id property="codigo" column="codigo"/>
-        <result property="tipo" column="tipo"/>
+        <id property="codigo" column="r.codigo"/>
+        <result property="tipo" column="tiporecurso"/>
         <result property="ubicacion" column="ubicacion"/>
-        <result property="nombre" column="nombre"/>
+        <result property="nombre" column="nombrerecurso"/>
         <result property="estado" column="estado"/>
+        <result property="capacidad" column="capacidad"/>
     </resultMap>
 
 </mapper>

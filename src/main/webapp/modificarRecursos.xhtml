@@ -251,6 +251,12 @@ header {
         </p:column>
         <p:column style="color:black;">
             <f:facet name="header">
+                <h:outputText value="Capacidad" />
+            </f:facet>
+            <h:outputText value="#{Resource.capacidad}" />
+        </p:column>
+        <p:column style="color:black;">
+            <f:facet name="header">
                 <h:outputText value="" />
             </f:facet>
             <h:commandLink value="Seleccionar" class="botn" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaModificar()}"/>

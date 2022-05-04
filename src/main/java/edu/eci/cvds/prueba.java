@@ -61,14 +61,14 @@ public class prueba {
         return optInjector.get().getInstance(ECIBookServices.class);
     }
 
-    public Resource createResource() {
-        Resource resource = new Resource(
-                1,
-                1,
-                2, "gg", "valido"
-        );
-        return resource;
-    }
+//    public Resource createResource() {
+//        Resource resource = new Resource(
+//                1,
+//                1,
+//                2, "gg", "valido", 1
+//        );
+//        return resource;
+//    }
 
     public Reserve createReserve(){
         Reserve reserve = new Reserve(
