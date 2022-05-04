@@ -239,7 +239,13 @@
               <br></br>
               <p:inputText placeholder="Capacidad Recurso"/>
 
-              <p:inputText placeholder="Id Interno" binding="#{codigo}"/>
+              <p:selectOneMenu style="width:100%; " id="estadoRec" value="#{selectOneMenuView.selectedOption}" >
+                  <f:selectItem itemLabel="Estado del Recurso" itemValue="" />
+                  <f:selectItem itemLabel="Activo" itemValue="Activo" />
+                  <f:selectItem itemLabel="Inactivo" itemValue="Inactivo"/>
+              </p:selectOneMenu>
+              <br></br>
+              <br></br>
               
               <p:commandButton type="button" value="Registrar" styleClass="ui-button-danger" />
               </form>
