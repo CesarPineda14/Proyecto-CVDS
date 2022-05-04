@@ -5,11 +5,11 @@
 <mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.LocationMapper">
 
 
-    <select parameterType="map" id="getLocation" resultMap="LocationResult">
+    <select parameterType="map" id="getLocationList" resultMap="LocationResult">
         select (codigo, nombre, horaminima, horamaxima) from ubicaciones
     </select>
 
-    <resultMap type="Resource" id="LocationResult">
+    <resultMap type="Location" id="LocationResult">
         <id property="codigo" column="codigo"/>
         <result property="nombre" column="nombre"/>
         <result property="horaMinima" column="horaminima"/>

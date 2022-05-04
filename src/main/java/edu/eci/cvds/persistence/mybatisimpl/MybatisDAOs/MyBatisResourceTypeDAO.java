@@ -5,6 +5,8 @@ import edu.eci.cvds.entities.ResourceType;
 import edu.eci.cvds.persistence.mybatisimpl.DAOs.ResourceTypeDAO;
 import edu.eci.cvds.persistence.mybatisimpl.mappers.ResourceTypeMapper;
 
+import java.util.List;
+
 public class MyBatisResourceTypeDAO implements ResourceTypeDAO {
 
     @Inject
@@ -12,9 +14,9 @@ public class MyBatisResourceTypeDAO implements ResourceTypeDAO {
 
 
     @Override
-    public ResourceType getResourceType() {
+    public List<ResourceType> getResourceType() {
         try{
-            return resourceTypeMapper.getResourceType();
+            return resourceTypeMapper.getResourceTypeList();
         } catch (Exception e){
             System.out.println(e.getMessage());
             return null;

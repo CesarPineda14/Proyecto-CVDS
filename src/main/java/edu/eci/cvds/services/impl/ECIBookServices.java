@@ -17,9 +17,9 @@ public interface ECIBookServices {
 
     public void createResource(Resource resource) throws ServicesException;
 
-    public ResourceType getResourceType() throws ServicesException;
+    public List<ResourceType> getResourceType() throws ServicesException;
 
-    public Location getLocation() throws ServicesException;
+    public List<Location> getLocation() throws ServicesException;
 
     public List<Reserve> getListReserve() throws ServicesException;
 

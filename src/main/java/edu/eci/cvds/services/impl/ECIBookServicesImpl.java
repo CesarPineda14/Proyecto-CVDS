@@ -78,7 +78,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	}
 
 	@Override
-	public ResourceType getResourceType() throws ServicesException {
+	public List<ResourceType> getResourceType() throws ServicesException {
 		try{
 			return resourceTypeDAO.getResourceType();
 		}catch (Exception e){
@@ -88,7 +88,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	}
 
 	@Override
-	public Location getLocation() throws ServicesException {
+	public List<Location> getLocation() throws ServicesException {
 		try{
 			return locationDAO.getLocation();
 		} catch (Exception e){
