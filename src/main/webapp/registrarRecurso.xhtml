@@ -208,6 +208,7 @@
     <h:form>
       <p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(185, 185, 185, 0.315);">  
         <p:menuitem value="Inicio" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaAdmin()}"/>
+        <p:menuitem value="Consultar Recursos" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaConsultaRec()}"/>
         <p:menuitem value="Cambiar Estado Recurso" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaModificar()}"/>
       </p:menubar>  
     </h:form>
