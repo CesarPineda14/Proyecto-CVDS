@@ -243,24 +243,28 @@ header {
       </f:facet>
         <h:outputText value="#{Resource.nombre}" />
       </p:column>
-        <p:column style="color:black;">
+  
+      <p:column style="color:black;">
+          <f:facet name="header">
+              <h:outputText value="Capacidad" />
+          </f:facet>
+          <h:outputText value="#{Resource.capacidad}" />
+      </p:column>
+
+      <p:column style="color:black;">
             <f:facet name="header">
                 <h:outputText value="Estado" />
             </f:facet>
             <h:outputText value="#{Resource.estado}" />
         </p:column>
-        <p:column style="color:black;">
-            <f:facet name="header">
-                <h:outputText value="Capacidad" />
-            </f:facet>
-            <h:outputText value="#{Resource.capacidad}" />
-        </p:column>
-        <p:column style="color:black;">
-            <f:facet name="header">
-                <h:outputText value="" />
-            </f:facet>
-            <h:commandLink value="Seleccionar" class="botn" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaModificar()}"/>
-        </p:column>
+
+      <p:column style="color:black;">
+          <f:facet name="header">
+              <h:outputText value="" />
+          </f:facet>
+          <h:commandButton value="Cambiar Estado" class="botn" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaModificar()}"/>
+      </p:column>
+
 	</p:dataTable>
 </h:form>
 </h:body>  

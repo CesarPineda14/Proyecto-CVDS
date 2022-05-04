@@ -212,12 +212,13 @@
         <p:menuitem value="Cambiar Estado Recurso" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaModificar()}"/>
       </p:menubar>  
     </h:form>
+    
       <h1>Gestión de Recursos</h1>
       <br></br>
       <h:form id="formRegistrarCliente">
             <div class="login-page">
                     <div class="form">
-              <form class="login-form" var="Resource" value="#{ResourceSearchBean.loadResource()}">
+              <form class="login-form" var="Resource" value="">
 
               <p:inputText placeholder="Nombre Recurso" binding="#{nombre}"/>
               
