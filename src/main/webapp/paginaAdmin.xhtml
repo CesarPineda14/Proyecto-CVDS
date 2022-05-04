@@ -182,7 +182,7 @@
     
     
     </style>
-    <title>MenuBar</title> 
+    <title>Gestión Biblioteca ECI</title>
   </h:head> 
 
   <h:body> 
@@ -205,6 +205,7 @@
 
     <h:form>
       <p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(185, 185, 185, 0.315);">
+        <p:menuitem value="Consultar Recursos" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaConsultaRec()}"/>
         <p:menuitem value="Registrar Recurso" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaRegistroRec()}"/>
         <p:menuitem value="Cambiar Estado Recurso" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaModificar()}"/> 
       </p:menubar>
