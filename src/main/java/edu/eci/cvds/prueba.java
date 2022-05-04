@@ -61,14 +61,12 @@ public class prueba {
         return optInjector.get().getInstance(ECIBookServices.class);
     }
 
-//    public Resource createResource() {
-//        Resource resource = new Resource(
-//                1,
-//                1,
-//                2, "gg", "valido", 1
-//        );
-//        return resource;
-//    }
+    public Resource createResource() {
+        Resource resource = new Resource(
+                1,2,"pc prueba", "Activo", 2
+                );
+        return resource;
+    }
 
     public Reserve createReserve(){
         Reserve reserve = new Reserve(
@@ -91,12 +89,12 @@ public class prueba {
 //        System.out.println(instance.getServiciosAlquiler().getUser().getApellidos());
 //        System.out.println(instance.getServiciosAlquiler().getUser().getNombres());
 
-//        System.out.println("------------------CONSULTAR RECURSO ----------------------------------------");
-//
-//        Resource resource = getInstance().createResource();
-//        //instance.getServiciosAlquiler().createResource(resource);
-//        System.out.println(instance.getServiciosAlquiler().getResource().getNombre());
-//
+        System.out.println("------------------CREAR RECURSO ----------------------------------------");
+
+        Resource resource = getInstance().createResource();
+        instance.getServiciosAlquiler().createResource(resource);
+        //System.out.println(instance.getServiciosAlquiler().getResource().getNombre());
+
 
 
 //        System.out.println("------------------CONSULTAR tipoRECURSO ----------------------------------------");

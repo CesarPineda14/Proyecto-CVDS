@@ -186,33 +186,33 @@
     </style>
     
   <title>MenuBar</title>  
-  </h:head> 
+  </h:head>
 
   <h:body>
     <header>
       <title>Recursos Biblioteca </title>
       <br></br>
       <img style="float: left;" class = "picture" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg/1920px-Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg.png" alt=""></img>
-      
+
       <div class="navigation">
-      
+
         <a class="button" href="" >
           <img src="https://flyclipart.com/thumb2/exit-icon-740908.png"></img>
-        
+
         <div class="logout" >LOGOUT</div>
         </a>
       </div>
     </header>
-    <br></br>	
-    
+    <br></br>
+
     <h:form>
-      <p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(185, 185, 185, 0.315);">  
+      <p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(185, 185, 185, 0.315);">
         <p:menuitem value="Inicio" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaAdmin()}"/>
         <p:menuitem value="Consultar Recursos" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaConsultaRec()}"/>
         <p:menuitem value="Cambiar Estado Recurso" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaModificar()}"/>
-      </p:menubar>  
+      </p:menubar>
     </h:form>
-    
+
       <h1>Gestión de Recursos</h1>
       <br></br>
       <h:form id="formRegistrarCliente">
@@ -220,39 +220,41 @@
                     <div class="form">
               <form class="login-form" var="Resource" value="">
 
-              <p:inputText placeholder="Nombre Recurso" binding="#{nombre}"/>
-              
-              <p:selectOneMenu style="width:100%;" id="ubicacionRec" value="#{createResource.selectedOption}" >
-                  <f:selectItem itemLabel="Ubicacion Recurso" itemValue="0"/>
+              <p:inputText placeholder="Nombre Recurso" value="#{CreateResourceBean.nombreRecurso}" />
+
+              <p:inputText placeholder="Capacidad Recurso" value="#{CreateResourceBean.capacidadRecurso}"/>
+
+                <p:selectOneMenu style="width:100%;" id="ubicacionRec" value="#{CreateResourceBean.selectedOptionUbication}" >
+                  <f:selectItem itemLabel="Ubicacion Recurso" itemValue=""/>
                   <f:selectItem itemLabel="Biblioteca Principal" itemValue="1"/>
                   <f:selectItem itemLabel="Biblioteca Satelite" itemValue="2" />
                   <f:selectItem itemLabel="Edificio I" itemValue="3" />
-              </p:selectOneMenu>
-              <br></br>
-              <br></br>
-              <p:selectOneMenu style="width:100%; " id="tipoRec" value="#{selectOneMenuView.selectedOption}" >
+                </p:selectOneMenu>
+                <br></br>
+                <br></br>
+                <p:selectOneMenu style="width:100%; " id="tipoRec" value="#{CreateResourceBean.selectedOptionRecTipe}" >
                   <f:selectItem itemLabel="Tipo Recurso" itemValue="" />
                   <f:selectItem itemLabel="Salas de Estudio" itemValue="1" />
                   <f:selectItem itemLabel="Equipos de Computo" itemValue="2"/>
                   <f:selectItem itemLabel="Equipos Multimedia" itemValue="3"/>
-              </p:selectOneMenu>
-              <br></br>
-              <br></br>
-              <p:inputText placeholder="Capacidad Recurso"/>
+                </p:selectOneMenu>
+                <br></br>
+                <br></br>
 
-              <p:selectOneMenu style="width:100%; " id="estadoRec" value="#{selectOneMenuView.selectedOption}" >
+
+                <p:selectOneMenu style="width:100%; " id="estadoRec" value="#{CreateResourceBean.selectedOptionState}" >
                   <f:selectItem itemLabel="Estado del Recurso" itemValue="" />
                   <f:selectItem itemLabel="Activo" itemValue="Activo" />
                   <f:selectItem itemLabel="Inactivo" itemValue="Inactivo"/>
-              </p:selectOneMenu>
-              <br></br>
-              <br></br>
-              
-              <p:commandButton type="button" value="Registrar" styleClass="ui-button-danger" />
+                </p:selectOneMenu>
+                <br></br>
+                <br></br>
+
+                  <p:commandButton type="button" value="Registrar" styleClass="ui-button-danger" actionListener="#{CreateResourceBean.createResources}"/>
               </form>
                     </div>
             </div>
-      </h:form>		
+      </h:form>
   </h:body>
 </html>
 

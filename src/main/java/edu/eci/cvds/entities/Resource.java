@@ -7,6 +7,24 @@ public class Resource {
     private String nombre;
     private String estado;
     private Integer capacidad;
+    private Integer ubicacionI;
+    private Integer tipoI;
+
+    public Integer getUbicacionI() {
+        return ubicacionI;
+    }
+
+    public void setUbicacionI(Integer ubicacionI) {
+        this.ubicacionI = ubicacionI;
+    }
+
+    public Integer getTipoI() {
+        return tipoI;
+    }
+
+    public void setTipoI(Integer tipoI) {
+        this.tipoI = tipoI;
+    }
 
     public Resource(Integer codigo, String tipo, String ubicacion, String nombre, String estado, Integer capacidad) {
         this.codigo = codigo;
@@ -15,6 +33,18 @@ public class Resource {
         this.nombre = nombre;
         this.estado = estado;
         this.capacidad = capacidad;
+    }
+
+    public Resource(Integer tipo, Integer ubicacion, String nombre, String estado, Integer capacidad){
+        this.tipoI = tipo;
+        this.ubicacionI = ubicacion;
+        this.nombre = nombre;
+        this.estado = estado;
+        this.capacidad = capacidad;
+    }
+
+    public Resource getResource(){
+        return this;
     }
 
     public Integer getCodigo() {
