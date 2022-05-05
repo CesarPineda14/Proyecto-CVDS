@@ -63,7 +63,7 @@ public class prueba {
 
     public Resource createResource() {
         Resource resource = new Resource(
-                1,2,"pc prueba", "Activo", 2
+                1,2,"pruebaaaa", "Activo", 99
                 );
         return resource;
     }

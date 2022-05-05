@@ -1,275 +1,294 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
 
-  <h:head> 
-      <style>
-        body{ 
-                  background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('https://escuelaing.s3.amazonaws.com/production/images/_DSC5270.max-1440x800.jpg');
-                  background-repeat: no-repeat;
-                  background-attachment: fixed;
-                  background-position: center;
-                  background-size: cover;
+<h:head>
+  <style>
+    body {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url('https://escuelaing.s3.amazonaws.com/production/images/_DSC5270.max-1440x800.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
 
-                  color: white;
-                  font-family: 'Helvetica', sans-serif;
-                  align-self: center;
-                  text-align: center;
-                  align-items: center;
-                  align-content: center;
-              }
-          
-          .picture{
-                  height: 60px;
-                  width: auto;
-              }
+      color: white;
+      font-family: 'Helvetica', sans-serif;
+      align-self: center;
+      text-align: center;
+      align-items: center;
+      align-content: center;
+    }
 
-          .login-page {
-              width: 360px;
-              padding: 1% 0 0;
-              margin: auto;
-              }
+    .picture {
+      height: 60px;
+      width: auto;
+    }
 
-          .form {
-              position: relative;
-              z-index: 1;
-              max-width: 360px;
-              margin: 0 auto 100px;
-              padding: 45px;
-              text-align: center;
-              box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-              }
-              .form input {
-              font-family: "Helvetica", sans-serif;
-              outline: 0;
-              background: #f2f2f2;
-              width: 100%;
-              border: 0;
-              margin: 0 0 15px;
-              padding: 15px;
-              box-sizing: border-box;
-              font-size: 14px;
-              }
+    .login-page {
+      width: 360px;
+      padding: 1% 0 0;
+      margin: auto;
+    }
 
-          .form select {
-            font-family: "Helvetica", sans-serif;
-            outline: 0;
-            background: #f2f2f2;
-            width: 100%;
-            border: 0;
-            margin: 0 0 15px;
-            padding: 15px;
-            box-sizing: border-box;
-            font-size: 14px;
-          }
+    .form {
+      position: relative;
+      z-index: 1;
+      max-width: 360px;
+      margin: 0 auto 100px;
+      padding: 45px;
+      text-align: center;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
 
-              .form button {
-              font-family: "Helvetica", sans-serif;
-              text-transform: uppercase;
-              outline: 0;
-              background: #ff0000;
-              width: 100%;
-              border: 0;
-              padding: 15px;
-              color: #FFFFFF;
-              font-size: 14px;
-              -webkit-transition: all 0.3 ease;
-              transition: all 0.3 ease;
-              cursor: pointer;
-              }
-              .form button:hover,.form button:active,.form button:focus {
-              background: #ff0000;
-              }
-              .form .message {
-              margin: 15px 0 0;
-              color: #b3b3b3;
-              font-size: 12px;
-              }
-              .form .message a {
-              color: #ff0000;
-              text-decoration: none;
-              }
-              .form .register-form {
-              display: none;
-              }
-              .container {
-              position: relative;
-              z-index: 1;
-              max-width: 300px;
-              margin: 0 auto;
-              }
-              .container:before, .container:after {
-              content: "";
-              display: block;
-              clear: both;
-              }
-              .container .info {
-              margin: 50px auto;
-              text-align: center;
-              }
-              .container .info h1 {
-              margin: 0 0 15px;
-              padding: 0;
-              font-size: 36px;
-              font-weight: 300;
-              color: #1a1a1a;
-              }
-              .container .info span {
-              color: #4d4d4d;
-              font-size: 12px;
-              }
-              .container .info span a {
-              color: #000000;
-              text-decoration: none;
-              }
-              .container .info span .fa {
-              color: #EF3B3A;
-              }	
+    .form input {
+      font-family: "Helvetica", sans-serif;
+      outline: 0;
+      background: #f2f2f2;
+      width: 100%;
+      border: 0;
+      margin: 0 0 15px;
+      padding: 15px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    .form select {
+      font-family: "Helvetica", sans-serif;
+      outline: 0;
+      background: #f2f2f2;
+      width: 100%;
+      border: 0;
+      margin: 0 0 15px;
+      padding: 15px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    .form button {
+      font-family: "Helvetica", sans-serif;
+      text-transform: uppercase;
+      outline: 0;
+      background: #ff0000;
+      width: 100%;
+      border: 0;
+      padding: 15px;
+      color: #FFFFFF;
+      font-size: 14px;
+      -webkit-transition: all 0.3 ease;
+      transition: all 0.3 ease;
+      cursor: pointer;
+    }
+
+    .form button:hover,
+    .form button:active,
+    .form button:focus {
+      background: #ff0000;
+    }
+
+    .form .message {
+      margin: 15px 0 0;
+      color: #b3b3b3;
+      font-size: 12px;
+    }
+
+    .form .message a {
+      color: #ff0000;
+      text-decoration: none;
+    }
+
+    .form .register-form {
+      display: none;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .container:before,
+    .container:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .container .info {
+      margin: 50px auto;
+      text-align: center;
+    }
+
+    .container .info h1 {
+      margin: 0 0 15px;
+      padding: 0;
+      font-size: 36px;
+      font-weight: 300;
+      color: #1a1a1a;
+    }
+
+    .container .info span {
+      color: #4d4d4d;
+      font-size: 12px;
+    }
+
+    .container .info span a {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    .container .info span .fa {
+      color: #EF3B3A;
+    }
 
 
-          select:invalid { color: gray; }
+    select:invalid {
+      color: gray;
+    }
 
-      img {
-        width: 25px;
-        border-radius: 5px;
-        float: left;
-      }
+    img {
+      width: 25px;
+      border-radius: 5px;
+      float: left;
+    }
 
-      .logout {
-        font-size: .8em;
-        font-family: "Helvetica", sans-serif;
-        position: relative;
-        right: -3px;
-        bottom: -4px;
-        overflow: hidden;
-        letter-spacing: 3px;
-        opacity: 0;
-        transition: opacity .45s;
-        -webkit-transition: opacity .35s;
-      }
+    .logout {
+      font-size: .8em;
+      font-family: "Helvetica", sans-serif;
+      position: relative;
+      right: -3px;
+      bottom: -4px;
+      overflow: hidden;
+      letter-spacing: 3px;
+      opacity: 0;
+      transition: opacity .45s;
+      -webkit-transition: opacity .35s;
+    }
 
-      .button {
-        text-decoration: none;
-        float: right;
-        padding: 1px;
-        margin: 20px;
-        color: white;
-        width: 100px;
-        background-color: rgba(185, 185, 185, 0);
-        transition: width .35s;
-        -webkit-transition: width .35s;
-        overflow: hidden
-      }
+    .button {
+      text-decoration: none;
+      float: right;
+      padding: 1px;
+      margin: 20px;
+      color: white;
+      width: 100px;
+      background-color: rgba(185, 185, 185, 0);
+      transition: width .35s;
+      -webkit-transition: width .35s;
+      overflow: hidden
+    }
 
-      a:hover {
-        width: 110px;
-      }
+    a:hover {
+      width: 110px;
+    }
 
-      a:hover .logout{
-        opacity: .9;
-      }
+    a:hover .logout {
+      opacity: .9;
+    }
 
-      a {
-        text-decoration: none;
-      }
+    a {
+      text-decoration: none;
+    }
 
-      header {
-          min-height: 100px;
-          background-color: rgba(185, 185, 185, 0.315);
-      }
+    header {
+      min-height: 100px;
+      background-color: rgba(185, 185, 185, 0.315);
+    }
+  </style>
+  <title>MenuBar</title>
+</h:head>
 
-      </style>
-    <title>MenuBar</title> 
-    </h:head>
-  
-  <h:body> 
-    <header>
-      <title>Recursos Biblioteca </title>
-      <br></br>
-      <img style="float: left;" class = "picture" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg/1920px-Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg.png" alt=""></img>
-      
-      <div class="navigation">
-      
-        <a class="button" href="">
-          <img src="https://flyclipart.com/thumb2/exit-icon-740908.png"></img>
-        
-        <div class="logout">LOGOUT</div>
-        </a>
-      </div>
-    </header>
+<h:body>
+  <header>
+    <title>Recursos Biblioteca </title>
     <br></br>
+    <img style="float: left;" class="picture"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg/1920px-Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg.png"
+      alt=""></img>
 
-    <h:form>
-        <p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(185, 185, 185, 0.315);">
-          <p:menuitem value="Inicio" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaAdmin()}"/>
-          <p:menuitem value="Registrar Recurso" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaRegistroRec()}"/>
-          <p:menuitem value="Cambiar Estado Recurso" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaModificar()}"/>
-      </p:menubar>
-      <br></br>
-    </h:form>
+    <div class="navigation">
 
-    <h:form id="consultarRecurso">
-      <p:dataTable id="listaRecursos" var="Resource" value="#{ResourceSearchBean.loadListResources()}"
-      rowKey="#{Resource.codigo}" paginator="true" rows="10" 
-      paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink}RowsPerPageDropdown}" 
-      currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords}" 
-      rowsPerPageTemplate="5,10,15,20" >
-          <p:column style="color:black;">
-                <f:facet name="header">
-                    <h:outputText value="Codigo"/>
-                </f:facet>
-                <h:outputText value="#{Resource.codigo}"/>
-          </p:column>
+      <a class="button" href="">
+        <img src="https://flyclipart.com/thumb2/exit-icon-740908.png"></img>
 
-          <p:column style="color:black;">
-              <f:facet name="header">
-                  <h:outputText value="Tipo" />
-                  <br></br>
-                  <p:selectOneMenu style="width:75%; " id="tipoRec" value="" >
-                      <f:selectItem itemLabel="Filtrar por Tipo" itemValue="" />
-                      <f:selectItem itemLabel="Salas de Estudio" itemValue="1" />
-                      <f:selectItem itemLabel="Equipos de Computo" itemValue="2"/>
-                      <f:selectItem itemLabel="Equipos Multimedia" itemValue="3"/>
-                    </p:selectOneMenu>
-              </f:facet>
-            <h:outputText value="#{Resource.tipo}" />
-          </p:column>
+        <div class="logout">LOGOUT</div>
+      </a>
+    </div>
+  </header>
+  <br></br>
 
-          <p:column style="color:black;">
-            <f:facet name="header">
-              <h:outputText value="Ubicacion" />
-              <br></br>
-              <p:selectOneMenu style="width:75%;" id="ubicacionRec" value="" >
-                  <f:selectItem itemLabel="Filtrar por Ubicacion" itemValue="0"/>
-                  <f:selectItem itemLabel="Biblioteca Principal" itemValue="1"/>
-                  <f:selectItem itemLabel="Biblioteca Satelite" itemValue="2" />
-                  <f:selectItem itemLabel="Edificio I" itemValue="3" />
-              </p:selectOneMenu>
-          </f:facet>
-            <h:outputText value="#{Resource.ubicacion}" />
-          </p:column>
+  <h:form>
+    <p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(185, 185, 185, 0.315);">
+      <p:menuitem value="Inicio" actionListener="#{ResourceSearchBean.loadListResources()}"
+        action="#{navigationController.paginaAdmin()}" />
+      <p:menuitem value="Registrar Recurso" actionListener="#{ResourceSearchBean.loadListResources()}"
+        action="#{navigationController.paginaRegistroRec()}" />
+      <p:menuitem value="Cambiar Estado Recurso" actionListener="#{ResourceSearchBean.loadListResources()}"
+        action="#{navigationController.paginaModificar()}" />
+    </p:menubar>
+    <br></br>
+  </h:form>
 
-          <p:column style="color:black;">
-            <f:facet name="header">
-              <h:outputText value="Nombre" />
-          </f:facet>
-            <h:outputText value="#{Resource.nombre}" />
-          </p:column>
+  <h:form id="consultarRecurso">
+    <p:dataTable id="listaRecursos" var="Resource" value="#{ResourceSearchBean.loadListResources()}"
+      rowKey="#{Resource.codigo}" paginator="true" rows="20"
+      paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink}RowsPerPageDropdown}"
+      currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords}" rowsPerPageTemplate="5,10,15,20">
+      <p:column style="color:black;">
+        <f:facet name="header">
+          <h:outputText value="Codigo" />
+        </f:facet>
+        <h:outputText value="#{Resource.codigo}" />
+      </p:column>
 
-          <p:column style="color:black;">
-              <f:facet name="header">
-                  <h:outputText value="Estado" />
-              </f:facet>
-              <h:outputText value="#{Resource.estado}" />
-          </p:column>
+      <p:column style="color:black;">
+        <f:facet name="header">
+          <h:outputText value="Tipo" />
+          <br></br>
+          <p:selectOneMenu style="width:75%; " id="tipoRec" value="">
+            <f:selectItem itemLabel="Filtrar por Tipo" itemValue="" />
+            <f:selectItem itemLabel="Salas de Estudio" itemValue="1" />
+            <f:selectItem itemLabel="Equipos de Computo" itemValue="2" />
+            <f:selectItem itemLabel="Equipos Multimedia" itemValue="3" />
+          </p:selectOneMenu>
+        </f:facet>
+        <h:outputText value="#{Resource.tipo}" />
+      </p:column>
+
+      <p:column style="color:black;">
+        <f:facet name="header">
+          <h:outputText value="Ubicacion" />
+          <br></br>
+          <p:selectOneMenu style="width:75%;" id="ubicacionRec" value="">
+            <f:selectItem itemLabel="Filtrar por Ubicacion" itemValue="0" />
+            <f:selectItem itemLabel="Biblioteca Principal" itemValue="1" />
+            <f:selectItem itemLabel="Biblioteca Satelite" itemValue="2" />
+            <f:selectItem itemLabel="Edificio I" itemValue="3" />
+          </p:selectOneMenu>
+        </f:facet>
+        <h:outputText value="#{Resource.ubicacion}" />
+      </p:column>
+
+      <p:column style="color:black;">
+        <f:facet name="header">
+          <h:outputText value="Nombre" />
+        </f:facet>
+        <h:outputText value="#{Resource.nombre}" />
+      </p:column>
+
+      <p:column style="color:black;">
+        <f:facet name="header">
+          <h:outputText value="Estado" />
+        </f:facet>
+        <h:outputText value="#{Resource.estado}" />
+      </p:column>
 
 
-      </p:dataTable>
+    </p:dataTable>
 
-    </h:form>  
-  </h:body>  
+  </h:form>
+</h:body>
+
 </html>
-
