@@ -186,31 +186,43 @@
   </h:head> 
 
   <h:body> 
-    <header>
-      <title>Recursos Biblioteca </title>
-	    <br></br>
-	    <img style="float: left;" class = "picture" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg/1920px-Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg.png" alt=""></img>
-	
-      <div class="navigation">
-  
-        <a class="button" href="">
-          <img src="https://flyclipart.com/thumb2/exit-icon-740908.png"></img>
+      <header>
+        <title>Recursos Biblioteca </title>
+        <br></br>
+        <img style="float: left;" class = "picture" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg/1920px-Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg.png" alt=""></img>
+    
+        <div class="navigation">
+    
+          <a class="button" href="">
+            <img src="https://flyclipart.com/thumb2/exit-icon-740908.png"></img>
+          
+          <div class="logout">LOGOUT</div>
         
-        <div class="logout">LOGOUT</div>
-      
-        </a>
-      </div>
-	  </header>
-    <br></br>
+          </a>
+        </div>
+      </header>
+      <br></br>
 
-    <h:form>
-      <p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(185, 185, 185, 0.315);">
-        <p:menuitem value="Consultar Recursos" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaConsultaRec()}"/>
-        <p:menuitem value="Registrar Recurso" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaRegistroRec()}"/>
-        <p:menuitem value="Cambiar Estado Recurso" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaModificar()}"/> 
-      </p:menubar>
+      <h:form>
+        <p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(185, 185, 185, 0.315);">
+          <p:menuitem value="Consultar Recursos" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaConsultaRec()}"/>
+          <p:menuitem value="Registrar Recurso" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaRegistroRec()}"/>
+          <p:menuitem value="Cambiar Estado Recurso" actionListener="#{ResourceSearchBean.loadListResources()}" action="#{navigationController.paginaModificar()}"/> 
+        </p:menubar>
+      </h:form>
+      <h1>Bienvenido al sistema de gestión de recuros ECI</h1>
+    <br></br>
+    <h:form class="login-form" id="formPaginaAdmin">
+      <div class="login-page">
+        <!--<div class="form">
+          <h2>Servicios para administrador</h2>
+            <p><img style="float: left;" class="picture"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg/1920px-Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg.png"
+              alt=""></img> Como administrador usted tiene permitido gestionar todos los recursos con los que 
+              cuenta la biblioteca</p>
+        </div>-->
+      </div>
     </h:form>
-  <br></br>
   </h:body>  
 </html>
 
