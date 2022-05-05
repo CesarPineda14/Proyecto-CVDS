@@ -139,10 +139,11 @@
             <div class="login-page">
                 <div class="form">
                     <h:form class="login-form">
-                        <input type="text" placeholder="Usuario"/>
-                        <input type="password" placeholder="Contraseña"/>
+                        <input type="text" placeholder="Usuario" id="correo" value="#{shiroBean.username}" class="form-control"/>
+                        <input type="password" placeholder="Contraseña" id="bloquear"  class="form-control"
+                        value="#{shiroBean.password}"/>
                         <h:form id="form1">
-                            <p:commandButton class="botn" value="Login" actionListener="#{shiroSession.doLoggin()}" action="#{navigationController.paginaAdmin()}"/>
+                            <p:commandButton class="botn" value="Login" actionListener="#{shiroBean.doLogin()}" action="#{navigationController.paginaAdmin()}"/>
                         </h:form>
                     </h:form>
                 </div>
