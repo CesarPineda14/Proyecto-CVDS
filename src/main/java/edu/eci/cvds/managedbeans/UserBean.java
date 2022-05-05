@@ -1,7 +1,7 @@
 package edu.eci.cvds.managedbeans;
 
 import edu.eci.cvds.entities.*;
-import edu.eci.cvds.security.ShiroSession;
+import edu.eci.cvds.security.SessionLogger;
 import edu.eci.cvds.services.impl.ECIBookServices;
 import javax.inject.Inject;
 import javax.enterprise.context.RequestScoped;
@@ -17,7 +17,7 @@ public class UserBean extends BasePageBean{
     private String email;
     private String password;
     private String nombreCompleto;
-    private ShiroSession shiroSession;
+    private SessionLogger shiroSession;
 
     /*
     public void createUser() throws Exception{
