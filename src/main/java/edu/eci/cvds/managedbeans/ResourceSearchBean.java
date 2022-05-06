@@ -73,4 +73,12 @@ public class ResourceSearchBean extends BasePageBean{
 
         }
     }
+
+    public void updateResource(){
+        try{
+            eciBookServices.updateResource(resource);
+        }catch(Exception e){
+
+        }
+    }
 }

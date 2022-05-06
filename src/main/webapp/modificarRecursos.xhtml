@@ -235,7 +235,7 @@
 <h:body>
   <br></br>
   <h:form>
-    <p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(185, 185, 185, 0.315);">
+    <p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(205, 205, 205, 0.607);">
       <p:menuitem value="Inicio" actionListener="#{ResourceSearchBean.loadListResources()}"
         action="#{navigationController.paginaAdmin()}" />
       <p:menuitem value="Consultar Recursos" actionListener="#{ResourceSearchBean.loadListResources()}"
@@ -248,7 +248,7 @@
 
   <h:form id="modificarRecurso">
     <p:dataTable id="listaRecursos" var="Resource" value="#{ResourceSearchBean.loadListResources()}"
-      rowKey="#{Resource.codigo}" paginator="true" rows="10"
+      rowKey="#{Resource.codigo}" paginator="true" rows="20"
       paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink}RowsPerPageDropdown}"
       currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords}" rowsPerPageTemplate="5,10,15,20">
       <p:column style="color:black;">
@@ -300,7 +300,7 @@
         <a>
           <h:commandButton value="Cambiar Estado" class="boton"
             actionListener="#{ResourceSearchBean.loadListResources()}"
-            action="#{navigationController.paginaModificar()}" />
+            action="#{ResourceSearchBean.updateResource()}" />
         </a>
 
       </p:column>
