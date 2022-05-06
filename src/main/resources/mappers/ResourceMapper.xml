@@ -22,8 +22,15 @@
             join ubicaciones u on r.ubicacion=u.codigo
     </select>
 
-   <select id="searchResourceType"  parameterType="map" resultMap="ResourceResult2" >
-        select codigo, tipo, ubicacion, nombre, estado, capacidad from recursos
+   <select id="searchResourceType"  parameterType="map" resultMap="ResourceResult" >
+       select r.codigo,
+       t.nombre as tiporecurso,
+       u.nombre as ubicacion,
+       r.nombre as nombrerecurso,
+       estado,
+       capacidad
+       from recursos r join tiporecurso t on r.tipo=t.codigo
+       join ubicaciones u on r.ubicacion=u.codigo
        <where>
            <if test="tipo != null">
                and tipo = #{tipo}
@@ -31,17 +38,31 @@
        </where>
    </select>
 
-    <select id="searchResourceCapacity" parameterType="map" resultMap="ResourceResult2">
-        select codigo, tipo, ubicacion, nombre, estado, capacidad from recursos
+    <select id="searchResourceCapacity" parameterType="map" resultMap="ResourceResult">
+        select r.codigo,
+        t.nombre as tiporecurso,
+        u.nombre as ubicacion,
+        r.nombre as nombrerecurso,
+        estado,
+        capacidad
+        from recursos r join tiporecurso t on r.tipo=t.codigo
+        join ubicaciones u on r.ubicacion=u.codigo
         <where>
             <if test="capacidad != null">
-                and tipo = #{capacidad}
+                and capacidad = #{capacidad}
             </if>
         </where>
     </select>
 
-    <select id="searchResourceLocation" parameterType="map" resultMap="ResourceResult2">
-        select codigo, tipo, ubicacion, nombre, estado, capacidad from recursos where ubicacion
+    <select id="searchResourceLocation" parameterType="map" resultMap="ResourceResult">
+        select r.codigo,
+        t.nombre as tiporecurso,
+        u.nombre as ubicacion,
+        r.nombre as nombrerecurso,
+        estado,
+        capacidad
+        from recursos r join tiporecurso t on r.tipo=t.codigo
+        join ubicaciones u on r.ubicacion=u.codigo
         <where>
             <if test="ubicacion != null">
                 and ubicacion = #{ubicacion}

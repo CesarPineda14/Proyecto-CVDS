@@ -128,7 +128,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	}
 
 	@Override
-	public List<Resource> searchResourceType(String tipo) throws ServicesException {
+	public List<Resource> searchResourceType(Integer tipo) throws ServicesException {
 		try{
 			System.out.println("pasaaaaaaaaaa");
 			return resourceDAO.searchResourceType(tipo);
@@ -140,7 +140,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	}
 
 	@Override
-	public List<Resource> searchResourceCapacity(String capacidad) throws ServicesException {
+	public List<Resource> searchResourceCapacity(Integer capacidad) throws ServicesException {
 		try{
 			return resourceDAO.searchResourceCapacity(capacidad);
 		}
@@ -151,7 +151,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	}
 
 	@Override
-	public List<Resource> searchResourceLocation(String ubicacion) throws ServicesException {
+	public List<Resource> searchResourceLocation(Integer ubicacion) throws ServicesException {
 		try{
 			return resourceDAO.searchResourcelocation(ubicacion);
 		}

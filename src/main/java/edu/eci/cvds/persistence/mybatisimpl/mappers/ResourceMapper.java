@@ -15,10 +15,10 @@ public interface ResourceMapper {
 
     public void updateResource(Resource resource);
 
-    public List<Resource> searchResourceType(@Param("tipo") String tipo);
+    public List<Resource> searchResourceType(@Param("tipo") Integer tipo);
 
-    public List<Resource> searchResourceCapacity(@Param("capacidad") String capacidad);
+    public List<Resource> searchResourceCapacity(@Param("capacidad") Integer capacidad);
 
-    public List<Resource> searchResourcelocation(@Param("ubicacion") String ubicacion);
+    public List<Resource> searchResourcelocation(@Param("ubicacion") Integer ubicacion);
 
 }

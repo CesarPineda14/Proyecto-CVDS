@@ -250,7 +250,7 @@
         <f:facet name="header">
           <h:outputText value="Tipo" />
           <br></br>
-          <p:selectOneMenu style="width:75%; " id="tipoRec" value="">
+          <p:selectOneMenu style="width:75%; " id="tipoRec" value="#{ResourceSearchBean.selectedOptionType}">
             <f:selectItem itemLabel="Filtrar por Tipo" itemValue="" />
             <f:selectItem itemLabel="Salas de Estudio" itemValue="1" />
             <f:selectItem itemLabel="Equipos de Computo" itemValue="2" />
@@ -265,7 +265,7 @@
         <f:facet name="header">
           <h:outputText value="Ubicacion" />
           <br></br>
-          <p:selectOneMenu style="width:75%;" id="ubicacionRec" value="">
+          <p:selectOneMenu style="width:75%;" id="ubicacionRec" value="#{ResourceSearchBean.selectedOptionUbication}">
             <f:selectItem itemLabel="Filtrar por Ubicacion" itemValue="0" />
             <f:selectItem itemLabel="Biblioteca Principal" itemValue="1" />
             <f:selectItem itemLabel="Biblioteca Satelite" itemValue="2" />
@@ -286,7 +286,7 @@
         <f:facet name="header">
           <h:outputText value="Capacidad" />
           <br></br>
-          <p:selectOneMenu style="width:75%;" id="capacidadRec" value="">
+          <p:selectOneMenu style="width:75%;" id="capacidadRec" value="#{ResourceSearchBean.selectedOptioncapacidad}">
             <f:selectItem itemLabel="Filtrar por Capacidad" itemValue="0" />
             <f:selectItem itemLabel="1" itemValue="1" />
             <f:selectItem itemLabel="2" itemValue="2" />

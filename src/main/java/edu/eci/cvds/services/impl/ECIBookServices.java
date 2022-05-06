@@ -27,9 +27,9 @@ public interface ECIBookServices {
 
     public void updateResource(Resource resource) throws ServicesException;
 
-    public List<Resource> searchResourceType(String tipo) throws ServicesException;
+    public List<Resource> searchResourceType(Integer tipo) throws ServicesException;
 
-    public List<Resource> searchResourceCapacity(String capacidad) throws ServicesException;
+    public List<Resource> searchResourceCapacity(Integer capacidad) throws ServicesException;
 
-    public List<Resource> searchResourceLocation(String ubicacion) throws ServicesException;
+    public List<Resource> searchResourceLocation(Integer ubicacion) throws ServicesException;
 }

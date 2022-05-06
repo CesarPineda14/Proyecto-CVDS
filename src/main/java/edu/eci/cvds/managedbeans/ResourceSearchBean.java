@@ -17,6 +17,9 @@ public class ResourceSearchBean extends BasePageBean{
     private ECIBookServices eciBookServices;
     public Resource resource;
     public List<Resource> resourcesList;
+    private String selectedOptionUbication;
+    private String selectedOptionType;
+    private String selectedOptioncapacidad;
 
 
 
@@ -79,6 +82,33 @@ public class ResourceSearchBean extends BasePageBean{
             eciBookServices.updateResource(resource);
         }catch(Exception e){
 
+        }
+    }
+
+    public List<Resource> searchResourceType(){
+        try {
+            return eciBookServices.searchResourceType(Integer.parseInt(selectedOptionType));
+        }
+        catch (Exception e){
+            return null;
+        }
+    }
+
+    public List<Resource> searchResourceCapacity(){
+        try {
+            return eciBookServices.searchResourceCapacity(Integer.parseInt(selectedOptioncapacidad));
+        }
+        catch (Exception e){
+            return null;
+        }
+    }
+
+    public List<Resource> searchResourceLocation(){
+        try {
+            return eciBookServices.searchResourceLocation(Integer.parseInt(selectedOptionUbication));
+        }
+        catch (Exception e){
+            return  null;
         }
     }
 }
