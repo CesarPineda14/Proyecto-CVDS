@@ -21,8 +21,8 @@
             join ubicaciones u on r.ubicacion=u.codigo
     </select>
 
-   <select id="searchResourceType"  parameterType="map" resultMap="ResourceResult" >
-        select codigo, tipo, ubicacion, nombre, estado from recursos
+   <select id="searchResourceType"  parameterType="map" resultMap="ResourceResult2" >
+        select codigo, tipo, ubicacion, nombre, estado, capacidad from recursos
        <where>
            <if test="tipo != null">
                and tipo = #{tipo}
@@ -30,8 +30,8 @@
        </where>
    </select>
 
-    <select id="searchResourceCapacity" parameterType="map" resultMap="ResourceResult">
-        select codigo, tipo, ubicacion, nombre, estado from recursos
+    <select id="searchResourceCapacity" parameterType="map" resultMap="ResourceResult2">
+        select codigo, tipo, ubicacion, nombre, estado, capacidad from recursos
         <where>
             <if test="capacidad != null">
                 and tipo = #{capacidad}
@@ -39,8 +39,8 @@
         </where>
     </select>
 
-    <select id="searchResourceLocation" parameterType="map" resultMap="ResourceResult">
-        select codigo, tipo, ubicacion, nombre, estado from recursos where ubicacion
+    <select id="searchResourceLocation" parameterType="map" resultMap="ResourceResult2">
+        select codigo, tipo, ubicacion, nombre, estado, capacidad from recursos where ubicacion
         <where>
             <if test="ubicacion != null">
                 and ubicacion = #{ubicacion}
@@ -54,6 +54,15 @@
 
     <resultMap type="Resource" id="ResourceResult">
         <id property="codigo" column="r.codigo"/>
+        <result property="tipo" column="tiporecurso"/>
+        <result property="ubicacion" column="ubicacion"/>
+        <result property="nombre" column="nombrerecurso"/>
+        <result property="estado" column="estado"/>
+        <result property="capacidad" column="capacidad"/>
+    </resultMap>
+
+    <resultMap type="Resource" id="ResourceResult2">
+        <id property="codigo" column="codigo"/>
         <result property="tipo" column="tiporecurso"/>
         <result property="ubicacion" column="ubicacion"/>
         <result property="nombre" column="nombrerecurso"/>
