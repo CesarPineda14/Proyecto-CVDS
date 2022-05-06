@@ -197,7 +197,7 @@
   }
 
   a:hover .boton {
-    background-color:#105494;
+    background-color: #105494;
   }
 
   a {
@@ -297,11 +297,12 @@
         <f:facet name="header">
           <h:outputText value="" />
         </f:facet>
-        <a >
-          <h:commandButton value="Cambiar Estado" class="boton" actionListener="#{ResourceSearchBean.loadListResources()}"
-          action="#{navigationController.paginaModificar()}" />
+        <a>
+          <h:commandButton value="Cambiar Estado" class="boton"
+            actionListener="#{ResourceSearchBean.loadListResources()}"
+            action="#{navigationController.paginaModificar()}" />
         </a>
-        
+
       </p:column>
 
     </p:dataTable>
