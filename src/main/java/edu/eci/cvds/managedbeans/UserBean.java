@@ -4,13 +4,13 @@ import edu.eci.cvds.entities.*;
 import edu.eci.cvds.security.SessionLogger;
 import edu.eci.cvds.services.impl.ECIBookServices;
 import javax.inject.Inject;
-import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-@ManagedBean(name="userBean")
+@ManagedBean(name = "userBean")
 @RequestScoped
-public class UserBean extends BasePageBean{
+public class UserBean extends BasePageBean {
 
     @Inject
     private ECIBookServices eciBookServices;
@@ -20,42 +20,40 @@ public class UserBean extends BasePageBean{
     private SessionLogger shiroSession;
 
     /*
-    public void createUser() throws Exception{
-        try{
-            //Uso de metodos en clase eciBookServices
-        }
-        catch (Exception exception){
-            // cambiar cuando se implementen las excepciones
-            // de servicesException
-            throw exception;
-        }
-    }*/
-    public void signIn(String nombre, String clave) throws Exception{
-        try{
-            ////Uso de metodos en clase eciBookServices
+     * public void createUser() throws Exception{
+     * try{
+     * //Uso de metodos en clase eciBookServices
+     * }
+     * catch (Exception exception){
+     * // cambiar cuando se implementen las excepciones
+     * // de servicesException
+     * throw exception;
+     * }
+     * }
+     */
+    public void signIn(String nombre, String clave) throws Exception {
+        try {
+            //// Uso de metodos en clase eciBookServices
             shiroSession.login(nombre, clave);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
 
         }
     }
 
-    public void logOut() throws Exception{
+    public void logOut() throws Exception {
         try {
-            if(shiroSession.isLogged()){
+            if (shiroSession.isLogged()) {
                 shiroSession.logout();
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
 
         }
     }
 
-    public User loadUser() throws Exception{
+    public User loadUser() throws Exception {
         try {
             return eciBookServices.getUser();
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             return null;
         }
     }
@@ -69,8 +67,7 @@ public class UserBean extends BasePageBean{
             User user = loadUser();
             nombreCompleto = user.getNombres() + user.getApellidos();
             return nombreCompleto;
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             return null;
         }
     }

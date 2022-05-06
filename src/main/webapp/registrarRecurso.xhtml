@@ -26,18 +26,12 @@
       width: auto;
     }
 
-    .login-page {
-      width: 360px;
-      padding: 1% 0 0;
-      margin: auto;
-    }
-
     .form {
       position: relative;
       z-index: 1;
       max-width: 360px;
       margin: 0 auto 100px;
-      padding: 45px;
+      padding: 25px;
       text-align: center;
       box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     }
@@ -65,8 +59,6 @@
       box-sizing: border-box;
       font-size: 14px;
     }
-
-
 
     .form button {
       font-family: "Helvetica", sans-serif;
@@ -235,42 +227,34 @@
 
   <h1>Registro de Recursos</h1>
   <br></br>
-  <h:form class="login-form" var="Resource" id="formRegistrarCliente">
-    <div class="login-page">
-      <div class="form">
-        <p:inputText placeholder="Nombre Recurso" value="#{creaRecurso.nombreRecurso}" />
-
-        <p:inputText placeholder="Capacidad Recurso" value="#{creaRecurso.capacidadRecurso}" />
-
-        <p:selectOneMenu style="width:100%;" id="ubicacionRec" value="#{creaRecurso.selectedOptionUbication}">
-          <f:selectItem itemLabel="Ubicacion Recurso" itemValue="" />
-          <f:selectItem itemLabel="Biblioteca Principal" itemValue="1" />
-          <f:selectItem itemLabel="Biblioteca Satelite" itemValue="2" />
-          <f:selectItem itemLabel="Edificio I" itemValue="3" />
-        </p:selectOneMenu>
-        <br></br>
-        <br></br>
-        <p:selectOneMenu style="width:100%; " id="tipoRec" value="#{creaRecurso.selectedOptionRecTipe}">
-          <f:selectItem itemLabel="Tipo Recurso" itemValue="" />
-          <f:selectItem itemLabel="Salas de Estudio" itemValue="1" />
-          <f:selectItem itemLabel="Equipos de Computo" itemValue="2" />
-          <f:selectItem itemLabel="Equipos Multimedia" itemValue="3" />
-        </p:selectOneMenu>
-        <br></br>
-        <br></br>
-
-
-        <p:selectOneMenu style="width:100%; " id="estadoRec" value="#{creaRecurso.selectedOptionState}">
-          <f:selectItem itemLabel="Estado del Recurso" itemValue="" />
-          <f:selectItem itemLabel="Activo" itemValue="Activo" />
-          <f:selectItem itemLabel="Inactivo" itemValue="Inactivo" />
-        </p:selectOneMenu>
-        <br></br>
-        <br></br>
-        <p:commandButton update="formRegistrarCliente" value="Registrar" class="ui-button-danger"
-          actionListener="#{creaRecurso.createResources()}" />
-      </div>
-    </div>
+  <h:form class="form" var="Resource" id="formRegistrarCliente">
+    <p:inputText placeholder="Nombre Recurso" value="#{creaRecurso.nombreRecurso}" />
+    <p:inputText placeholder="Capacidad Recurso" value="#{creaRecurso.capacidadRecurso}" />
+    <p:selectOneMenu style="width:100%;" id="ubicacionRec" value="#{creaRecurso.selectedOptionUbication}">
+      <f:selectItem itemLabel="Ubicacion Recurso" itemValue="" />
+      <f:selectItem itemLabel="Biblioteca Principal" itemValue="1" />
+      <f:selectItem itemLabel="Biblioteca Satelite" itemValue="2" />
+      <f:selectItem itemLabel="Edificio I" itemValue="3" />
+    </p:selectOneMenu>
+    <br></br>
+    <br></br>
+    <p:selectOneMenu style="width:100%; " id="tipoRec" value="#{creaRecurso.selectedOptionRecTipe}">
+      <f:selectItem itemLabel="Tipo Recurso" itemValue="" />
+      <f:selectItem itemLabel="Salas de Estudio" itemValue="1" />
+      <f:selectItem itemLabel="Equipos de Computo" itemValue="2" />
+      <f:selectItem itemLabel="Equipos Multimedia" itemValue="3" />
+    </p:selectOneMenu>
+    <br></br>
+    <br></br>
+    <p:selectOneMenu style="width:100%; " id="estadoRec" value="#{creaRecurso.selectedOptionState}">
+      <f:selectItem itemLabel="Estado del Recurso" itemValue="" />
+      <f:selectItem itemLabel="Activo" itemValue="Activo" />
+      <f:selectItem itemLabel="Inactivo" itemValue="Inactivo" />
+    </p:selectOneMenu>
+    <br></br>
+    <br></br>
+    <p:commandButton update="formRegistrarCliente" value="Registrar" class="ui-button-danger"
+      actionListener="#{creaRecurso.createResources()}" />
   </h:form>
 </h:body>
 

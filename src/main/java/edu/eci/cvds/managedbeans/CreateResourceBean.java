@@ -7,14 +7,14 @@ import edu.eci.cvds.entities.ResourceType;
 import edu.eci.cvds.services.ServicesException;
 import edu.eci.cvds.services.impl.ECIBookServices;
 
-import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 
 import java.util.List;
 
 @ManagedBean(name = "creaRecurso")
-@SessionScoped
+@RequestScoped
 public class CreateResourceBean extends BasePageBean {
     @Inject
     private ECIBookServices eciBookServices;
