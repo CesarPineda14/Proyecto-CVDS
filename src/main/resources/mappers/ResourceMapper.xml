@@ -10,6 +10,7 @@
     </insert>
 
 
+
     <select parameterType="map" id="getListResources" resultMap="ResourceResult">
         select r.codigo,
             t.nombre as tiporecurso,
@@ -49,7 +50,7 @@
     </select>
 
     <update id="updateResource" parameterType="map">
-        update recursos set estado = #{resource.estado}
+        update recursos set estado = #{resource.estado} where codigo = #{codigo}
     </update>
 
     <resultMap type="Resource" id="ResourceResult">
