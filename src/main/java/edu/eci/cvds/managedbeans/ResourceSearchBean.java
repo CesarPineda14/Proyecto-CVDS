@@ -21,29 +21,7 @@ public class ResourceSearchBean extends BasePageBean {
     private String selectedOptionType;
     private String selectedOptioncapacidad;
 
-    public String getSelectedOptionUbication() {
-        return selectedOptionUbication;
-    }
 
-    public void setSelectedOptionUbication(String selectedOptionUbication) {
-        this.selectedOptionUbication = selectedOptionUbication;
-    }
-
-    public String getSelectedOptionType() {
-        return selectedOptionType;
-    }
-
-    public void setSelectedOptionType(String selectedOptionType) {
-        this.selectedOptionType = selectedOptionType;
-    }
-
-    public String getSelectedOptioncapacidad() {
-        return selectedOptioncapacidad;
-    }
-
-    public void setSelectedOptioncapacidad(String selectedOptioncapacidad) {
-        this.selectedOptioncapacidad = selectedOptioncapacidad;
-    }
 
     public ResourceSearchBean() {
         try {
@@ -51,16 +29,6 @@ public class ResourceSearchBean extends BasePageBean {
             // resource = loadResource();
         } catch (Exception e) {
 
-        }
-    }
-
-    public void save(Resource resource) throws Exception {
-        try {
-            // Uso de metodos en clase eciBookServices
-            // eciBookServices.createResource(resource);
-        } catch (Exception e) {
-            // cambiar cuando se implementen las excepciones
-            // de servicesException
         }
     }
 
@@ -86,19 +54,23 @@ public class ResourceSearchBean extends BasePageBean {
         return resourcesList;
     }
 
+
+
+
     public void createResource(Resource resource) {
         try {
             eciBookServices.createResource(resource);
         } catch (Exception e) {
-
+            System.out.println(e.getMessage());
         }
     }
 
-    public void updateResource() {
+    public void updateResource(Resource resource) {
         try {
+
             eciBookServices.updateResource(resource);
         } catch (Exception e) {
-
+            System.out.println(e.getMessage());
         }
     }
 
@@ -106,6 +78,7 @@ public class ResourceSearchBean extends BasePageBean {
         try {
             return eciBookServices.searchResourceType(Integer.parseInt(selectedOptionType));
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             return null;
         }
     }
@@ -124,5 +97,28 @@ public class ResourceSearchBean extends BasePageBean {
         } catch (Exception e) {
             return null;
         }
+    }
+    public String getSelectedOptionUbication() {
+        return selectedOptionUbication;
+    }
+
+    public void setSelectedOptionUbication(String selectedOptionUbication) {
+        this.selectedOptionUbication = selectedOptionUbication;
+    }
+
+    public String getSelectedOptionType() {
+        return selectedOptionType;
+    }
+
+    public void setSelectedOptionType(String selectedOptionType) {
+        this.selectedOptionType = selectedOptionType;
+    }
+
+    public String getSelectedOptioncapacidad() {
+        return selectedOptioncapacidad;
+    }
+
+    public void setSelectedOptioncapacidad(String selectedOptioncapacidad) {
+        this.selectedOptioncapacidad = selectedOptioncapacidad;
     }
 }
