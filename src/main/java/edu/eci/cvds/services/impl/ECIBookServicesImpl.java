@@ -28,6 +28,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	@Inject
 	private ReserveDAO reserveDAO;
 
+	private int count = 0;
 
 	@Override
 	public User getUser() throws ServicesException {
@@ -121,6 +122,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	public void updateResource(Resource resource) throws ServicesException {
 		try{
 			resourceDAO.updateResource(resource);
+			System.out.println(resource.getCodigo());
 		}
 		catch (Exception e){
 			System.out.println(e.getMessage());

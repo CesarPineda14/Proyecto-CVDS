@@ -20,6 +20,7 @@
             capacidad
         from recursos r join tiporecurso t on r.tipo=t.codigo
             join ubicaciones u on r.ubicacion=u.codigo
+        order by r.codigo
     </select>
 
    <select id="searchResourceType"  parameterType="map" resultMap="ResourceResult" >
@@ -71,7 +72,12 @@
     </select>
 
     <update id="updateResource" parameterType="map">
-        update recursos set estado = #{resource.estado} where codigo = #{codigo}
+        update recursos set estado = #{resource.estado}
+        <where>
+            <if test="codigo != null">
+                and codigo = #{resource.codigo}
+            </if>
+        </where>
     </update>
 
     <resultMap type="Resource" id="ResourceResult">
