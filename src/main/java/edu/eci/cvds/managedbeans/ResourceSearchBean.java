@@ -21,6 +21,30 @@ public class ResourceSearchBean extends BasePageBean {
     private String selectedOptionType;
     private String selectedOptioncapacidad;
 
+    public String getSelectedOptionUbication() {
+        return selectedOptionUbication;
+    }
+
+    public void setSelectedOptionUbication(String selectedOptionUbication) {
+        this.selectedOptionUbication = selectedOptionUbication;
+    }
+
+    public String getSelectedOptionType() {
+        return selectedOptionType;
+    }
+
+    public void setSelectedOptionType(String selectedOptionType) {
+        this.selectedOptionType = selectedOptionType;
+    }
+
+    public String getSelectedOptioncapacidad() {
+        return selectedOptioncapacidad;
+    }
+
+    public void setSelectedOptioncapacidad(String selectedOptioncapacidad) {
+        this.selectedOptioncapacidad = selectedOptioncapacidad;
+    }
+
     public ResourceSearchBean() {
         try {
             resourcesList = new ArrayList<Resource>();
