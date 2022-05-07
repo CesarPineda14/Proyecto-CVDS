@@ -97,5 +97,5 @@
 --insert into recursos values (default, 1, 1, 'Sala Estudio 3', 'Activo', 5);
 --insert into recursos values (default, 2, 2, 'PC Portatil 3', 'Inactivo', 1);
 
---insert into roles values (default, 'Administrador');
---insert into roles values (default, 'Usuario');
+--insert into roles values ('Administrador');
+--insert into roles values ('Usuario');
