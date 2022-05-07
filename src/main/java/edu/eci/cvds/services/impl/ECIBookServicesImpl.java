@@ -5,6 +5,7 @@ import java.util.List;
 import com.google.inject.Inject;
 
 import edu.eci.cvds.entities.*;
+import edu.eci.cvds.persistence.ExceptionReport.ReportFile;
 import edu.eci.cvds.persistence.mybatisimpl.DAOs.*;
 import edu.eci.cvds.services.ServicesException;
 
@@ -46,7 +47,6 @@ public class ECIBookServicesImpl implements ECIBookServices {
 			return resourceDAO.loadListResources();
 		}
 		catch (Exception e){
-			System.out.println();
 			return null;
 		}
 	}
@@ -55,7 +55,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	public void createResource(Resource resource) throws ServicesException{
 		try {
 			resourceDAO.save(resource);
-			System.out.println("recurso agregado");
+			ReportFile.loadReport("Recurso agregado");
 			System.out.println(resource);
 		}
 		catch (Exception e){
@@ -68,7 +68,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 		try{
 			return resourceTypeDAO.getResourceType();
 		}catch (Exception e){
-			System.out.println(e.getMessage());
+			ReportFile.loadReport(e.getMessage());
 			return null;
 		}
 	}
@@ -78,7 +78,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 		try{
 			return locationDAO.getLocation();
 		} catch (Exception e){
-			System.out.println(e.getMessage());
+			ReportFile.loadReport(e.getMessage());
 			return null;
 		}
 	}
@@ -88,7 +88,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 		try {
 			return reserveDAO.getListReserves();
 		} catch (Exception e){
-			System.out.println(e.getMessage());
+			ReportFile.loadReport(e.getMessage());
 			return null;
 		}
 	}
@@ -99,7 +99,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 			reserveDAO.createReserve(reserve);
 		}
 		catch (Exception e){
-			System.out.println(e.getMessage());
+			ReportFile.loadReport(e.getMessage());
 		}
 	}
 
@@ -107,10 +107,10 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	public void updateResource(Resource resource) throws ServicesException {
 		try{
 			resourceDAO.updateResource(resource);
-			System.out.println(resource.getCodigo());
+			ReportFile.loadReport(resource.getEstado());
 		}
 		catch (Exception e){
-			System.out.println(e.getMessage());
+			ReportFile.loadReport(e.getMessage());
 		}
 	}
 }

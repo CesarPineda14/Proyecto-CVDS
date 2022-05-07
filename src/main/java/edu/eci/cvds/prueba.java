@@ -3,6 +3,7 @@ package edu.eci.cvds;
 import com.google.inject.Injector;
 import edu.eci.cvds.entities.Reserve;
 import edu.eci.cvds.entities.Resource;
+import edu.eci.cvds.persistence.ExceptionReport.ReportFile;
 import edu.eci.cvds.persistence.mybatisimpl.DAOs.*;
 import edu.eci.cvds.persistence.mybatisimpl.MybatisDAOs.*;
 import edu.eci.cvds.services.ServicesException;
@@ -53,13 +54,6 @@ public class prueba {
         return optInjector.get().getInstance(ECIBookServices.class);
     }
 
-    public ECIBookServices getServiciosAlquilerTesting() {
-        if (!optInjector.isPresent()) {
-            optInjector = Optional.of(myBatisInjector("test", "mybatis-config-h2.xml"));
-        }
-
-        return optInjector.get().getInstance(ECIBookServices.class);
-    }
 
     public Resource createResource() {
         Resource resource = new Resource(
@@ -112,15 +106,16 @@ public class prueba {
         // System.out.println(instance.getServiciosAlquiler().getLocation().getHoraMaxima());
         //
 
+        ReportFile.loadReport("------------------CONSULTAR lista adsfdsaf ----------------------------------------");
 
+        ReportFile.loadReport("------------------CONSULTAR lista RECURSO ----------------------------------------");
+        System.out.println("------------------CONSULTAR lista RECURSO ----------------------------------------");
+        List<Resource> listaRecursos = instance.update();
+        System.out.println(listaRecursos);
+        for (Resource i : listaRecursos) {
+            System.out.println(i.getEstado());
 
-//        System.out.println("------------------CONSULTAR lista RECURSO ----------------------------------------");
-//        List<Resource> listaRecursos = instance.update();
-//        System.out.println(listaRecursos);
-//        for (Resource i : listaRecursos) {
-//            System.out.println(i.getEstado());
-//
-//        }
+        }
 
 
         // System.out.println("------------------Actualizar recurso

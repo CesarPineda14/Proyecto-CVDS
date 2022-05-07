@@ -2,6 +2,8 @@ package edu.eci.cvds.persistence.mybatisimpl.MybatisDAOs;
 
 import com.google.inject.Inject;
 import edu.eci.cvds.entities.Reserve;
+import edu.eci.cvds.persistence.ExceptionReport.ReportFile;
+import edu.eci.cvds.persistence.PersistenceException;
 import edu.eci.cvds.persistence.mybatisimpl.DAOs.ReserveDAO;
 import edu.eci.cvds.persistence.mybatisimpl.mappers.ReserveMapper;
 
@@ -19,7 +21,7 @@ public class MyBatisReserveDAO implements ReserveDAO {
             return reserveMapper.getListReserves();
         }
         catch (Exception e){
-            System.out.println(e.getMessage());
+            ReportFile.loadReport(e.getMessage());
             return null;
         }
     }
@@ -30,7 +32,7 @@ public class MyBatisReserveDAO implements ReserveDAO {
             reserveMapper.createReserve(reserve);
         }
         catch (Exception e){
-            System.out.println(e.getMessage());
+            ReportFile.loadReport(e.getMessage());
         }
     }
 }

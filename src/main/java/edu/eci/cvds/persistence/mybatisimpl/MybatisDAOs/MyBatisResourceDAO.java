@@ -2,6 +2,7 @@ package edu.eci.cvds.persistence.mybatisimpl.MybatisDAOs;
 
 import com.google.inject.Inject;
 import edu.eci.cvds.entities.Resource;
+import edu.eci.cvds.persistence.ExceptionReport.ReportFile;
 import edu.eci.cvds.persistence.PersistenceException;
 import edu.eci.cvds.persistence.mybatisimpl.DAOs.ResourceDAO;
 import edu.eci.cvds.persistence.mybatisimpl.mappers.ResourceMapper;
@@ -18,7 +19,7 @@ public class MyBatisResourceDAO implements ResourceDAO{
     @Override
     public void save(Resource resource) throws PersistenceException {
         try {
-            System.out.println("aqui pasa");
+            ReportFile.loadReport("Aqui pasa");
             resourceMapper.createResource(resource);
         }
         catch (Exception e) {
@@ -31,7 +32,7 @@ public class MyBatisResourceDAO implements ResourceDAO{
         try{
             return resourceMapper.getListResources();
         } catch (Exception e){
-            System.out.println(e.getMessage());
+            ReportFile.loadReport(e.getMessage());
             return null;
         }
     }
@@ -47,9 +48,9 @@ public class MyBatisResourceDAO implements ResourceDAO{
                 //System.out.println("entra");
                 resource.setEstado("Activo");}
             resourceMapper.updateResource(resource);
-            System.out.println("pasa por aca");
+            ReportFile.loadReport("pasa por aca");
         }catch (Exception e){
-            System.out.println(e.getMessage());
+            ReportFile.loadReport(e.getMessage());
         }
     }
 }

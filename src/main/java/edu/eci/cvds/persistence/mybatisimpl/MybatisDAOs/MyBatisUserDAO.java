@@ -2,6 +2,7 @@ package edu.eci.cvds.persistence.mybatisimpl.MybatisDAOs;
 
 import com.google.inject.Inject;
 import edu.eci.cvds.entities.User;
+import edu.eci.cvds.persistence.ExceptionReport.ReportFile;
 import edu.eci.cvds.persistence.PersistenceException;
 import edu.eci.cvds.persistence.mybatisimpl.DAOs.UserDAO;
 import edu.eci.cvds.persistence.mybatisimpl.mappers.UserMapper;
@@ -27,7 +28,7 @@ public class MyBatisUserDAO implements UserDAO {
             return userMapper.getUser();
         }
         catch (Exception e){
-            System.out.println(e.getMessage());
+            ReportFile.loadReport(e.getMessage());
             return null;
         }
     }
