@@ -57,11 +57,10 @@
 
 --Table Roles
 --CREATE TABLE ROLES (
---	codigo SERIAL not null,
 --	tipo VARCHAR(50) not null
 --);
 
---ALTER table ROLES ADD PRIMARY KEY (codigo);
+--ALTER table ROLES ADD PRIMARY KEY (tipo);
 
 
 --Table Usuario
@@ -72,7 +71,7 @@
 --	contrasena VARCHAR(20) not null,
 --	programa VARCHAR(50) NOT null,
 --	rol SERIAL not null,
---	CONSTRAINT FK_usuarios_rol FOREIGN KEY(rol) REFERENCES ROLES(codigo)
+--	CONSTRAINT FK_usuarios_rol FOREIGN KEY(rol) REFERENCES ROLES(tipo)
 --);
 
 --ALTER table USUARIOS ADD PRIMARY KEY (correo);
@@ -98,5 +97,5 @@
 --insert into recursos values (default, 1, 1, 'Sala Estudio 3', 'Activo', 5);
 --insert into recursos values (default, 2, 2, 'PC Portatil 3', 'Inactivo', 1);
 
---insert into roles values (default, 'Administrador');
---insert into roles values (default, 'Usuario');
+--insert into roles values ('Administrador');
+--insert into roles values ('Usuario');
