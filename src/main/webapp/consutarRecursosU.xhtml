@@ -50,11 +50,10 @@
   <h:form>
     <p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(205, 205, 205, 0.607);">
       <p:menuitem value="Inicio" actionListener="#{ResourceSearchBean.loadListResources()}"
-        action="#{navigationController.paginaAdmin()}" />
-      <p:menuitem value="Registrar Recurso" actionListener="#{ResourceSearchBean.loadListResources()}"
-        action="#{navigationController.paginaRegistroRec()}" />
-      <p:menuitem value="Cambiar Estado Recurso" actionListener="#{ResourceSearchBean.loadListResources()}"
-        action="#{navigationController.paginaModificar()}" />
+        action="#{navigationController.paginaUser()}" />
+      <p:menuitem value="Reservar Recurso" actionListener="#{ResourceSearchBean.loadListResources()}"
+        action="#{navigationController.paginaReservas()}" />
+      <p:menuitem value="Consultar reservas" actionListener="#{ResourceSearchBean.loadListResources()}" action="" />
     </p:menubar>
     <br></br>
   </h:form>
@@ -88,11 +87,6 @@
       <p:column headerText="Capacidad" sortBy="#{Resource.capacidad}" filterBy="#{Resource.capacidad}">
         <h:outputText value="#{Resource.capacidad}" />
       </p:column>
-
-      <p:column headerText="Estado">
-        <h:outputText value="#{Resource.estado}" />
-      </p:column>
-
 
     </p:dataTable>
 

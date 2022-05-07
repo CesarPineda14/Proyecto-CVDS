@@ -51,11 +51,10 @@
   <h:form>
     <p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(205, 205, 205, 0.607);">
       <p:menuitem value="Consultar Recursos" actionListener="#{ResourceSearchBean.loadListResources()}"
-        action="#{navigationController.paginaConsultaRec()}" />
+        action="#{navigationController.paginaConsultaRecU()}" />
       <p:menuitem value="Reservar Recurso" actionListener="#{ResourceSearchBean.loadListResources()}"
         action="#{navigationController.paginaReservas()}" />
-      <p:menuitem value="Consultar Reserva" actionListener="#{ResourceSearchBean.loadListResources()}"
-        action="#{navigationController.paginaModificar()}" />
+      <p:menuitem value="Consultar Reserva" actionListener="#{ResourceSearchBean.loadListResources()}" action="" />
     </p:menubar>
     <br></br>
   </h:form>
