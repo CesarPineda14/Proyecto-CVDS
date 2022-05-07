@@ -28,8 +28,6 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	@Inject
 	private ReserveDAO reserveDAO;
 
-	private int count = 0;
-
 	@Override
 	public User getUser() throws ServicesException {
 		try{
@@ -40,20 +38,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 		}
 	}
 
-	@Override
-	public void createUser() throws ServicesException {
 
-	}
-
-	@Override
-	public Resource getResource() throws ServicesException {
-		try {
-			return resourceDAO.load(1);
-		}catch (Exception e){
-			System.out.println(e.getMessage());
-			return null;
-		}
-	}
 
 	@Override
 	public List<Resource> getListResources() throws ServicesException {
@@ -126,40 +111,6 @@ public class ECIBookServicesImpl implements ECIBookServices {
 		}
 		catch (Exception e){
 			System.out.println(e.getMessage());
-		}
-	}
-
-	@Override
-	public List<Resource> searchResourceType(Integer tipo) throws ServicesException {
-		try{
-			System.out.println("pasaaaaaaaaaa");
-			return resourceDAO.searchResourceType(tipo);
-		}
-		catch (Exception e){
-			System.out.println(e.getMessage());
-			return null;
-		}
-	}
-
-	@Override
-	public List<Resource> searchResourceCapacity(Integer capacidad) throws ServicesException {
-		try{
-			return resourceDAO.searchResourceCapacity(capacidad);
-		}
-		catch (Exception e){
-			System.out.println(e.getMessage());
-			return null;
-		}
-	}
-
-	@Override
-	public List<Resource> searchResourceLocation(Integer ubicacion) throws ServicesException {
-		try{
-			return resourceDAO.searchResourcelocation(ubicacion);
-		}
-		catch (Exception e){
-			System.out.println(e.getMessage());
-			return null;
 		}
 	}
 }

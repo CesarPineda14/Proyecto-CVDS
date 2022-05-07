@@ -27,18 +27,6 @@ public class MyBatisResourceDAO implements ResourceDAO{
     }
 
     @Override
-    public Resource load(long id) throws PersistenceException {
-        try {
-            //System.out.println("aqui pasa");
-            return resourceMapper.getResource();
-        }
-        catch (Exception e){
-            System.out.println(e.getMessage());
-            return null;
-        }
-    }
-
-    @Override
     public List<Resource> loadListResources() {
         try{
             return resourceMapper.getListResources();
@@ -62,41 +50,6 @@ public class MyBatisResourceDAO implements ResourceDAO{
             System.out.println("pasa por aca");
         }catch (Exception e){
             System.out.println(e.getMessage());
-        }
-    }
-
-    @Override
-    public List<Resource> searchResourceType(Integer tipo) {
-        try {
-            //System.out.println("paseeeeeeeeeeeeee");
-            return resourceMapper.searchResourceType(tipo);
-        }
-        catch (Exception e){
-            System.out.println(e.getMessage());
-            return null;
-        }
-    }
-
-    @Override
-    public List<Resource> searchResourceCapacity(Integer capacidad) {
-        try {
-            //System.out.println("paseeeeeeeeeeeeee");
-            return resourceMapper.searchResourceCapacity(capacidad);
-        }
-        catch (Exception e){
-            System.out.println(e.getMessage());
-            return null;
-        }
-    }
-
-    @Override
-    public List<Resource> searchResourcelocation(Integer ubicacion) {
-        try {
-            return resourceMapper.searchResourcelocation(ubicacion);
-        }
-        catch (Exception e){
-            System.out.println(e.getMessage());
-            return null;
         }
     }
 }

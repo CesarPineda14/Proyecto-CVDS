@@ -32,14 +32,7 @@ public class ResourceSearchBean extends BasePageBean {
         }
     }
 
-    public Resource loadResource() throws Exception {
-        try {
-            return eciBookServices.getResource();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
-    }
+
 
     public List<Resource> loadListResources() throws Exception {
         try {
@@ -74,30 +67,6 @@ public class ResourceSearchBean extends BasePageBean {
         }
     }
 
-    public List<Resource> searchResourceType() {
-        try {
-            return eciBookServices.searchResourceType(Integer.parseInt(selectedOptionType));
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
-    }
-
-    public List<Resource> searchResourceCapacity() {
-        try {
-            return eciBookServices.searchResourceCapacity(Integer.parseInt(selectedOptioncapacidad));
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
-    public List<Resource> searchResourceLocation() {
-        try {
-            return eciBookServices.searchResourceLocation(Integer.parseInt(selectedOptionUbication));
-        } catch (Exception e) {
-            return null;
-        }
-    }
     public String getSelectedOptionUbication() {
         return selectedOptionUbication;
     }
