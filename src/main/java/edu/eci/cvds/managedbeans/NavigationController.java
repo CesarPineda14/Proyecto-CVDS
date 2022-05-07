@@ -31,6 +31,10 @@ public class NavigationController implements Serializable {
         FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/paginaAdmin.xhtml");
     }
 
+    public void paginaUser() throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/paginaUser.xhtml");
+    }
+
     public void paginaModificar() throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/modificarRecursos.xhtml");
     }
