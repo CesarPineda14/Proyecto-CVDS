@@ -23,54 +23,6 @@
         order by r.codigo
     </select>
 
-   <select id="searchResourceType"  parameterType="map" resultMap="ResourceResult" >
-       select r.codigo,
-       t.nombre as tiporecurso,
-       u.nombre as ubicacion,
-       r.nombre as nombrerecurso,
-       estado,
-       capacidad
-       from recursos r join tiporecurso t on r.tipo=t.codigo
-       join ubicaciones u on r.ubicacion=u.codigo
-       <where>
-           <if test="tipo != null">
-               and tipo = #{tipo}
-           </if>
-       </where>
-   </select>
-
-    <select id="searchResourceCapacity" parameterType="map" resultMap="ResourceResult">
-        select r.codigo,
-        t.nombre as tiporecurso,
-        u.nombre as ubicacion,
-        r.nombre as nombrerecurso,
-        estado,
-        capacidad
-        from recursos r join tiporecurso t on r.tipo=t.codigo
-        join ubicaciones u on r.ubicacion=u.codigo
-        <where>
-            <if test="capacidad != null">
-                and capacidad = #{capacidad}
-            </if>
-        </where>
-    </select>
-
-    <select id="searchResourceLocation" parameterType="map" resultMap="ResourceResult">
-        select r.codigo,
-        t.nombre as tiporecurso,
-        u.nombre as ubicacion,
-        r.nombre as nombrerecurso,
-        estado,
-        capacidad
-        from recursos r join tiporecurso t on r.tipo=t.codigo
-        join ubicaciones u on r.ubicacion=u.codigo
-        <where>
-            <if test="ubicacion != null">
-                and ubicacion = #{ubicacion}
-            </if>
-        </where>
-    </select>
-
     <update id="updateResource" parameterType="map">
         update recursos set estado = #{resource.estado}
         <where>

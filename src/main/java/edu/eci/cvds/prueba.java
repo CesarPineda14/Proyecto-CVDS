@@ -83,25 +83,37 @@ public class prueba {
     }
 
     public static void main(String[] args) throws ServicesException {
+
+
+
         // System.out.println("-------------------------------- CONSULAR CLIENTES
         // --------------------------------");
         // System.out.println(instance.getServiciosAlquiler().getUser().getApellidos());
         // System.out.println(instance.getServiciosAlquiler().getUser().getNombres());
-//
+
+
+
 //        System.out.println("------------------CREAR RECURSO ----------------------------------------");
 //
 //        Resource resource = getInstance().createResource();
 //        instance.getServiciosAlquiler().createResource(resource);
         // System.out.println(instance.getServiciosAlquiler().getResource().getNombre());
 
+
+
         // System.out.println("------------------CONSULTAR tipoRECURSO
         // ----------------------------------------");
         // System.out.println(instance.getServiciosAlquiler().getResourceType().getDescripcion());
-        //
+
+
+
         // System.out.println("------------------CONSULTAR RECURSO
         // ----------------------------------------");
         // System.out.println(instance.getServiciosAlquiler().getLocation().getHoraMaxima());
         //
+
+
+
 //        System.out.println("------------------CONSULTAR lista RECURSO ----------------------------------------");
 //        List<Resource> listaRecursos = instance.update();
 //        System.out.println(listaRecursos);
@@ -109,6 +121,8 @@ public class prueba {
 //            System.out.println(i.getEstado());
 //
 //        }
+
+
         // System.out.println("------------------Actualizar recurso
         // estado----------------------------------------");
         // instance.getServiciosAlquiler().updateResource(listaRecursos.get(1));
@@ -117,16 +131,9 @@ public class prueba {
         // System.out.println(i.getEstado());
         //
         // }
-         System.out.println("------------------CONSULTAR RECURSO TIPO----------------------------------------");
-         List<Resource> resourcesType =
-         instance.getServiciosAlquiler().searchResourceType(1);
-         //List<Resource> resourcesType2 =
-         //instance.getServiciosAlquiler().searchResourceCapacity("");
-         //List<Resource> resourcesType3 =
-         //instance.getServiciosAlquiler().searchResourceLocation("");
-         for (Resource i : resourcesType){
-         System.out.println(i.getNombre());
-         }
+
+
+
         // System.out.println("------------------INSERTAR
         // RESERVA----------------------------------------");
         // Reserve reserve = instance.createReserve();

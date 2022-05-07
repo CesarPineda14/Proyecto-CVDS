@@ -9,10 +9,6 @@ public interface ECIBookServices {
 
     public User getUser() throws ServicesException;
 
-    public void createUser() throws ServicesException;
-
-    public Resource getResource() throws ServicesException;
-
     public List<Resource> getListResources() throws ServicesException;
 
     public void createResource(Resource resource) throws ServicesException;
@@ -26,10 +22,4 @@ public interface ECIBookServices {
     public void createReserve(Reserve reserve) throws ServicesException;
 
     public void updateResource(Resource resource) throws ServicesException;
-
-    public List<Resource> searchResourceType(Integer tipo) throws ServicesException;
-
-    public List<Resource> searchResourceCapacity(Integer capacidad) throws ServicesException;
-
-    public List<Resource> searchResourceLocation(Integer ubicacion) throws ServicesException;
 }
