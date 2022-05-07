@@ -58,17 +58,6 @@
     </p:menubar>
     <br></br>
   </h:form>
-  <h:form>
-    <p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(205, 205, 205, 0.607);">
-      <p:menuitem value="Inicio" actionListener="#{ResourceSearchBean.loadListResources()}"
-        action="#{navigationController.paginaAdmin()}" />
-      <p:menuitem value="Registrar Recurso" actionListener="#{ResourceSearchBean.loadListResources()}"
-        action="#{navigationController.paginaRegistroRec()}" />
-      <p:menuitem value="Cambiar Estado Recurso" actionListener="#{ResourceSearchBean.loadListResources()}"
-        action="#{navigationController.paginaModificar()}" />
-    </p:menubar>
-    <br></br>
-  </h:form>
 
   <h:form id="consultarRecurso">
     <p:dataTable id="listaRecursos" var="Resource" value="#{ResourceSearchBean.loadListResources()}"
