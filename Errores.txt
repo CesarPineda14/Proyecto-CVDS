@@ -1,1 +1,6 @@
-------------------CONSULTAR lista RECURSO ----------------------------------------
+
+### Error updating database.  Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'reserve' in 'class edu.eci.cvds.entities.Reserve'
+### The error may involve edu.eci.cvds.persistence.mybatisimpl.mappers.ReserveMapper.createReserve-Inline
+### The error occurred while setting parameters
+### SQL: insert into reservas (recurso, horainicial, horafinal, periodicidad, fechafinal)         values (?, ?, ?, ?,         ?)
+### Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'reserve' in 'class edu.eci.cvds.entities.Reserve'

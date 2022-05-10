@@ -9,7 +9,7 @@ import edu.eci.cvds.services.impl.ECIBookServices;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
+
 
 import java.util.List;
 

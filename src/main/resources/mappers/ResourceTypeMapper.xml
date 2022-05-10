@@ -5,7 +5,7 @@
 <mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.ResourceTypeMapper">
 
     <select parameterType="map" id="getResourceTypeList" resultMap="ResourceTypeResult">
-        select codigo,nombre,descripcion,horaminima,horamaxima from tiporecurso
+        select codigo, nombre, descripcion, horaminima, horamaxima from tiporecurso
     </select>
 
 

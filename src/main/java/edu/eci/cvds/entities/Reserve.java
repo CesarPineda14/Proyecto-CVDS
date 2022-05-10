@@ -5,18 +5,46 @@ import java.sql.Date;
 
 public class Reserve {
 
-    private String codigo;
+    private Integer codigo;
     private String recurso;
     private Time horaInicial;
     private Time horaFinal;
     private String periodicidad;
     private Date fechaFinal;
 
-    public String getCodigo() {
+    private Integer recurso2;
+
+
+    public Reserve(Integer codigo, String recurso, Time horaInicial, Time horaFinal, String periodicidad, Date fechaFinal) {
+        this.codigo = codigo;
+        this.recurso = recurso;
+        this.horaInicial = horaInicial;
+        this.horaFinal = horaFinal;
+        this.periodicidad = periodicidad;
+        this.fechaFinal = fechaFinal;
+    }
+
+    public Reserve(Integer recurso, Time horaInicial, Time horaFinal, String periodicidad, Date fechaFinal) {
+        this.recurso2 = recurso;
+        this.horaInicial = horaInicial;
+        this.horaFinal = horaFinal;
+        this.periodicidad = periodicidad;
+        this.fechaFinal = fechaFinal;
+    }
+
+    public Integer getRecurso2() {
+        return recurso2;
+    }
+
+    public void setRecurso2(Integer recurso2) {
+        this.recurso2 = recurso2;
+    }
+
+    public Integer getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(Integer codigo) {
         this.codigo = codigo;
     }
 
@@ -60,12 +88,5 @@ public class Reserve {
         this.fechaFinal = fechaFinal;
     }
 
-    public Reserve(String codigo, String recurso, Time horaInicial, Time horaFinal, String periodicidad, Date fechaFinal) {
-        this.codigo = codigo;
-        this.recurso = recurso;
-        this.horaInicial = horaInicial;
-        this.horaFinal = horaFinal;
-        this.periodicidad = periodicidad;
-        this.fechaFinal = fechaFinal;
-    }
+
 }

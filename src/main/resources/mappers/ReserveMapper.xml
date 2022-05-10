@@ -9,8 +9,8 @@
     </select>
 
     <insert id="createReserve" parameterType="map">
-        insert into reservas (codigo, recurso , horainicial, horafinal, periodicidad, fechafinal)
-        values (#{reserve.codigo}, #{reserve.recurso}, #{reserve.horaInicial}, #{reserve.horaFinal}, #{reserve.periodicidad},
+        insert into reservas (recurso, horainicial, horafinal, periodicidad, fechafinal)
+        values (#{reserve.recurso}, #{reserve.horaInicial}, #{reserve.horaFinal}, #{reserve.periodicidad},
         #{reserve.fechaFinal})
     </insert>
 

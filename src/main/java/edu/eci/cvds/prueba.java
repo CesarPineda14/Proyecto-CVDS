@@ -57,17 +57,26 @@ public class prueba {
 
     public Resource createResource() {
         Resource resource = new Resource(
-                1, 2, "pruebaaaa", "Activo", 99);
+                1, 2, "HOLAAAAAA", "Activo", 99);
         return resource;
     }
 
+//    public Reserve createReserve() {
+//        Reserve reserve = new Reserve(
+//                3,
+//                new Time(12, 30, 40),
+//                new Time(13, 30, 40),
+//                "frente",
+//                new Date(2, 12, 5));
+//        return reserve;
+//    }
+
     public Reserve createReserve() {
         Reserve reserve = new Reserve(
-                "001",
-                "PC Portatil 1",
+                3,
                 new Time(12, 30, 40),
                 new Time(13, 30, 40),
-                "frecnte",
+                "frecuente",
                 new Date(2, 12, 5));
         return reserve;
     }
@@ -88,10 +97,10 @@ public class prueba {
 
 
 //        System.out.println("------------------CREAR RECURSO ----------------------------------------");
-//
+
 //        Resource resource = getInstance().createResource();
 //        instance.getServiciosAlquiler().createResource(resource);
-        // System.out.println(instance.getServiciosAlquiler().getResource().getNombre());
+//         //System.out.println(instance.getServiciosAlquiler().getResource().getNombre());
 
 
 
@@ -105,17 +114,17 @@ public class prueba {
         // ----------------------------------------");
         // System.out.println(instance.getServiciosAlquiler().getLocation().getHoraMaxima());
         //
-
-        ReportFile.loadReport("------------------CONSULTAR lista adsfdsaf ----------------------------------------");
-
-        ReportFile.loadReport("------------------CONSULTAR lista RECURSO ----------------------------------------");
-        System.out.println("------------------CONSULTAR lista RECURSO ----------------------------------------");
-        List<Resource> listaRecursos = instance.update();
-        System.out.println(listaRecursos);
-        for (Resource i : listaRecursos) {
-            System.out.println(i.getEstado());
-
-        }
+//
+//        ReportFile.loadReport("------------------CONSULTAR lista adsfdsaf ----------------------------------------");
+//
+//        ReportFile.loadReport("------------------CONSULTAR lista RECURSO ----------------------------------------");
+//        System.out.println("------------------CONSULTAR lista RECURSO ----------------------------------------");
+//        List<Resource> listaRecursos = instance.update();
+//        System.out.println(listaRecursos);
+//        for (Resource i : listaRecursos) {
+//            System.out.println(i.getEstado());
+//
+//        }
 
 
         // System.out.println("------------------Actualizar recurso
@@ -129,14 +138,17 @@ public class prueba {
 
 
 
-        // System.out.println("------------------INSERTAR
-        // RESERVA----------------------------------------");
-        // Reserve reserve = instance.createReserve();
-        // //instance.getServiciosAlquiler().createReserve(reserve);
-        // List<Reserve> reserves = instance.getServiciosAlquiler().getListReserve();
-        //// for (Reserve r: reserves){
-        //// System.out.println(r.getFechaFinal());
-        //// }
+         System.out.println("------------------INSERTAR RESERVA----------------------------------------");
+        // Resource resource = getInstance().createResource();
+//        instance.getServiciosAlquiler().createResource(resource);
+         Reserve reserve = getInstance().createReserve();
+         instance.getServiciosAlquiler().createReserve(reserve);
+        //System.out.println(instance.getServiciosAlquiler().getListReserve());
+//         List<Reserve> reserves = instance.getServiciosAlquiler().getListReserve();
+//         reserves.add(reserve);
+//         for (Reserve r: reserves){
+//            System.out.println(r.getPeriodicidad());
+//         }
 
     }
 
