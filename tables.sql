@@ -45,12 +45,12 @@
 --Reservas
  --CREATE TABLE RESERVAS (
 --	codigo SERIAL NOT NULL,
-	--recurso VARCHAR(20) not null,
+	--recurso SERIAL not null,
 --	horaInicial time not null,
 --	horaFinal time not null,
 --	periodicidad VARCHAR(17) NOT NULL,
 --	fechaFinal date not NULL,
---	CONSTRAINT FK_reserva_recurso FOREIGN KEY(recurso) REFERENCES RECURSOS(nombre)
+--	CONSTRAINT FK_reserva_recurso FOREIGN KEY(recurso) REFERENCES RECURSOS(codigo)
 --);
 
 --ALTER table RESERVAS ADD PRIMARY KEY (codigo);
