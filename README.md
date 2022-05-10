@@ -15,7 +15,7 @@
 * ### EDGAR RONALDO HENAO VILLARREAL
 * ### SANTIAGO MIGUEL FETECUA SUÁREZ
 * ### EDWAR FABIAN LOZANO FLOREZ
-* ### (COMPLETAR NOMBRES)
+* ### CARLOS ALBERTO SORZA GÓMEZ
 ## Nombre del profesor
 ### JULIAN MAURICIO VELASCO BRICEÑO
 ## Roles asignados
@@ -23,7 +23,7 @@
 * ### EDGAR RONALDO HENAO VILLARREAL: ***Back***
 * ### SANTIAGO MIGUEL FETECUA SUÁREZ:  ***Front***
 * ### EDWAR FABIAN LOZANO FLOREZ: ***Front***
-* ###
+* ### CARLOS ALBERTO SORZA GÓMEZ ***Back***
 * ### JULIAN MAURICIO VELASCO BRICEÑO: ***Dueño del producto***
 * ### SANTIAGO AGUSTIN LAITON CUBIDES: ***Dueño del producto***
 
@@ -152,7 +152,7 @@ Integrantes.
 - Edgar Ronaldo Henao Villarreal - ronis97
 - Santiago Miguel Fetecua Suárez - santiago-f20
 - Edwar Fabian Lozano Florez - EdwarLozano
-- 
+- Carlos Alberto Sorza Gómez - carlossorza
 
 Breve descripción de la Metodología.
 
@@ -164,7 +164,7 @@ Breve descripción de la Metodología.
 
    - YESID SANTIAGO CARRILLO ALMEIDA: Back
    - EDGAR RONALDO HENAO VILLARREAL: Back
-   - (Colocar nombres y roles)
+   - CARLOS ALBERTO SORZA GÓMEZ: Back
 
 2. El donde y Cuando: Que representa el Sprint.
 
