@@ -13,16 +13,16 @@
 ## Nombre de los integrantes
 * ### YESID SANTIAGO CARRILLO ALMEIDA
 * ### EDGAR RONALDO HENAO VILLARREAL
-* ### (COMPLETAR NOMBRES)
-* ### (COMPLETAR NOMBRES)
+* ### SANTIAGO MIGUEL FETECUA SUÁREZ
+* ### EDWAR FABIAN LOZANO FLOREZ
 * ### (COMPLETAR NOMBRES)
 ## Nombre del profesor
 ### JULIAN MAURICIO VELASCO BRICEÑO
 ## Roles asignados
 * ### YESID SANTIAGO CARRILLO ALMEIDA: ***Back***
 * ### EDGAR RONALDO HENAO VILLARREAL: ***Back***
-* ### (COMPLETAR NOMBRES)  ***roles***
-* ###
+* ### SANTIAGO MIGUEL FETECUA SUÁREZ:  ***Front***
+* ### EDWAR FABIAN LOZANO FLOREZ: ***Front***
 * ###
 * ### JULIAN MAURICIO VELASCO BRICEÑO: ***Dueño del producto***
 * ### SANTIAGO AGUSTIN LAITON CUBIDES: ***Dueño del producto***
@@ -34,12 +34,11 @@
 
 **2. Manual de usuario.**
 
-El presenta manual se encuentra organizado de acuerdo al orden de pantallas de la pagina, como se muestra a continuacion: 
+El presente manual se encuentra organizado de acuerdo al orden de pantallas de la pagina, como se muestra a continuacion: 
 
 1. Inicio de sesión a la pagina:
 
-   
-
+![](img/1.png)
 
 
 2. Cerrar Sesión:
@@ -49,7 +48,13 @@ El presenta manual se encuentra organizado de acuerdo al orden de pantallas de l
 
 3. Pagina de bienvenida:
 
-(Insertar imagenes necesarias para cubrir muestra de funcionalidades)
+- Administrador
+
+![](img/2.png)
+
+- Usuario
+
+![](img/3.png)
 
    Al momento de ingresar se habilitan las siguientes funcionalidades:
 
@@ -145,8 +150,8 @@ Integrantes.
 
 - Yesid Santiago Carrillo Almeida - YesidCarrillo26
 - Edgar Ronaldo Henao Villarreal - ronis97
-- (Colocar nombres)
-- 
+- Santiago Miguel Fetecua Suárez - santiago-f20
+- Edwar Fabian Lozano Florez - EdwarLozano
 - 
 
 Breve descripción de la Metodología.
