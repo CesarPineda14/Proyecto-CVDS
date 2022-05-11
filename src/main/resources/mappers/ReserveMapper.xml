@@ -5,12 +5,19 @@
 <mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.ReserveMapper">
 
     <select parameterType="map" id="getListReserves" resultMap="ReserveResult">
-        select codigo, recurso, horainicial, horafinal, periodicidad, fechafinal from reservas
+        select recurso,
+        horainicial,
+        horafinal,
+        periodicidad,
+        fechafinal,
+        programa
+        from reservas r join usuarios u on r.usuario = u.codigo;
     </select>
 
+
     <insert id="createReserve" parameterType="map">
-        insert into reservas (recurso, horainicial, horafinal, periodicidad, fechafinal)
-        values (#{reserve.recurso}, #{reserve.horaInicial}, #{reserve.horaFinal}, #{reserve.periodicidad},
+        insert into reservas (recurso, usuario, horainicial, horafinal, periodicidad, fechafinal)
+        values (#{reserve.recurso},#{reserve.usuario}, #{reserve.horaInicial}, #{reserve.horaFinal}, #{reserve.periodicidad},
         #{reserve.fechaFinal})
     </insert>
 
@@ -22,6 +29,7 @@
         <result property="horaFinal" column="horafinal"/>
         <result property="periodicidad" column="periodicidad"/>
         <result property="fechaFinal" column="fechafinal"/>
+        <result property="programa" column="programa"/>
     </resultMap>
 
 </mapper>

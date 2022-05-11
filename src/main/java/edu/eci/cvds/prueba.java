@@ -73,10 +73,10 @@ public class prueba {
 
     public Reserve createReserve() {
         Reserve reserve = new Reserve(
-                3,
+                4,1,
                 new Time(12, 30, 40),
                 new Time(13, 30, 40),
-                "frecuente",
+                "poca",
                 new Date(2, 12, 5));
         return reserve;
     }
@@ -138,17 +138,24 @@ public class prueba {
 
 
 
-         System.out.println("------------------INSERTAR RESERVA----------------------------------------");
-        // Resource resource = getInstance().createResource();
-//        instance.getServiciosAlquiler().createResource(resource);
-         Reserve reserve = getInstance().createReserve();
-         instance.getServiciosAlquiler().createReserve(reserve);
-        //System.out.println(instance.getServiciosAlquiler().getListReserve());
-//         List<Reserve> reserves = instance.getServiciosAlquiler().getListReserve();
-//         reserves.add(reserve);
-//         for (Reserve r: reserves){
-//            System.out.println(r.getPeriodicidad());
-//         }
+//         System.out.println("------------------INSERTAR RESERVA----------------------------------------");
+//        // Resource resource = getInstance().createResource();
+////        instance.getServiciosAlquiler().createResource(resource);
+//         Reserve reserve = getInstance().createReserve();
+//         instance.getServiciosAlquiler().createReserve(reserve);
+//        //System.out.println(instance.getServiciosAlquiler().getListReserve());
+////         List<Reserve> reserves = instance.getServiciosAlquiler().getListReserve();
+////         reserves.add(reserve);
+////         for (Reserve r: reserves){
+////            System.out.println(r.getPeriodicidad());
+////         }
+
+        System.out.println("---------------------------CONSULTAR RESERVA --------------------");
+        List<Reserve> reserves = instance.getServiciosAlquiler().getListReserve();
+        System.out.println(reserves);
+        for (Reserve r: reserves){
+            System.out.println(r.getPrograma());
+        }
 
     }
 

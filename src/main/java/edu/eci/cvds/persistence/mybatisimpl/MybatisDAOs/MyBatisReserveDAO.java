@@ -21,6 +21,7 @@ public class MyBatisReserveDAO implements ReserveDAO {
             return reserveMapper.getListReserves();
         }
         catch (Exception e){
+            System.out.println(e.getMessage());
             ReportFile.loadReport(e.getMessage());
             return null;
         }
@@ -32,6 +33,7 @@ public class MyBatisReserveDAO implements ReserveDAO {
             reserveMapper.createReserve(reserve);
         }
         catch (Exception e){
+            System.out.println(e.getMessage());
             ReportFile.loadReport(e.getMessage());
         }
     }

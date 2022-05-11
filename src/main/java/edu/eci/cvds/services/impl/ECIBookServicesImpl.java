@@ -88,6 +88,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 		try {
 			return reserveDAO.getListReserves();
 		} catch (Exception e){
+			System.out.println(e.getMessage());
 			ReportFile.loadReport(e.getMessage());
 			return null;
 		}
@@ -99,6 +100,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 			reserveDAO.createReserve(reserve);
 		}
 		catch (Exception e){
+			System.out.println(e.getMessage());
 			ReportFile.loadReport(e.getMessage());
 		}
 	}
