@@ -143,7 +143,7 @@ El presente manual se encuentra organizado de acuerdo al orden de pantallas de l
 5. Enlace al sistema de integración continua.
 
 (Insertar link de circle CI)
-
+[![CircleCI](https://circleci.com/gh/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/tree/main.svg?style=svg)](https://circleci.com/gh/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/tree/main)
 
 ## Descripción del proceso:
 Integrantes.
