@@ -254,7 +254,7 @@ Reporte de pruebas y de cubrimiento de las mismas (sólo la foto del reporte pri
 
 Reporte de análisis estático de código. Se pueden usar las mismas herramientas trabajadas en los laboratorios.
 
-(Insertar badge de codacy)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/2d5c57739e744a08b9560453ce350d62)](https://www.codacy.com/gh/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS&amp;utm_campaign=Badge_Grade)
 
 (Insertar reporte de codacy)
 
