@@ -45,12 +45,14 @@
 --Reservas
  --CREATE TABLE RESERVAS (
 --	codigo SERIAL NOT NULL,
-	--recurso VARCHAR(20) not null,
+	--recurso SERIAL not null,
+--	usuario SERIAL not null,
 --	horaInicial time not null,
 --	horaFinal time not null,
 --	periodicidad VARCHAR(17) NOT NULL,
 --	fechaFinal date not NULL,
---	CONSTRAINT FK_reserva_recurso FOREIGN KEY(recurso) REFERENCES RECURSOS(nombre)
+--	CONSTRAINT FK_reserva_recurso FOREIGN KEY(recurso) REFERENCES RECURSOS(codigo),
+--	CONSTRAINT FK_reserva_usuario FOREIGN KEY(usuario) REFERENCES USUARIOS(codigo)
 --);
 
 --ALTER table RESERVAS ADD PRIMARY KEY (codigo);
@@ -65,12 +67,13 @@
 
 --Table Usuario
 --CREATE TABLE USUARIOS (
+--	codigo SERIAL not null,
 --	correo VARCHAR(50) not null,
 --	apellidos VARCHAR(50) NOT NULL,
 --	nombres VARCHAR(50) NOT NULL,
 --	contrasena VARCHAR(20) not null,
 --	programa VARCHAR(50) NOT null,
---	rol SERIAL not null,
+--	rol VARCHAR(50) not null,
 --	CONSTRAINT FK_usuarios_rol FOREIGN KEY(rol) REFERENCES ROLES(tipo)
 --);
 
