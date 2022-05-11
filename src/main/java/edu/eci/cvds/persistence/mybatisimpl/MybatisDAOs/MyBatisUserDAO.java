@@ -3,7 +3,7 @@ package edu.eci.cvds.persistence.mybatisimpl.MybatisDAOs;
 import com.google.inject.Inject;
 import edu.eci.cvds.entities.User;
 import edu.eci.cvds.persistence.ExceptionReport.ReportFile;
-import edu.eci.cvds.persistence.PersistenceException;
+import edu.eci.cvds.persistence.ExceptionPersistence;
 import edu.eci.cvds.persistence.mybatisimpl.DAOs.UserDAO;
 import edu.eci.cvds.persistence.mybatisimpl.mappers.UserMapper;
 
@@ -13,7 +13,7 @@ public class MyBatisUserDAO implements UserDAO {
     private UserMapper userMapper;
     // Insert
     @Override
-    public void save(User rs) throws PersistenceException {
+    public void save(User rs) throws ExceptionPersistence {
         try {
 
             userMapper.createUser();
@@ -23,7 +23,7 @@ public class MyBatisUserDAO implements UserDAO {
     }
     // Consulta
     @Override
-    public User load() throws PersistenceException {
+    public User load() throws ExceptionPersistence {
         try {
             return userMapper.getUser();
         }

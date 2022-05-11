@@ -3,7 +3,6 @@ package edu.eci.cvds.persistence.mybatisimpl.MybatisDAOs;
 import com.google.inject.Inject;
 import edu.eci.cvds.entities.Reserve;
 import edu.eci.cvds.persistence.ExceptionReport.ReportFile;
-import edu.eci.cvds.persistence.PersistenceException;
 import edu.eci.cvds.persistence.mybatisimpl.DAOs.ReserveDAO;
 import edu.eci.cvds.persistence.mybatisimpl.mappers.ReserveMapper;
 

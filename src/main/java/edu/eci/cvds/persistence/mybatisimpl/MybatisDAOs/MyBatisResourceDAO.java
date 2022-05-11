@@ -3,7 +3,7 @@ package edu.eci.cvds.persistence.mybatisimpl.MybatisDAOs;
 import com.google.inject.Inject;
 import edu.eci.cvds.entities.Resource;
 import edu.eci.cvds.persistence.ExceptionReport.ReportFile;
-import edu.eci.cvds.persistence.PersistenceException;
+import edu.eci.cvds.persistence.ExceptionPersistence;
 import edu.eci.cvds.persistence.mybatisimpl.DAOs.ResourceDAO;
 import edu.eci.cvds.persistence.mybatisimpl.mappers.ResourceMapper;
 
@@ -17,7 +17,7 @@ public class MyBatisResourceDAO implements ResourceDAO{
 
 
     @Override
-    public void save(Resource resource) throws PersistenceException {
+    public void save(Resource resource) throws ExceptionPersistence {
         try {
             ReportFile.loadReport("Aqui pasa");
             resourceMapper.createResource(resource);

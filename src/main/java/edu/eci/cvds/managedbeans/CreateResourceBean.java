@@ -4,8 +4,8 @@ import com.google.inject.Inject;
 import edu.eci.cvds.entities.Location;
 import edu.eci.cvds.entities.Resource;
 import edu.eci.cvds.entities.ResourceType;
-import edu.eci.cvds.services.ServicesException;
-import edu.eci.cvds.services.impl.ECIBookServices;
+import edu.eci.cvds.services.ExceptionServices;
+import edu.eci.cvds.services.implementation.CiclasServices;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -17,7 +17,7 @@ import java.util.List;
 @RequestScoped
 public class CreateResourceBean extends BasePageBean {
     @Inject
-    private ECIBookServices eciBookServices;
+    private CiclasServices ciclasServices;
 
     private String selectedOptionUbication;
     private String selectedOptionRecTipe;
@@ -30,15 +30,15 @@ public class CreateResourceBean extends BasePageBean {
     public CreateResourceBean() {
 
         try {
-            resourceTypeList = eciBookServices.getResourceType();
-            locationList = eciBookServices.getLocation();
+            resourceTypeList = ciclasServices.getResourceType();
+            locationList = ciclasServices.getLocation();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
     }
 
-    public void createResources() throws ServicesException {
+    public void createResources() throws ExceptionServices {
         System.out.println("Esta entrando");
         try {
             int indexResourceType = Integer.parseInt(selectedOptionRecTipe);
@@ -46,7 +46,7 @@ public class CreateResourceBean extends BasePageBean {
             Resource resource = new Resource(indexResourceType, indexLocation,
                     nombreRecurso, selectedOptionState,
                     Integer.parseInt(capacidadRecurso));
-            eciBookServices.createResource(resource);
+            ciclasServices.createResource(resource);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

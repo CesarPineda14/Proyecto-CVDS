@@ -2,18 +2,17 @@ package edu.eci.cvds.managedbeans;
 
 import edu.eci.cvds.entities.*;
 import edu.eci.cvds.security.SessionLogger;
-import edu.eci.cvds.services.impl.ECIBookServices;
+import edu.eci.cvds.services.implementation.CiclasServices;
 import javax.inject.Inject;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name = "userBean")
 @RequestScoped
 public class UserBean extends BasePageBean {
 
     @Inject
-    private ECIBookServices eciBookServices;
+    private CiclasServices ciclasServices;
     private String email;
     private String password;
     private String nombreCompleto;
@@ -52,7 +51,7 @@ public class UserBean extends BasePageBean {
 
     public User loadUser() throws Exception {
         try {
-            return eciBookServices.getUser();
+            return ciclasServices.getUser();
         } catch (Exception e) {
             return null;
         }

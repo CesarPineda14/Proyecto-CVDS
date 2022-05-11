@@ -1,11 +1,10 @@
 package edu.eci.cvds.managedbeans;
 
 import edu.eci.cvds.entities.*;
-import edu.eci.cvds.services.impl.ECIBookServices;
+import edu.eci.cvds.services.implementation.CiclasServices;
 import javax.inject.Inject;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +13,7 @@ import java.util.List;
 public class ResourceSearchBean extends BasePageBean {
 
     @Inject
-    private ECIBookServices eciBookServices;
+    private CiclasServices ciclasServices;
     public Resource resource;
     public List<Resource> resourcesList;
     private String selectedOptionUbication;
@@ -36,7 +35,7 @@ public class ResourceSearchBean extends BasePageBean {
 
     public List<Resource> loadListResources() throws Exception {
         try {
-            return eciBookServices.getListResources();
+            return ciclasServices.getListResources();
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;
@@ -52,7 +51,7 @@ public class ResourceSearchBean extends BasePageBean {
 
     public void createResource(Resource resource) {
         try {
-            eciBookServices.createResource(resource);
+            ciclasServices.createResource(resource);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -61,7 +60,7 @@ public class ResourceSearchBean extends BasePageBean {
     public void updateResource(Resource resource) {
         try {
 
-            eciBookServices.updateResource(resource);
+            ciclasServices.updateResource(resource);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

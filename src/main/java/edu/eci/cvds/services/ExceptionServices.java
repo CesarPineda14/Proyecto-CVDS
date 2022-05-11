@@ -1,24 +1,24 @@
 package edu.eci.cvds.services;
 
-public class ServicesException extends Exception {
+public class ExceptionServices extends Exception {
 
     /**
 	 * Default generated servial version id
 	 */
 	private static final long serialVersionUID = 2872498150117457223L;
 
-	public ServicesException() {
+	public ExceptionServices() {
     }
 
-    public ServicesException(String message) {
+    public ExceptionServices(String message) {
         super(message);
     }
 
-    public ServicesException(String message, Throwable cause) {
+    public ExceptionServices(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public ServicesException(Throwable cause) {
+    public ExceptionServices(Throwable cause) {
         super(cause);
     }
     

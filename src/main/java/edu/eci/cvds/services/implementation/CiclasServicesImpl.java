@@ -1,4 +1,4 @@
-package edu.eci.cvds.services.impl;
+package edu.eci.cvds.services.implementation;
 
 import java.util.List;
 
@@ -7,12 +7,12 @@ import com.google.inject.Inject;
 import edu.eci.cvds.entities.*;
 import edu.eci.cvds.persistence.ExceptionReport.ReportFile;
 import edu.eci.cvds.persistence.mybatisimpl.DAOs.*;
-import edu.eci.cvds.services.ServicesException;
+import edu.eci.cvds.services.ExceptionServices;
 
 /**
- * Implementación de {@link ECIBookServices}
+ * Implementación de {@link CiclasServices}
  */
-public class ECIBookServicesImpl implements ECIBookServices {
+public class CiclasServicesImpl implements CiclasServices {
 
 	@Inject
 	private UserDAO userDAO;
@@ -30,7 +30,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	private ReserveDAO reserveDAO;
 
 	@Override
-	public User getUser() throws ServicesException {
+	public User getUser() throws ExceptionServices {
 		try{
 			return userDAO.load();
 		}
@@ -42,7 +42,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 
 
 	@Override
-	public List<Resource> getListResources() throws ServicesException {
+	public List<Resource> getListResources() throws ExceptionServices {
 		try{
 			return resourceDAO.loadListResources();
 		}
@@ -52,7 +52,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	}
 
 	@Override
-	public void createResource(Resource resource) throws ServicesException{
+	public void createResource(Resource resource) throws ExceptionServices {
 		try {
 			resourceDAO.save(resource);
 			ReportFile.loadReport("Recurso agregado");
@@ -64,7 +64,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	}
 
 	@Override
-	public List<ResourceType> getResourceType() throws ServicesException {
+	public List<ResourceType> getResourceType() throws ExceptionServices {
 		try{
 			return resourceTypeDAO.getResourceType();
 		}catch (Exception e){
@@ -74,7 +74,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	}
 
 	@Override
-	public List<Location> getLocation() throws ServicesException {
+	public List<Location> getLocation() throws ExceptionServices {
 		try{
 			return locationDAO.getLocation();
 		} catch (Exception e){
@@ -84,7 +84,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	}
 
 	@Override
-	public List<Reserve> getListReserve() throws ServicesException {
+	public List<Reserve> getListReserve() throws ExceptionServices {
 		try {
 			return reserveDAO.getListReserves();
 		} catch (Exception e){
@@ -95,7 +95,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	}
 
 	@Override
-	public void createReserve(Reserve reserve) throws ServicesException {
+	public void createReserve(Reserve reserve) throws ExceptionServices {
 		try {
 			reserveDAO.createReserve(reserve);
 		}
@@ -106,7 +106,7 @@ public class ECIBookServicesImpl implements ECIBookServices {
 	}
 
 	@Override
-	public void updateResource(Resource resource) throws ServicesException {
+	public void updateResource(Resource resource) throws ExceptionServices {
 		try{
 			resourceDAO.updateResource(resource);
 			ReportFile.loadReport(resource.getEstado());
