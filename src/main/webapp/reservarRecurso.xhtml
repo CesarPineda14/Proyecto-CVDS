@@ -57,6 +57,46 @@
     </h:form>
     <h1>Reserva de Recursos</h1>
     <br></br>
+    <script type="text/javascript">
+        PrimeFaces.locales['es'] = {
+            closeText: 'Cerrar',
+            prevText: 'Anterior',
+            nextText: 'Siguiente',
+            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+            dayNamesMin: ['D', 'L', 'M', 'X', 'J', 'V', 'S'],
+            weekHeader: 'Semana',
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: '',
+            timeOnlyTitle: 'Sólo hora',
+            timeText: 'Tiempo',
+            hourText: 'Hora',
+            minuteText: 'Minuto',
+            secondText: 'Segundo',
+            currentText: 'Fecha actual',
+            ampm: false,
+            month: 'Mes',
+            week: 'Semana',
+            day: 'Día',
+            allDayText: 'Todo el día'
+        };
+    </script>
+    <h:form id="form">
+        <p:outputLabel styleClass="p-d-block">Ingrese la fecha en la que desea regitrar la reserva</p:outputLabel>
+        <br></br>
+        <br></br>
+        <p:calendar  value="#{CreateReserveBean.fecha}" locale="es" pattern="dd/MM/yyyy" showOn="button">
+            <p:ajax event="dateSelect" listener="#{CreateReserveBean.actualizarFecha}" update=":form:fechaSelec"/> 
+        </p:calendar>
+        <br />
+        <br />
+        <h:outputText id="fechaSelec" value="#{CreateReserveBean.fechaSelec}"/>
+        <p:commandButton  value="Consultar" class="ui-button-danger"/>
+    </h:form>
 </h:body>
 
 </html>
