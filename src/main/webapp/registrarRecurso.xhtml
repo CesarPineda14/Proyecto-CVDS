@@ -133,6 +133,7 @@
   <h1>Registro de Recursos</h1>
   <br></br>
   <h:form class="form" var="Resource" id="formRegistrarCliente">
+    <p:growl id="message" showDetail="true" />
     <p:inputText placeholder="Nombre Recurso" value="#{creaRecurso.nombreRecurso}" />
     <p:inputText placeholder="Capacidad Recurso" value="#{creaRecurso.capacidadRecurso}" />
     <p:selectOneMenu style="width:100%;" id="ubicacionRec" value="#{creaRecurso.selectedOptionUbication}">

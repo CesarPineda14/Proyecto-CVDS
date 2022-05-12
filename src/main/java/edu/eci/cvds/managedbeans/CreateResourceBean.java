@@ -7,9 +7,10 @@ import edu.eci.cvds.entities.ResourceType;
 import edu.eci.cvds.services.ExceptionServices;
 import edu.eci.cvds.services.implementation.CiclasServices;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-
+import javax.faces.context.FacesContext;
 
 import java.util.List;
 
@@ -47,9 +48,16 @@ public class CreateResourceBean extends BasePageBean {
                     nombreRecurso, selectedOptionState,
                     Integer.parseInt(capacidadRecurso));
             ciclasServices.createResource(resource);
+            addMessage("Confirmed", "Recurso Agregado");
         } catch (Exception e) {
+            addMessage("Confirmed", "Recurso Ya Existe");
             System.out.println(e.getMessage());
         }
+    }
+
+    public void addMessage(String summary, String detail) {
+        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary, detail);
+        FacesContext.getCurrentInstance().addMessage(null, message);
     }
 
     public String getSelectedOptionUbication() {
