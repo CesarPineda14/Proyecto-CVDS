@@ -134,9 +134,10 @@
   <br></br>
   <h:form class="form" var="Resource" id="formRegistrarCliente">
     <p:growl id="message" showDetail="true" />
-    <p:inputText placeholder="Nombre Recurso" value="#{creaRecurso.nombreRecurso}" />
-    <p:inputText placeholder="Capacidad Recurso" value="#{creaRecurso.capacidadRecurso}" />
-    <p:selectOneMenu style="width:100%;" id="ubicacionRec" value="#{creaRecurso.selectedOptionUbication}">
+    <p:inputText placeholder="Nombre Recurso" value="#{creaRecurso.nombreRecurso}" required="true" />
+    <p:inputText placeholder="Capacidad Recurso" value="#{creaRecurso.capacidadRecurso}" required="true" />
+    <p:selectOneMenu style="width:100%;" id="ubicacionRec" value="#{creaRecurso.selectedOptionUbication}"
+      required="true">
       <f:selectItem itemLabel="Ubicacion Recurso" itemValue="" />
       <f:selectItem itemLabel="Biblioteca Principal" itemValue="1" />
       <f:selectItem itemLabel="Biblioteca Satelite" itemValue="2" />
@@ -144,7 +145,7 @@
     </p:selectOneMenu>
     <br></br>
     <br></br>
-    <p:selectOneMenu style="width:100%; " id="tipoRec" value="#{creaRecurso.selectedOptionRecTipe}">
+    <p:selectOneMenu style="width:100%; " id="tipoRec" value="#{creaRecurso.selectedOptionRecTipe}" required="true">
       <f:selectItem itemLabel="Tipo Recurso" itemValue="" />
       <f:selectItem itemLabel="Salas de Estudio" itemValue="1" />
       <f:selectItem itemLabel="Equipos de Computo" itemValue="2" />
@@ -152,7 +153,7 @@
     </p:selectOneMenu>
     <br></br>
     <br></br>
-    <p:selectOneMenu style="width:100%; " id="estadoRec" value="#{creaRecurso.selectedOptionState}">
+    <p:selectOneMenu style="width:100%; " id="estadoRec" value="#{creaRecurso.selectedOptionState}" required="true">
       <f:selectItem itemLabel="Estado del Recurso" itemValue="" />
       <f:selectItem itemLabel="Activo" itemValue="Activo" />
       <f:selectItem itemLabel="Inactivo" itemValue="Inactivo" />

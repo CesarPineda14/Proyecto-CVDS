@@ -50,7 +50,7 @@ public class CreateResourceBean extends BasePageBean {
             ciclasServices.createResource(resource);
             addMessage("Confirmed", "Recurso Agregado");
         } catch (Exception e) {
-            addMessage("Confirmed", "Recurso Ya Existe");
+            addMessage("Confirmed", "Error");
             System.out.println(e.getMessage());
         }
     }
