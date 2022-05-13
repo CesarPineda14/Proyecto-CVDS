@@ -1,7 +1,1 @@
-
-### Error querying database.  Cause: org.apache.ibatis.executor.ExecutorException: No constructor found in edu.eci.cvds.entities.Reserve matching [java.lang.Integer, java.sql.Time, java.sql.Time, java.lang.String, java.sql.Date]
-### The error may exist in mappers/ReserveMapper.xml
-### The error may involve edu.eci.cvds.persistence.mybatisimpl.mappers.ReserveMapper.getListReserves
-### The error occurred while handling results
-### SQL: select recurso, horainicial, horafinal, periodicidad, fechafinal from reservas
-### Cause: org.apache.ibatis.executor.ExecutorException: No constructor found in edu.eci.cvds.entities.Reserve matching [java.lang.Integer, java.sql.Time, java.sql.Time, java.lang.String, java.sql.Date]
+Recurso agregado
