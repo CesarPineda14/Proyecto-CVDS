@@ -117,13 +117,12 @@ public class prueba {
 //        ReportFile.loadReport("------------------CONSULTAR lista adsfdsaf ----------------------------------------");
 //
 //        ReportFile.loadReport("------------------CONSULTAR lista RECURSO ----------------------------------------");
-//        System.out.println("------------------CONSULTAR lista RECURSO ----------------------------------------");
-//        List<Resource> listaRecursos = instance.update();
-//        System.out.println(listaRecursos);
-//        for (Resource i : listaRecursos) {
-//            System.out.println(i.getEstado());
-//
-//        }
+        System.out.println("------------------CONSULTAR lista RECURSO ----------------------------------------");
+        List<Resource> listaRecursos = instance.update();
+        System.out.println(listaRecursos);
+        for (Resource i : listaRecursos) {
+            System.out.println(i.getEstado());
+        }
 
 
         // System.out.println("------------------Actualizar recurso
@@ -142,25 +141,35 @@ public class prueba {
 ////        instance.getServiciosAlquiler().createResource(resource);
 //         Reserve reserve = getInstance().createReserve();
 //         instance.getServiciosAlquiler().createReserve(reserve);
-//        //System.out.println(instance.getServiciosAlquiler().getListReserve());
-////         List<Reserve> reserves = instance.getServiciosAlquiler().getListReserve();
-////         reserves.add(reserve);
-////         for (Reserve r: reserves){
-////            System.out.println(r.getPeriodicidad());
-////         }
+////        //System.out.println(instance.getServiciosAlquiler().getListReserve());
+//////         List<Reserve> reserves = instance.getServiciosAlquiler().getListReserve();
+//////         reserves.add(reserve);
+//////         for (Reserve r: reserves){
+//////            System.out.println(r.getPeriodicidad());
+//////         }
+//
+//        System.out.println("---------------------------CONSULTAR RESERVA --------------------");
+//        List<Reserve> reserves = instance.getServiciosAlquiler().getListReserve();
+//        System.out.println(reserves);
+//        for (Reserve r: reserves){
+//            System.out.println(r.getPrograma());
+//        }
+//
 
-        System.out.println("---------------------------CONSULTAR RESERVA --------------------");
-        List<Reserve> reserves = instance.getServiciosAlquiler().getListReserve();
-        System.out.println(reserves);
-        for (Reserve r: reserves){
-            System.out.println(r.getPrograma());
-        }
-
-    }
-
+//        System.out.println("---------------------------ELIMINAR RESERVA --------------------");
+//        List<Reserve> reserveList = instance.getServiciosAlquiler().getListReserve();
+//        System.out.println(reserveList.get(0).getPrograma());
+//        instance.getServiciosAlquiler().deleteReserve(reserveList.get(0));
+//        reserveList = instance.getServiciosAlquiler().getListReserve();
+//        for(Reserve r: reserveList){
+//            System.out.println(r.getPrograma());
+//        }
+   }
+//
+//
     public List<Resource> update() {
         try {
-            List<Resource> listaRecursos = instance.getServiciosAlquiler().getListResources();
+            List<Resource> listaRecursos = instance.getServiciosAlquiler().getListActiveResources();
             return listaRecursos;
         } catch (Exception e) {
             System.out.println(e.getMessage());

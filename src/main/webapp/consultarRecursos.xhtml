@@ -60,7 +60,7 @@
   </h:form>
 
   <h:form id="consultarRecurso">
-    <p:dataTable id="listaRecursos" var="Resource" value="#{ResourceSearchBean.loadListResources()}"
+    <p:dataTable id="listaRecursos" var="Resource" value="#{ResourceSearchBean.loadListActiveResources()}"
       rowKey="#{Resource.codigo}" paginator="true" rows="20" emptyMessage="No hay recursos con la información dada"
       paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink}RowsPerPageDropdown}"
       currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords}" rowsPerPageTemplate="5,10,15,20">

@@ -21,8 +21,13 @@
         #{reserve.fechaFinal})
     </insert>
 
-    <delete id = "deleteReserve" parameterType="int">
-        DELETE from reserves where codigo = #{codigo}
+    <delete id = "deleteReserve" parameterType="map">
+        delete from reservas
+        <where>
+            <if test="codigo != null">
+                and codigo = #{resource.codigo}
+            </if>
+        </where>
     </delete>
 
 

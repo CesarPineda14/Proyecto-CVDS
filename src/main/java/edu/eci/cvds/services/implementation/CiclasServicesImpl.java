@@ -127,5 +127,15 @@ public class CiclasServicesImpl implements CiclasServices {
 		}
 	}
 
+	@Override
+	public List<Resource> getListActiveResources() throws ExceptionServices {
+		try{
+			return resourceDAO.loadListActiveResources();
+		}catch (Exception e){
+			System.out.println(e.getMessage());
+			return null;
+		}
+	}
+
 
 }
