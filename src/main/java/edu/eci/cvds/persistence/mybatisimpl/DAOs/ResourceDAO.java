@@ -13,6 +13,8 @@ public interface ResourceDAO {
 
     public void updateResource(Resource resource);
 
+    public List<Resource> loadListActiveResources();
+
 }
 
     //metodo para consultar recurso

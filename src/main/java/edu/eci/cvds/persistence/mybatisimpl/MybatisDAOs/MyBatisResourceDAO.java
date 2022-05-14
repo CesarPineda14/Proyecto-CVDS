@@ -53,4 +53,15 @@ public class MyBatisResourceDAO implements ResourceDAO{
             ReportFile.loadReport(e.getMessage());
         }
     }
+
+    @Override
+    public List<Resource> loadListActiveResources() {
+        try{
+            return resourceMapper.getListActiveResources();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
 }

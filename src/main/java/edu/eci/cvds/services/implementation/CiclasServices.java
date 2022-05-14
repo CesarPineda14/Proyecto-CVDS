@@ -24,4 +24,6 @@ public interface CiclasServices {
     public void updateResource(Resource resource) throws ExceptionServices;
 
     public void deleteReserve(Reserve reserve) throws ExceptionServices;
+
+    public List<Resource> getListActiveResources() throws ExceptionServices;
 }

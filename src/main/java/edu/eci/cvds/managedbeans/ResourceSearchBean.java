@@ -42,6 +42,15 @@ public class ResourceSearchBean extends BasePageBean {
         }
     }
 
+    public List<Resource> loadListActiveResources() throws Exception{
+        try{
+            return ciclasServices.getListActiveResources();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
     public List<Resource> getResourcesList() {
         return resourcesList;
     }

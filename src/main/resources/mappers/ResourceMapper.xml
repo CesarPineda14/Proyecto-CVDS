@@ -23,6 +23,19 @@
         order by r.codigo
     </select>
 
+    <select id="getListActiveResources" resultMap="ResourceResult">
+        select r.codigo,
+            t.nombre as tiporecurso,
+            u.nombre as ubicacion,
+            r.nombre as nombrerecurso,
+            estado,
+            capacidad
+        from recursos r join tiporecurso t on r.tipo=t.codigo
+            join ubicaciones u on r.ubicacion=u.codigo
+        where estado='Activo'
+        order by r.codigo
+    </select>
+
     <update id="updateResource" parameterType="map">
         update recursos set estado = #{resource.estado}
         <where>

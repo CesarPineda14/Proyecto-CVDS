@@ -13,4 +13,6 @@ public interface ResourceMapper {
     public List<Resource> getListResources();
 
     public void updateResource(Resource resource);
+
+    public List<Resource> getListActiveResources();
 }
