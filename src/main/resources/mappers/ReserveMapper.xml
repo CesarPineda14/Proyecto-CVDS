@@ -21,6 +21,11 @@
         #{reserve.fechaFinal})
     </insert>
 
+    <delete id = "deleteReserve" parameterType="int">
+        DELETE from reserves where codigo = #{codigo}
+    </delete>
+
+
     <!--property como esta escrito en la clase y column como esta en la base de datos   !-->
     <resultMap type="Reserve" id="ReserveResult">
         <id property="codigo" column="codigo"/>

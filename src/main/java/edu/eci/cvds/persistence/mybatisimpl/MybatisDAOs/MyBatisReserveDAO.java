@@ -36,4 +36,15 @@ public class MyBatisReserveDAO implements ReserveDAO {
             ReportFile.loadReport(e.getMessage());
         }
     }
+
+    @Override
+    public void deleteReserve(Reserve reserve) {
+        try {
+            reserveMapper.deleteReserve(reserve);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+            ReportFile.loadReport(e.getMessage());
+        }
+    }
 }

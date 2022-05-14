@@ -115,4 +115,17 @@ public class CiclasServicesImpl implements CiclasServices {
 			ReportFile.loadReport(e.getMessage());
 		}
 	}
+
+	@Override
+	public void deleteReserve(Reserve reserve) throws ExceptionServices {
+		try {
+			reserveDAO.deleteReserve(reserve);
+		}
+		catch (Exception e){
+			System.out.println(e.getMessage());
+			ReportFile.loadReport(e.getMessage());
+		}
+	}
+
+
 }
