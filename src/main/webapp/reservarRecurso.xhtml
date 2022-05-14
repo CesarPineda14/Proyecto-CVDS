@@ -31,33 +31,81 @@
             min-height: 100px;
             background-color: rgba(205, 205, 205, 0.607);
         }
+
+        .form {
+            position: relative;
+            z-index: 1;
+            max-width: 360px;
+            margin: 0 auto 100px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+
+        .form input {
+            font-family: "Helvetica", sans-serif;
+            outline: 0;
+            background: #f2f2f2;
+            width: 100%;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .form select {
+            font-family: "Helvetica", sans-serif;
+            outline: 0;
+            background: #f2f2f2;
+            width: 100%;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .form button {
+            font-family: "Helvetica", sans-serif;
+            text-transform: uppercase;
+            outline: 0;
+            background: #ff0000;
+            width: 70%;
+            border: 0;
+            padding: 15px;
+            color: #FFFFFF;
+            font-size: 14px;
+            -webkit-transition: all 0.3 ease;
+            transition: all 0.3 ease;
+            cursor: pointer;
+        }
+
+        .form button:hover,
+        .form button:active,
+        .form button:focus {
+            background: #ff0000;
+        }
+
+        .form .message {
+            margin: 15px 0 0;
+            color: #b3b3b3;
+            font-size: 12px;
+        }
+
+        .form .message a {
+            color: #ff0000;
+            text-decoration: none;
+        }
+
+        .form .register-form {
+            display: none;
+        }
     </style>
 </h:head>
 
 <h:body>
-    <header>
-        <br></br>
-        <div>
-            <img class="picture"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg/1920px-Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg.png">
-            </img>
-            <p:commandButton value="LOGOUT" actionListener="#{navigationController.paginaInicio()}"
-                style="float:right; right: 50px; top: 10px; background-color: #ff0000; border: none;" />
-        </div>
-    </header>
-    <br></br>
-    <h:form>
-        <p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(205, 205, 205, 0.607);">
-            <p:menuitem value="Inicio" actionListener="#{ResourceSearchBean.loadListResources()}"
-                action="#{navigationController.paginaUser()}" />
-            <p:menuitem value="Consultar Recursos" actionListener="#{ResourceSearchBean.loadListResources()}"
-                action="#{navigationController.paginaConsultaRecU()}" />
-            <p:menuitem value="Consultar Reserva" actionListener="#{ResourceSearchBean.loadListResources()}" />
-        </p:menubar>
-    </h:form>
-    <h1>Reserva de Recursos</h1>
-    <br></br>
-    <!--<script type="text/javascript">
+    <script type="text/javascript">
         PrimeFaces.locales['es'] = {
             closeText: 'Cerrar',
             prevText: 'Anterior',
@@ -85,63 +133,73 @@
             allDayText: 'Todo el día'
         };
     </script>
-    <h:form id="form">
-        <p:outputLabel styleClass="p-d-block">Ingrese la fecha en la que desea regitrar la reserva</p:outputLabel>
-        <br></br>
-        <br></br>
-        <p:calendar  value="#{CreateReserveBean.fecha}" locale="es" pattern="dd/MM/yyyy" showOn="button">
-            <p:ajax event="dateSelect" listener="#{CreateReserveBean.actualizarFecha}" update="eventDetails"
-            oncomplete="PF('eventDialog').show();"/> 
-        </p:calendar>
-        <br />
-        <br />
-        <h:outputText id="fechaSelec" value="#{CreateReserveBean.fechaSelec}"/>
-        <p:commandButton  value="Consultar" class="ui-button-danger"/>
 
-        <p:dialog widgetVar="eventDialog" header="Event Details" showEffect="fade" hideEffect="fade">
-            <h:panelGrid id="eventDetails" columns="2" cellpadding="7">
-                <p:outputLabel for="title" value="Titles" styleClass="p-text-bold"/>
-                <p:inputText id="title" required="true"/>
-            </h:panelGrid>
-            <div class="p-d-flex p-jc-between p-mt-3">
-                <p:commandButton type="reset" value="Reset" styleClass="p-text-bold ui-button-outlined"/>
-                <p:commandButton id="addButton" value="Save" action="#{scheduleJava8View.addEvent}"
-                            oncomplete="PF('myschedule').update();PF('eventDialog').hide();"/>
-            </div>
-        </p:dialog>
-    </h:form>-->
-    <div class="card">
-        <h:form>
-            <p:growl id="messages" showDetail="true"/>
-    
-            <p:schedule id="schedule" value="#{ScheduleBean.eventModel}" widgetVar="myschedule">
+    <header>
+        <br></br>
+        <div>
+            <img class="picture"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg/1920px-Logo_de_la_Escuela_Colombiana_de_Ingenier%C3%ADa.svg.png">
+            </img>
+            <p:commandButton value="LOGOUT" actionListener="#{navigationController.paginaInicio()}"
+                style="float:right; right: 50px; top: 10px; background-color: #ff0000; border: none;" />
+        </div>
+    </header>
+    <br></br>
+    <h:form>
+        <p:menubar style="border: rgba(185, 185, 185, 0.315); background-color: rgba(205, 205, 205, 0.607);">
+            <p:menuitem value="Inicio" actionListener="#{ResourceSearchBean.loadListResources()}"
+                action="#{navigationController.paginaUser()}" />
+            <p:menuitem value="Consultar Recursos" actionListener="#{ResourceSearchBean.loadListResources()}"
+                action="#{navigationController.paginaConsultaRecU()}" />
+            <p:menuitem value="Consultar Reserva" actionListener="#{ResourceSearchBean.loadListResources()}" />
+        </p:menubar>
+    </h:form>
+
+    <h1>Reserva de Recursos</h1>
+    <h:form>
+        <p:outputLabel styleClass="p-d-block">Reservas existentes</p:outputLabel>
+        <br></br>
+        <br></br>
+        <p:commandButton value="Consultar" type="button" onclick="PF('schedule').show();" class="ui-button-danger" />
+        <p:dialog widgetVar="schedule">
+            <p:schedule id="schedule" value="#{ScheduleBean.eventModel}" widgetVar="myschedule"
+                style="height: auto; width: 1000px">
             </p:schedule>
-    
-            <p:dialog widgetVar="eventDialog" header="Event Details" showEffect="fade" hideEffect="fade">
-                <h:panelGrid id="eventDetails" columns="2" cellpadding="7">
-                    <p:outputLabel for="title" value="Titles" styleClass="p-text-bold"/>
-                    <p:inputText id="title" value="#{scheduleJava8View.event.title}" required="true"/>
-    
-                    <p:outputLabel for="from" value="From" styleClass="p-text-bold"/>
-                    <p:datePicker id="from" value="#{scheduleJava8View.event.startDate}" pattern="dd/MM/yyyy"
-                                  showTime="true" appendTo="@(body)"/>
-    
-                    <p:outputLabel for="to" value="To" styleClass="p-text-bold"/>
-                    <p:datePicker id="to" value="#{scheduleJava8View.event.endDate}" pattern="dd/MM/yyyy"
-                                  showTime="true" appendTo="@(body)"/>
-    
-                    <p:outputLabel for="allDay" value="All Day" styleClass="p-text-bold"/>
-                    <h:selectBooleanCheckbox id="allDay" value="#{scheduleJava8View.event.allDay}"/>
-                </h:panelGrid>
-    
-                <div class="p-d-flex p-jc-between p-mt-3">
-                    <p:commandButton type="reset" value="Reset" styleClass="p-text-bold ui-button-outlined"/>
-                    <p:commandButton id="addButton" value="Save" action="#{scheduleJava8View.addEvent}"
-                                oncomplete="PF('myschedule').update();PF('eventDialog').hide();"/>
-                </div>
-            </p:dialog>
-        </h:form>
-    </div>
+        </p:dialog>
+        <p:growl id="messages" showDetail="true" />
+    </h:form>
+    <br></br>
+    <h:form class="form" var="Resource" id="formRegistrarCliente">
+        <p:growl id="message" showDetail="true" />
+        <!-- Poner información de un map par apoder cogerlo en el selctonemenu-->
+
+        <p:selectOneMenu style="width:100%;" id="reservaRec" value="#{reserva.recurso}" required="true">
+            <f:selectItem itemLabel="Recurso a reservar" itemValue="" />
+            <f:selectItem itemLabel="Mostrar tlaba de recursos" itemValue="" />
+        </p:selectOneMenu>
+
+        <p:selectOneMenu style="width:100%;" id="reservaUser" value="#{reserva.usuario}" required="true">
+            <f:selectItem itemLabel="Id usuario" itemValue="" />
+            <f:selectItem itemLabel="Mostrar tabla de usuarios" itemValue="" />
+        </p:selectOneMenu>
+
+        <p:datePicker id="reservaIni" value="#{reserva.horaIncial}" timeOnly="true" pattern="HH:mm:ss"
+            required="true" />
+
+        <p:datePicker id="reservaFin" value="#{reserva.horaFinal}" timeOnly="true" pattern="HH:mm:ss" required="true" />
+
+        <p:selectOneMenu style="width:100%;" id="reservaPeri" value="#{reserva.periodicidad}" required="true">
+            <f:selectItem itemLabel="Periodicidad" itemValue="" />
+            <f:selectItem itemLabel="Semanal" itemValue="Semanal" />
+            <f:selectItem itemLabel="Unica" itemValue="Unica" />
+            <f:selectItem itemLabel="Diaria" itemValue="Diaria" />
+        </p:selectOneMenu>
+
+        <p:datePicker id="reseFecFIn" value="#{reserva.fechaFinal}" />
+
+        <p:commandButton update="formRegistrarCliente" value="Registrar" class="ui-button-danger" />
+
+    </h:form>
 </h:body>
 
 </html>
