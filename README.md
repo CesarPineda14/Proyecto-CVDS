@@ -91,14 +91,19 @@ El presente manual se encuentra organizado de acuerdo al orden de pantallas de l
 
 #### Diagrama version Final.
 
-(Insertar diagrama E-R)
+![](https://github.com/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/blob/main/img/entRel.png)
 
 2. Diagrama de clases (hacerlo mediante ingeniería inversa)
 
 #### Diagrama version Final.
 
 
-(Insertar diagrama de clases)
+![](https://github.com/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/blob/main/img/General.jpg)
+
+![](https://github.com/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/blob/main/img/Entities.jpg)
+
+![](https://github.com/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/blob/main/img/DataModel.jpg)
+
 
 3. Descripción de la arquitectura (capas) y del Stack de tecnologías utilizado (PrimeFaces, Guice, QuickTheories, PostgreSQL).
 
@@ -257,4 +262,5 @@ Reporte de análisis estático de código. Se pueden usar las mismas herramienta
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/2d5c57739e744a08b9560453ce350d62)](https://www.codacy.com/gh/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS&amp;utm_campaign=Badge_Grade)
 
 (Insertar reporte de codacy)
+
 
