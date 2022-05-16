@@ -159,8 +159,8 @@
                     <input type="password" placeholder="Contraseña" id="bloquear" class="form-control"
                         value="#{shiroBean.password}" />
                     <h:form id="form1">
-                        <p:commandButton class="botn" value="Login" actionListener="#{shiroBean.doLogin()}"
-                            action="#{navigationController.paginaAdmin()}" />
+                        <p:commandButton class="botn" value="Login As Admin" action="#{navigationController.paginaAdmin()}" />
+                        <p:commandButton class="botn" value="Login As User" action="#{navigationController.paginaUser()}" />
                     </h:form>
                 </h:form>
             </div>
