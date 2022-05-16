@@ -56,26 +56,6 @@ El presente manual se encuentra organizado de acuerdo al orden de pantallas de l
 
 ![](img/3.png)
 
-   Al momento de ingresar se habilitan las siguientes funcionalidades:
-
-   1.  Cerrar sesión: permite al usuario cerrar su sesión:
-
-     (insertar imagen de cierre de sesion cuando este implementado)
-
-   2. Ingresar recurso:
-
-
-   3. Actualizar estado recurso:
-
-
-   4. Consultar recursos existentes:
-
-
-   6. Ingresar reserva:
-
-
-   7. Consultar reservas: 
-
 
 
 
@@ -147,7 +127,6 @@ El presente manual se encuentra organizado de acuerdo al orden de pantallas de l
 
 5. Enlace al sistema de integración continua.
 
-(Insertar link de circle CI)
 [![CircleCI](https://circleci.com/gh/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/tree/main.svg?style=svg)](https://circleci.com/gh/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/tree/main)
 
 ## Descripción del proceso:
@@ -216,7 +195,7 @@ La tarea de "Registrar recursos" presento algunos inconvenientes que fueron solu
 
 Adicionalmente subimos el proyecto en Circle Ci y Codacy. Hicimos las debidas configuraciones para cada una de estas plataformas.
 
-(Insertar imagenes de las historias de uso del sprint)
+![](https://github.com/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/blob/main/img/sprint1.png)
 
 
 
@@ -233,7 +212,7 @@ Para el segundo sprint escogimos las tareas:
 
 En este sprint pudimos tener un mejor desempeño en el trabajo de cada actividad debido a que como grupo nos acostumbramos de una mejor manera a la metodología de trabajo de scrum. Adicionalmente hicimos algunos arreglos en cuanto a la parte del frontend de las páginas xhtml que fueron creadas en el primer sprint.
 
-(Insertar imagenes de las historias de uso)
+![](https://github.com/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/blob/main/img/spreen2.png)
 
 **Tercer Sprint**
 
@@ -245,22 +224,11 @@ Para el tercer sprint escogimos las actividades:
 
 Este sprint nos tomó más trabajo ya que nos dimos cuenta de que habían algunos aspectos por mejorar y para esto nos repartimos equivalentemente el trabajo de las actividades planteadas. Sumado a esto, también cambiamos algunos aspectos de los anteriores sprints en cuanto al aparatado del frontend, adicionalmente, realizamos las pruebas unitarias.
 
-
-
-
-
-- Imagen del 'sprint-backlog'
-
-- Imagen del 'sprint-burndown chart' (sacado del sprint-backlog anterior), y una descripción breve de los problemas encontrados y mejoras realizadas al proceso.
-
-Reporte de pruebas y de cubrimiento de las mismas (sólo la foto del reporte principal). Para la cobertura, pueden usar los plugins disponibles (EclEmma, Jacoco, etc.)
-
-(Insertar imagenes de pruebas)
+![](https://github.com/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/blob/main/img/sprint3.png)
 
 Reporte de análisis estático de código. Se pueden usar las mismas herramientas trabajadas en los laboratorios.
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/2d5c57739e744a08b9560453ce350d62)](https://www.codacy.com/gh/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS&amp;utm_campaign=Badge_Grade)
 
-(Insertar reporte de codacy)
 
 
