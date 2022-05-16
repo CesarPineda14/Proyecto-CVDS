@@ -117,12 +117,12 @@ public class prueba {
 //        ReportFile.loadReport("------------------CONSULTAR lista adsfdsaf ----------------------------------------");
 //
 //        ReportFile.loadReport("------------------CONSULTAR lista RECURSO ----------------------------------------");
-        System.out.println("------------------CONSULTAR lista RECURSO ----------------------------------------");
-        List<Resource> listaRecursos = instance.update();
-        System.out.println(listaRecursos);
-        for (Resource i : listaRecursos) {
-            System.out.println(i.getEstado());
-        }
+//        System.out.println("------------------CONSULTAR lista RECURSO ----------------------------------------");
+//        List<Resource> listaRecursos = instance.update();
+//        System.out.println(listaRecursos);
+//        for (Resource i : listaRecursos) {
+//            System.out.println(i.getEstado());
+//        }
 
 
         // System.out.println("------------------Actualizar recurso
@@ -136,17 +136,15 @@ public class prueba {
 
 
 
-//         System.out.println("------------------INSERTAR RESERVA----------------------------------------");
-//        // Resource resource = getInstance().createResource();
-////        instance.getServiciosAlquiler().createResource(resource);
-//         Reserve reserve = getInstance().createReserve();
-//         instance.getServiciosAlquiler().createReserve(reserve);
-////        //System.out.println(instance.getServiciosAlquiler().getListReserve());
-//////         List<Reserve> reserves = instance.getServiciosAlquiler().getListReserve();
-//////         reserves.add(reserve);
-//////         for (Reserve r: reserves){
-//////            System.out.println(r.getPeriodicidad());
-//////         }
+         System.out.println("------------------INSERTAR RESERVA----------------------------------------");
+         Reserve reserve = getInstance().createReserve();
+         instance.getServiciosAlquiler().createReserve(reserve);
+//        //System.out.println(instance.getServiciosAlquiler().getListReserve());
+//         List<Reserve> reserves = instance.getServiciosAlquiler().getListReserve();
+//         reserves.add(reserve);
+//         for (Reserve r: reserves){
+//            System.out.println(r.getPeriodicidad());
+//         }
 //
 //        System.out.println("---------------------------CONSULTAR RESERVA --------------------");
 //        List<Reserve> reserves = instance.getServiciosAlquiler().getListReserve();

@@ -47,6 +47,7 @@ public class CiclasServicesImpl implements CiclasServices {
 			return resourceDAO.loadListResources();
 		}
 		catch (Exception e){
+			System.out.println(e.getMessage());
 			return null;
 		}
 	}

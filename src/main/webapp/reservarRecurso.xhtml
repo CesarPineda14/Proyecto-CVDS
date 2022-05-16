@@ -173,9 +173,8 @@
         <p:growl id="message" showDetail="true" />
         <!-- Poner información de un map par apoder cogerlo en el selctonemenu-->
 
-        <p:selectOneMenu style="width:100%;" id="reservaRec" value="#{reserva.recurso}" required="true">
-            <f:selectItem itemLabel="Recurso a reservar" itemValue="" />
-            <f:selectItem itemLabel="Mostrar tlaba de recursos" itemValue="" />
+        <p:selectOneMenu style="width:100%;" id="reservaRec" value="#{reserve.programa}" required="true">
+            <f:selectItems value="#{createReserve.resourceList}" var="resource" itemValue="#{resource.nombre}"/>
         </p:selectOneMenu>
 
         <p:selectOneMenu style="width:100%;" id="reservaUser" value="#{reserva.usuario}" required="true">
@@ -183,19 +182,19 @@
             <f:selectItem itemLabel="Mostrar tabla de usuarios" itemValue="" />
         </p:selectOneMenu>
 
-        <p:datePicker id="reservaIni" value="#{reserva.horaIncial}" timeOnly="true" pattern="HH:mm:ss"
+        <p:datePicker id="reservaIni" value="#{reserve.horaIncial}" timeOnly="true" pattern="HH:mm:ss"
             required="true" />
 
-        <p:datePicker id="reservaFin" value="#{reserva.horaFinal}" timeOnly="true" pattern="HH:mm:ss" required="true" />
+        <p:datePicker id="reservaFin" value="#{reserve.horaFinal}" timeOnly="true" pattern="HH:mm:ss" required="true" />
 
-        <p:selectOneMenu style="width:100%;" id="reservaPeri" value="#{reserva.periodicidad}" required="true">
+        <p:selectOneMenu style="width:100%;" id="reservaPeri" value="#{reserve.periodicidad}" required="true">
             <f:selectItem itemLabel="Periodicidad" itemValue="" />
             <f:selectItem itemLabel="Semanal" itemValue="Semanal" />
             <f:selectItem itemLabel="Unica" itemValue="Unica" />
             <f:selectItem itemLabel="Diaria" itemValue="Diaria" />
         </p:selectOneMenu>
 
-        <p:datePicker id="reseFecFIn" value="#{reserva.fechaFinal}" />
+        <p:datePicker id="reseFecFIn" value="#{reserve.fechaFinal}" />
 
         <p:commandButton update="formRegistrarCliente" value="Registrar" class="ui-button-danger" />
 

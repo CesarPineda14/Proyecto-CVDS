@@ -1,1 +1,7 @@
-Activo
+
+### Error querying database.  Cause: org.postgresql.util.PSQLException: An I/O error occurred while sending to the backend.
+### The error may exist in mappers/ResourceMapper.xml
+### The error may involve edu.eci.cvds.persistence.mybatisimpl.mappers.ResourceMapper.getListResources-Inline
+### The error occurred while setting parameters
+### SQL: select r.codigo,             t.nombre as tiporecurso,             u.nombre as ubicacion,             r.nombre as nombrerecurso,             estado,             capacidad         from recursos r join tiporecurso t on r.tipo=t.codigo             join ubicaciones u on r.ubicacion=u.codigo         order by r.codigo
+### Cause: org.postgresql.util.PSQLException: An I/O error occurred while sending to the backend.
