@@ -27,43 +27,37 @@
 * ### JULIAN MAURICIO VELASCO BRICEÑO: ***Dueño del producto***
 * ### SANTIAGO AGUSTIN LAITON CUBIDES: ***Dueño del producto***
 
-## Descripción del producto.
-**1. Descripción general:**
+## Imagenes del producto.
 
+Las siguientes imagenes muestran el funcionamiento del producto.
 
+- Inicio de sesión a la pagina:
 
-**2. Manual de usuario.**
-
-El presente manual se encuentra organizado de acuerdo al orden de pantallas de la pagina, como se muestra a continuacion: 
-
-1. Inicio de sesión a la pagina:
-
-![](img/1.png)
-
-
-2. Cerrar Sesión:
-
-   Al hacer inicio de sesión, una de las primeras funcionalidades disponibles es la de cerrar la sesión en la que se encuentra actualmente. 
-
-
-3. Pagina de bienvenida:
+![](https://github.com/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/blob/main/img/inicio%20Sesion.png)
 
 - Administrador
 
-![](img/2.png)
+![](https://github.com/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/blob/main/img/PaginaAdmin.png)
 
 - Usuario
 
 ![](img/3.png)
 
+- consultarRecurso
 
+![](https://github.com/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/blob/main/img/consultarRecurso.png)
 
+- crearRecurso
 
-**3. Descripcion de la metodologia scrum**
+![](https://github.com/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/blob/main/img/crearRecurso.png)
 
+- cambiarEstado
 
-**4. Detalle de los sprints llevados a cabo durante la realización del producto (Metodologia scrum)**
+![](https://github.com/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/blob/main/img/cambiarEstado.png)
 
+- reservarRecurso
+
+![](https://github.com/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/blob/main/img/reservarRecurso.png)
 
 
 ## Arquitectura y Diseño detallado:
@@ -140,15 +134,15 @@ Integrantes.
 
 Breve descripción de la Metodología.
 
-
-
-
+Scrum es un proceso en el que se aplican de manera regular un conjunto de buenas prácticas para trabajar colaborativamente, en equipo y obtener el mejor resultado posible de proyecto.
 
 1. El quien y el que: Identificar los roles de cada uno de los miembros y definir su responsabilidad en el proyecto.
 
    - YESID SANTIAGO CARRILLO ALMEIDA: Back
    - EDGAR RONALDO HENAO VILLARREAL: Back
    - CARLOS ALBERTO SORZA GÓMEZ: Back
+   - SANTIAGO MIGUEL FETECUA SUÁREZ: Front
+   - EDWAR FABIAN LOZANO FLOREZ: Front
 
 2. El donde y Cuando: Que representa el Sprint.
 
