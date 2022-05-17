@@ -139,14 +139,17 @@
                 <span>Lista de reservas</span>
             </f:facet>
 
-            <p:column headerText="Código">
-                <h:outputText value="#{Reserva.codigo}" />
+            <p:column headerText="Nombre Recurso" sortBy="#{Reserve.recursoi}" filterBy="#{Reserve.recursoi}">
+                <h:outputText value="#{Reserva.recursoi}" />
             </p:column>
 
-            <p:column headerText="Recurso" sortBy="#{Resource.recurso}" filterBy="#{Resource.recurso}">
-                <h:outputText value="#{Reserva.recurso}" />
+            <p:column headerText="Nombres" >
+                <h:outputText value="#{Reserva.nombresu}" />
             </p:column>
 
+            <p:column headerText="Apellidos" >
+                <h:outputText value="#{Reserva.apellidosu}" />
+            </p:column>
 
             <p:column headerText="Hora Inicial">
                 <h:outputText value="#{Reserva.horaInicial}" />
@@ -162,6 +165,10 @@
 
             <p:column headerText="Fecha Final">
                 <h:outputText value="#{Reserva.fechaFinal}" />
+            </p:column>
+
+            <p:column headerText="Programa">
+                <h:outputText value="#{Reserva.programa}" />
             </p:column>
 
             <p:column style="color:black;">

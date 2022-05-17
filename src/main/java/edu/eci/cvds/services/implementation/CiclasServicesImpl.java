@@ -91,6 +91,17 @@ public class CiclasServicesImpl implements CiclasServices {
 	}
 
 	@Override
+	public List<Reserve> getListReserve1() throws ExceptionServices {
+		try {
+			return reserveDAO.getListReserves1();
+		} catch (Exception e){
+			System.out.println(e.getMessage());
+			ReportFile.loadReport(e.getMessage());
+			return null;
+		}
+	}
+
+	@Override
 	public void createReserve(Reserve reserve) throws ExceptionServices {
 		try {
 			reserveDAO.createReserve(reserve);

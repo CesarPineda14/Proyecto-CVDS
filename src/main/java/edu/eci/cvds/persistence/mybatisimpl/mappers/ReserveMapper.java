@@ -10,4 +10,6 @@ public interface ReserveMapper {
     public void createReserve(Reserve reserve);
 
     public void deleteReserve(Reserve reverse);
+
+    public List<Reserve> getListReserves1();
 }

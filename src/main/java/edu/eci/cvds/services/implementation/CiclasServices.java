@@ -19,6 +19,8 @@ public interface CiclasServices {
 
     public List<Reserve> getListReserve() throws ExceptionServices;
 
+    public List<Reserve> getListReserve1() throws ExceptionServices;
+
     public void createReserve(Reserve reserve) throws ExceptionServices;
 
     public void updateResource(Resource resource) throws ExceptionServices;
