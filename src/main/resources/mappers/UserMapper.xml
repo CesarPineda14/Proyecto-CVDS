@@ -10,8 +10,22 @@
     </insert>
 
     <select parameterType="map" id="getUser" resultType="User">
-        select * from usuario limit 1
+        select * from usuarios as u where u.correo = #{param1} and u.contrasena = #{param2}
     </select>
 
+    <select parameterType="map" id="getTipo" resultType="User">
+        select rol from usuario where #{username} = correo 
+        
+    </select>
+
+ <resultMap type='User' id='User'>
+        <result property='codigo' column='codigo'/>
+        <result property='correo' column='correo'/>
+        <result property='apellidos' column='apellidos'/>
+        <result property='nombres' column='nombres'/>
+        <result property='contrasena' column='contrasena'/>     
+        <result property='programa' column='programa'/>
+        <result property='rol' column='rol'/>
+    </resultMap>
 
 </mapper>

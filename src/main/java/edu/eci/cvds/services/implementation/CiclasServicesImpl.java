@@ -3,8 +3,10 @@ package edu.eci.cvds.services.implementation;
 import java.util.List;
 
 import com.google.inject.Inject;
-
+import edu.eci.cvds.services.implementation.CiclasServices;
 import edu.eci.cvds.entities.*;
+import edu.eci.cvds.persistence.mybatisimpl.DAOs.UserDAO;
+import edu.eci.cvds.persistence.ExceptionPersistence;
 import edu.eci.cvds.persistence.ExceptionReport.ReportFile;
 import edu.eci.cvds.persistence.mybatisimpl.DAOs.*;
 import edu.eci.cvds.services.ExceptionServices;
@@ -38,6 +40,23 @@ public class CiclasServicesImpl implements CiclasServices {
 			return null;
 		}
 	}
+
+	@Override
+	public User getUser(String correo, String contrasena) throws ExceptionServices {
+
+		User usuario = null;
+        try{
+            List<User> lista = userDAO.getUser(correo, contrasena);
+            if(!lista.isEmpty()) {
+                usuario = lista.get(0);
+            }
+        }catch (ExceptionPersistence e){
+            throw new ExceptionServices("Error", e);
+        }
+        return usuario;
+    }
+	
+	
 
 
 

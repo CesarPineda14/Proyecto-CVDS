@@ -9,6 +9,8 @@ public interface CiclasServices {
 
     public User getUser() throws ExceptionServices;
 
+    public abstract User getUser(String correo, String contrasena) throws ExceptionServices;
+
     public List<Resource> getListResources() throws ExceptionServices;
 
     public void createResource(Resource resource) throws ExceptionServices;

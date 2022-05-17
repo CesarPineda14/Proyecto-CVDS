@@ -1,38 +1,30 @@
 package edu.eci.cvds.entities;
 
 public class User {
-    private String id;
-    private String nid;
+    private int id;
     private String apellidos;
     private String nombres;
     private String programa;
-    private String tipo;
+    private String rol;
+    private String correo;
     private String contrasena;
 
-    public User(String id, String nid, String apellidos, String nombres, String programa, String tipo, String contrasena) {
+    public User(int id, String apellidos, String nombres, String programa, String rol, String correo, String contrasena) {
         this.id = id;
-        this.nid = nid;
         this.apellidos = apellidos;
         this.nombres = nombres;
         this.programa = programa;
-        this.tipo = tipo;
+        this.correo = correo;
+        this.rol = rol;
         this.contrasena = contrasena;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
-    }
-
-    public String getNid() {
-        return nid;
-    }
-
-    public void setNid(String nid) {
-        this.nid = nid;
     }
 
     public String getApellidos() {
@@ -59,12 +51,20 @@ public class User {
         this.programa = programa;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getRol() {
+        return rol;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public String getContrasena() {

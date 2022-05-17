@@ -1,6 +1,9 @@
 package edu.eci.cvds.persistence.mybatisimpl.mappers;
 
 import edu.eci.cvds.entities.User;
+
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
@@ -15,4 +18,6 @@ public interface UserMapper {
             @Param("programa") String programa
             */
     );
+
+    public List<User> getUser(String correo, String contrasena);
 }

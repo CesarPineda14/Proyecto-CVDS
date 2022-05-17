@@ -3,14 +3,19 @@ package edu.eci.cvds.managedbeans;
 import java.io.IOException;
 import java.io.Serializable;
 
+import edu.eci.cvds.entities.Rol;
+import edu.eci.cvds.entities.User;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 
+
 @ManagedBean(name = "navigationController", eager = true)
 @RequestScoped
 
+
 public class NavigationController implements Serializable {
+    private User user;
     public void paginaInicio() throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/inicioSesion.xhtml");
     }
@@ -31,13 +36,14 @@ public class NavigationController implements Serializable {
         FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/reservarRecurso.xhtml");
     }
 
-    public void paginaAdmin() throws IOException {
-        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/paginaAdmin.xhtml");
-    }
-
-    public void paginaUser() throws IOException {
-        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/paginaUser.xhtml");
-    }
+    public void login() throws IOException {
+        
+        if (user.getRol().equals(Rol.Administrador)) {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/paginaAdmin.xhtml");}
+        else if (user.getRol().equals(Rol.Usuario)){
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/paginaUser.xhtml");}
+        }
+        
 
     public void paginaModificar() throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/modificarRecursos.xhtml");
