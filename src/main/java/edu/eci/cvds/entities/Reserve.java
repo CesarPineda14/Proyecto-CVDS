@@ -13,6 +13,9 @@ public class Reserve {
     private String periodicidad;
     private Date fechaFinal;
     private String programa;
+    private String recursoi;
+    private String nombresu;
+    private String apellidosu;
 
     public String getPrograma() {
         return programa;
@@ -46,6 +49,41 @@ public class Reserve {
         this.periodicidad = periodicidad;
         this.fechaFinal = fechaFinal;
         this.programa = programa;
+    }
+
+    public String getRecursoi() {
+        return recursoi;
+    }
+
+    public void setRecursoi(String recursoi) {
+        this.recursoi = recursoi;
+    }
+
+    public String getNombresu() {
+        return nombresu;
+    }
+
+    public void setNombresu(String nombresu) {
+        this.nombresu = nombresu;
+    }
+
+    public String getApellidosu() {
+        return apellidosu;
+    }
+
+    public void setApellidosu(String apellidosu) {
+        this.apellidosu = apellidosu;
+    }
+
+    public Reserve(String recursoi, String nombresu, String apellidosu, Time horaInicial, Time horaFinal, String periodicidad, Date fechaFinal, String programa) {
+        this.horaInicial = horaInicial;
+        this.horaFinal = horaFinal;
+        this.periodicidad = periodicidad;
+        this.fechaFinal = fechaFinal;
+        this.programa = programa;
+        this.recursoi = recursoi;
+        this.nombresu = nombresu;
+        this.apellidosu = apellidosu;
     }
 
     public Reserve getReserve(){

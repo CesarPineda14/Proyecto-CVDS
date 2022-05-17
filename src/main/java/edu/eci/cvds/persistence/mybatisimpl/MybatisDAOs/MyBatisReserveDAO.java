@@ -27,6 +27,18 @@ public class MyBatisReserveDAO implements ReserveDAO {
     }
 
     @Override
+    public List<Reserve> getListReserves1() {
+        try {
+            return reserveMapper.getListReserves1();
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+            ReportFile.loadReport(e.getMessage());
+            return null;
+        }
+    }
+
+    @Override
     public void createReserve(Reserve reserve) {
         try {
             reserveMapper.createReserve(reserve);

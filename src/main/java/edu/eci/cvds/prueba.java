@@ -136,9 +136,9 @@ public class prueba {
 
 
 
-         System.out.println("------------------INSERTAR RESERVA----------------------------------------");
-         Reserve reserve = getInstance().createReserve();
-         instance.getServiciosAlquiler().createReserve(reserve);
+//         System.out.println("------------------INSERTAR RESERVA----------------------------------------");
+//         Reserve reserve = getInstance().createReserve();
+//         instance.getServiciosAlquiler().createReserve(reserve);
 //        //System.out.println(instance.getServiciosAlquiler().getListReserve());
 //         List<Reserve> reserves = instance.getServiciosAlquiler().getListReserve();
 //         reserves.add(reserve);
@@ -146,12 +146,12 @@ public class prueba {
 //            System.out.println(r.getPeriodicidad());
 //         }
 //
-//        System.out.println("---------------------------CONSULTAR RESERVA --------------------");
-//        List<Reserve> reserves = instance.getServiciosAlquiler().getListReserve();
-//        System.out.println(reserves);
-//        for (Reserve r: reserves){
-//            System.out.println(r.getPrograma());
-//        }
+        System.out.println("---------------------------CONSULTAR RESERVA --------------------");
+        List<Reserve> reserves = instance.getServiciosAlquiler().getListReserve();
+        System.out.println(reserves);
+        for (Reserve r: reserves){
+            System.out.println(r.getPrograma());
+        }
 //
 
 //        System.out.println("---------------------------ELIMINAR RESERVA --------------------");
