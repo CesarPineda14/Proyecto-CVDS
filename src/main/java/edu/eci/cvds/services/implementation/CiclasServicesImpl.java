@@ -31,22 +31,18 @@ public class CiclasServicesImpl implements CiclasServices {
 
 	@Override
 	public User getUser() throws ExceptionServices {
-		try{
+		try {
 			return userDAO.load();
-		}
-		catch (Exception e){
+		} catch (Exception e) {
 			return null;
 		}
 	}
 
-
-
 	@Override
 	public List<Resource> getListResources() throws ExceptionServices {
-		try{
+		try {
 			return resourceDAO.loadListResources();
-		}
-		catch (Exception e){
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			return null;
 		}
@@ -58,17 +54,16 @@ public class CiclasServicesImpl implements CiclasServices {
 			resourceDAO.save(resource);
 			ReportFile.loadReport("Recurso agregado");
 			System.out.println(resource);
-		}
-		catch (Exception e){
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 	}
 
 	@Override
 	public List<ResourceType> getResourceType() throws ExceptionServices {
-		try{
+		try {
 			return resourceTypeDAO.getResourceType();
-		}catch (Exception e){
+		} catch (Exception e) {
 			ReportFile.loadReport(e.getMessage());
 			return null;
 		}
@@ -76,9 +71,9 @@ public class CiclasServicesImpl implements CiclasServices {
 
 	@Override
 	public List<Location> getLocation() throws ExceptionServices {
-		try{
+		try {
 			return locationDAO.getLocation();
-		} catch (Exception e){
+		} catch (Exception e) {
 			ReportFile.loadReport(e.getMessage());
 			return null;
 		}
@@ -88,7 +83,7 @@ public class CiclasServicesImpl implements CiclasServices {
 	public List<Reserve> getListReserve() throws ExceptionServices {
 		try {
 			return reserveDAO.getListReserves();
-		} catch (Exception e){
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			ReportFile.loadReport(e.getMessage());
 			return null;
@@ -99,8 +94,7 @@ public class CiclasServicesImpl implements CiclasServices {
 	public void createReserve(Reserve reserve) throws ExceptionServices {
 		try {
 			reserveDAO.createReserve(reserve);
-		}
-		catch (Exception e){
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			ReportFile.loadReport(e.getMessage());
 		}
@@ -108,11 +102,10 @@ public class CiclasServicesImpl implements CiclasServices {
 
 	@Override
 	public void updateResource(Resource resource) throws ExceptionServices {
-		try{
+		try {
 			resourceDAO.updateResource(resource);
 			ReportFile.loadReport(resource.getEstado());
-		}
-		catch (Exception e){
+		} catch (Exception e) {
 			ReportFile.loadReport(e.getMessage());
 		}
 	}
@@ -121,8 +114,7 @@ public class CiclasServicesImpl implements CiclasServices {
 	public void deleteReserve(Reserve reserve) throws ExceptionServices {
 		try {
 			reserveDAO.deleteReserve(reserve);
-		}
-		catch (Exception e){
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			ReportFile.loadReport(e.getMessage());
 		}
@@ -130,13 +122,12 @@ public class CiclasServicesImpl implements CiclasServices {
 
 	@Override
 	public List<Resource> getListActiveResources() throws ExceptionServices {
-		try{
+		try {
 			return resourceDAO.loadListActiveResources();
-		}catch (Exception e){
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			return null;
 		}
 	}
-
 
 }

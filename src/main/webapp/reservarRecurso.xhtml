@@ -6,7 +6,7 @@
     xmlns:of="http://omnifaces.org/functions">
 
 <h:head>
-    <title>Pagina de registro de recursos</title>
+    <title>Reservar Recursos</title>
     <style>
         body {
             background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://escuelaing.s3.amazonaws.com/production/images/Biblioteca-Bloque-B-Escuela-Colombiana-de-I.max-1200x600.jpg');
@@ -152,7 +152,8 @@
                 action="#{navigationController.paginaUser()}" />
             <p:menuitem value="Consultar Recursos" actionListener="#{ResourceSearchBean.loadListResources()}"
                 action="#{navigationController.paginaConsultaRecU()}" />
-            <p:menuitem value="Consultar Reserva" actionListener="#{ResourceSearchBean.loadListResources()}" />
+            <p:menuitem value="Consultar Reserva" actionListener="#{ResourceSearchBean.loadListResources()}"
+                action="#{navigationController.paginaConsultaReserva()}" />
         </p:menubar>
     </h:form>
 

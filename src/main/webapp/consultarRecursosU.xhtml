@@ -53,7 +53,8 @@
         action="#{navigationController.paginaUser()}" />
       <p:menuitem value="Reservar Recurso" actionListener="#{ResourceSearchBean.loadListResources()}"
         action="#{navigationController.paginaReservas()}" />
-      <p:menuitem value="Consultar reservas" actionListener="#{ResourceSearchBean.loadListResources()}" />
+      <p:menuitem value="Consultar Reserva" actionListener="#{ResourceSearchBean.loadListResources()}"
+        action="#{navigationController.paginaConsultaReserva()}" />
     </p:menubar>
     <br></br>
   </h:form>
@@ -65,7 +66,7 @@
       currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords}" rowsPerPageTemplate="5,10,15,20">
 
       <f:facet name="header">
-        <span>Lista de recursos</span>
+        <span>Recursos Disponibles</span>
       </f:facet>
 
       <p:column headerText="Código">

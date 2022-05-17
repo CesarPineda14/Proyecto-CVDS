@@ -130,7 +130,7 @@
 
     <h1>Consultar Reservas</h1>
     <h:form id="consultarReserva">
-        <p:dataTable id="listaRecursos" var="Resource" value="#{ReservaSearchBean.loadListReservas()}"
+        <p:dataTable id="listaReservas" var="Reserva" value="#{ReserveSearchBean.loadListReservas()}"
             rowKey="#{Reserva.codigo}" paginator="true" rows="20" emptyMessage="No hay reservas con la información dada"
             paginatorTemplate="{CurrentPageReport} {PreviousPageLink} {PageLinks} {LastPageLink}RowsPerPageDropdown}"
             currentPageReportTemplate="{startRecord}-{endRecord} de {totalRecords}" rowsPerPageTemplate="5,10,15,20">
@@ -143,24 +143,24 @@
                 <h:outputText value="#{Reserva.codigo}" />
             </p:column>
 
-            <p:column headerText="Tipo" sortBy="#{Resource.tipo}" filterBy="#{Resource.tipo}">
+            <p:column headerText="Recurso" sortBy="#{Resource.recurso}" filterBy="#{Resource.recurso}">
                 <h:outputText value="#{Reserva.recurso}" />
             </p:column>
 
 
-            <p:column headerText="Nombre" sortBy="#{Resource.nombre}" filterBy="#{Resource.nombre}">
+            <p:column headerText="Hora Inicial">
                 <h:outputText value="#{Reserva.horaInicial}" />
             </p:column>
 
-            <p:column headerText="Capacidad" sortBy="#{Resource.capacidad}" filterBy="#{Resource.capacidad}">
+            <p:column headerText="Hora Final">
                 <h:outputText value="#{Reserva.horaFinal}" />
             </p:column>
 
-            <p:column headerText="Estado">
+            <p:column headerText="Periodicidad">
                 <h:outputText value="#{Reserva.periodicidad}" />
             </p:column>
 
-            <p:column headerText="Estado">
+            <p:column headerText="Fecha Final">
                 <h:outputText value="#{Reserva.fechaFinal}" />
             </p:column>
 
@@ -171,9 +171,9 @@
                 <a>
                     <p:commandButton value="Consultar" type="button" onclick="PF('schedule').show();"
                         class="ui-button-danger" />
-                    <p:dialog widgetVar="schedule">
+                    <p:dialog widgetVar="schedule" modal="true" width="1000" height="500">
                         <p:schedule id="schedule" value="#{ScheduleBean.eventModel}" widgetVar="myschedule"
-                            style="height: auto; width: 1000px">
+                            style="padding: 1%;">
                         </p:schedule>
                     </p:dialog>
                 </a>
