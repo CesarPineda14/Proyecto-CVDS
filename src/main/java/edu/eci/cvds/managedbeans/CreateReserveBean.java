@@ -9,6 +9,7 @@ import edu.eci.cvds.entities.Reserve;
 import edu.eci.cvds.entities.Resource;
 import edu.eci.cvds.services.implementation.CiclasServices;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -39,6 +40,35 @@ public class CreateReserveBean extends BasePageBean{
 
     }
 
+
+    public void actualizarFecha(SelectEvent event) {
+        SimpleDateFormat fecha1 = new SimpleDateFormat("EEEEE dd MMMMM yyyy");
+        StringBuilder cadena_fecha1_11 = new StringBuilder(fecha1.format(event.getObject()));
+        fechaSelec = cadena_fecha1_11.toString();
+        
+    }
+
+
+    public void setCiclasServices(CiclasServices ciclasServices) {
+        this.ciclasServices = ciclasServices;
+    }
+
+    public List<Resource> getResourceList() {
+        return resourceList;
+    }
+
+    public void setResourceList(List<Resource> resourceList) {
+        this.resourceList = resourceList;
+    }
+
+    public List<Reserve> getReserveList() {
+        return reserveList;
+    }
+
+    public void setReserveList(List<Reserve> reserveList) {
+        this.reserveList = reserveList;
+    }
+
     public Date getFecha() {
         return fecha;
     }
@@ -54,24 +84,4 @@ public class CreateReserveBean extends BasePageBean{
     public void setFechaSelec(String fechaSelec) {
         this.fechaSelec = fechaSelec;
     }
-
-
-
-    public CiclasServices getEciBookServices() {
-        return ciclasServices;
-    }
-
-    public void setEciBookServices(CiclasServices ciclasServices) {
-        this.ciclasServices = ciclasServices;
-    }
-
-    public void actualizarFecha(SelectEvent event) {
-        SimpleDateFormat fecha1 = new SimpleDateFormat("EEEEE dd MMMMM yyyy");
-        StringBuilder cadena_fecha1_11 = new StringBuilder(fecha1.format(event.getObject()));
-        fechaSelec = cadena_fecha1_11.toString();
-        
-    }
-
-
-
 }

@@ -2,10 +2,11 @@
 <!DOCTYPE html
     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
-    xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
+    xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui" xmlns:o="http://omnifaces.org/ui"
+    xmlns:of="http://omnifaces.org/functions">
 
 <h:head>
-    <title>Pagina de registro de recursos</title>
+    <title>Reservar Recursos</title>
     <style>
         body {
             background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://escuelaing.s3.amazonaws.com/production/images/Biblioteca-Bloque-B-Escuela-Colombiana-de-I.max-1200x600.jpg');
@@ -151,7 +152,8 @@
                 action="#{navigationController.paginaUser()}" />
             <p:menuitem value="Consultar Recursos" actionListener="#{ResourceSearchBean.loadListResources()}"
                 action="#{navigationController.paginaConsultaRecU()}" />
-            <p:menuitem value="Consultar Reserva" actionListener="#{ResourceSearchBean.loadListResources()}" />
+            <p:menuitem value="Consultar Reserva" actionListener="#{ResourceSearchBean.loadListResources()}"
+                action="#{navigationController.paginaConsultaReserva()}" />
         </p:menubar>
     </h:form>
 
@@ -161,9 +163,8 @@
         <br></br>
         <br></br>
         <p:commandButton value="Consultar" type="button" onclick="PF('schedule').show();" class="ui-button-danger" />
-        <p:dialog widgetVar="schedule">
-            <p:schedule id="schedule" value="#{ScheduleBean.eventModel}" widgetVar="myschedule"
-                style="height: auto; width: 1000px">
+        <p:dialog widgetVar="schedule" modal="true" width="1000" height="500">
+            <p:schedule id="schedule" value="#{ScheduleBean.eventModel}" widgetVar="myschedule" style="padding: 1%;">
             </p:schedule>
         </p:dialog>
         <p:growl id="messages" showDetail="true" />
@@ -173,31 +174,36 @@
         <p:growl id="message" showDetail="true" />
         <!-- Poner información de un map par apoder cogerlo en el selctonemenu-->
 
-        <p:selectOneMenu style="width:100%;" id="reservaRec" value="#{reserva.recurso}" required="true">
-            <f:selectItem itemLabel="Recurso a reservar" itemValue="" />
-            <f:selectItem itemLabel="Mostrar tlaba de recursos" itemValue="" />
+        <p:selectOneMenu style="width:100%;" id="reservaRec" value="#{reserve.programa}" required="true">
+            <f:selectItems value="#{createReserve.resourceList}" var="resource" itemValue="#{resource.nombre}" />
         </p:selectOneMenu>
-
+        <br></br>
+        <br></br>
         <p:selectOneMenu style="width:100%;" id="reservaUser" value="#{reserva.usuario}" required="true">
             <f:selectItem itemLabel="Id usuario" itemValue="" />
             <f:selectItem itemLabel="Mostrar tabla de usuarios" itemValue="" />
         </p:selectOneMenu>
+        <br></br>
+        <br></br>
+        <p> Hora Inicio</p>
+        <p:datePicker style="width:100%;" id="reservaIni" value="#{reserve.horaIncial}" timeOnly="true"
+            pattern="HH:mm:ss" required="true" />
+        <p> Hora Fin</p>
+        <p:datePicker style="width:100%;" id="reservaFin" value="#{reserve.horaFinal}" timeOnly="true"
+            pattern="HH:mm:ss" required="true" />
 
-        <p:datePicker id="reservaIni" value="#{reserva.horaIncial}" timeOnly="true" pattern="HH:mm:ss"
-            required="true" />
-
-        <p:datePicker id="reservaFin" value="#{reserva.horaFinal}" timeOnly="true" pattern="HH:mm:ss" required="true" />
-
-        <p:selectOneMenu style="width:100%;" id="reservaPeri" value="#{reserva.periodicidad}" required="true">
+        <p:selectOneMenu style="width:100%;" id="reservaPeri" value="#{reserve.periodicidad}" required="true">
             <f:selectItem itemLabel="Periodicidad" itemValue="" />
             <f:selectItem itemLabel="Semanal" itemValue="Semanal" />
             <f:selectItem itemLabel="Unica" itemValue="Unica" />
             <f:selectItem itemLabel="Diaria" itemValue="Diaria" />
         </p:selectOneMenu>
+        <br></br>
+        <br></br>
+        <p> Hora Fin</p>
+        <p:datePicker style="width:100%;" id="reseFecFIn" value="#{reserve.fechaFinal}" />
 
-        <p:datePicker id="reseFecFIn" value="#{reserva.fechaFinal}" />
-
-        <p:commandButton update="formRegistrarCliente" value="Registrar" class="ui-button-danger" />
+        <p:commandButton update="formRegistrarCliente" value="Reservar" class="ui-button-danger" />
 
     </h:form>
 </h:body>
