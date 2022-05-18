@@ -31,6 +31,7 @@
         fechafinal,
         programa
         from reservas r join usuarios u on r.usuario = u.codigo join recursos r2 on r.recurso = r2.codigo
+        order by r2.nombre
     </select>
 
 
