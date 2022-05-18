@@ -14,6 +14,9 @@ import javax.faces.context.FacesContext;
 @RequestScoped
 
 
+
+    
+
 public class NavigationController implements Serializable {
     private User user;
     public void paginaInicio() throws IOException {
@@ -36,17 +39,16 @@ public class NavigationController implements Serializable {
         FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/reservarRecurso.xhtml");
     }
 
-    public void login() throws IOException {
-        
-        if (user.getRol().equals(Rol.Administrador)) {
-            FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/paginaAdmin.xhtml");}
-        else if (user.getRol().equals(Rol.Usuario)){
-            FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/paginaUser.xhtml");}
+    public void paginaAdmin() throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/paginaAdmin.xhtml");
     }
 
+    public void paginaUser() throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/paginaUser.xhtml");
+    }
 
     public void paginaModificar() throws IOException {
-        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/paginaAdmin.xhtml");
+        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/modificarRecursos.xhtml");
     }
 
     public void paginaCambiarEstado() throws IOException {
@@ -56,5 +58,13 @@ public class NavigationController implements Serializable {
     public void paginaConsultaReserva() throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/consultarReserva.xhtml");
     }
+
+    public void login() throws IOException {
+        
+        if (user.getRol().equals(Rol.Administrador)) {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/paginaAdmin.xhtml");}
+        else if (user.getRol().equals(Rol.Usuario)){
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/paginaUser.xhtml");}
+    }  
 
 }
