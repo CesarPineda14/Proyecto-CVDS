@@ -42,11 +42,11 @@ public class NavigationController implements Serializable {
             FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/paginaAdmin.xhtml");}
         else if (user.getRol().equals(Rol.Usuario)){
             FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/paginaUser.xhtml");}
-        }
-        
+    }
+
 
     public void paginaModificar() throws IOException {
-        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/modificarRecursos.xhtml");
+        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/paginaAdmin.xhtml");
     }
 
     public void paginaCambiarEstado() throws IOException {
