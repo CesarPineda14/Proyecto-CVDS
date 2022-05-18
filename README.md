@@ -59,6 +59,10 @@ Las siguientes imagenes muestran el funcionamiento del producto.
 
 ![](https://github.com/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/blob/main/img/reservarRecurso.png)
 
+- consultarReserva
+
+![](https://github.com/2022-1-PROYCVDS-BIBLIOTECA-ECI/Proyecto-CVDS/blob/main/img/consultarReserva.png)
+
 
 ## Arquitectura y Diseño detallado:
 1. Modelo E-R.
