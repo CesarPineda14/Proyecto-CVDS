@@ -40,7 +40,6 @@ public class CiclasServicesImpl implements CiclasServices {
 		}
 	}
 
-<<<<<<< HEAD
 	@Override
 	public User getUser(String correo, String contrasena) throws ExceptionServices {
 
@@ -54,14 +53,10 @@ public class CiclasServicesImpl implements CiclasServices {
             throw new ExceptionServices("Error", e);
         }
         return usuario;
-    }
+   	}
 	
 	
 
-
-
-=======
->>>>>>> df4a0e202d40732c601c8b69b68e78cc54825418
 	@Override
 	public List<Resource> getListResources() throws ExceptionServices {
 		try {
